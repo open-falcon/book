@@ -1,4 +1,3 @@
-open-falcon使用手册
+open-falcon完全手册
 
-力求清晰明了
 
