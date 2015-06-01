@@ -1,5 +1,6 @@
 {
     "variables": {
         "contact": "sa-dev@xiaomi.com"
-    }
+    },
+    "gitbook": ">=2.0.0"
 }
