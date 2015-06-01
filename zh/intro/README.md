@@ -27,9 +27,15 @@
 
 ![Dashboard Screen](https://raw.githubusercontent.com/open-falcon/doc/master/screenshots/falcon-screen.png)
 
+**大图**
+
 ![Dashboard Big chart](https://raw.githubusercontent.com/open-falcon/doc/master/screenshots/falcon-big-chart.png)
 
+**Portal host group**
+
 ![Portal host group](https://raw.githubusercontent.com/open-falcon/doc/master/screenshots/portal-hostgrp.png)
+
+**Portal template**
 
 ![Portal template](https://raw.githubusercontent.com/open-falcon/doc/master/screenshots/portal-tpl.png)
 
