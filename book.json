@@ -2,5 +2,5 @@
     "variables": {
         "contact": "sa-dev@xiaomi.com"
     },
-    "gitbook": ">=2.0.0"
+    "gitbook": ">=1.5.0"
 }
