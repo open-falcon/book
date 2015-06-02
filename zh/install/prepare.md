@@ -21,7 +21,7 @@ source .bashrc
 
 接下来clone代码，以备后用
 
-```
+```bash
 cd $GOPATH/src
 mkdir github.com
 cd github.com
