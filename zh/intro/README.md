@@ -184,7 +184,7 @@ c.RRA("MIN", 0.5, 720, 730)
 - 秦晓辉: http://ulricqin.com/ UlricQin@微博 UlricQin@Twitter
 - yubo: https://github.com/yubo x80386@微信
 - 聂安: https://github.com/niean niean_sail@微信
-- QQ群：373249123 
+- QQ群：373249123
 
 
 # License
