@@ -8,3 +8,4 @@
   * [Sender](install/sender.md)
   * [Web前端](install/fe.md)
   * [Portal](install/portal.md)
+  * [Heartbeat Server](install/hbs.md)
