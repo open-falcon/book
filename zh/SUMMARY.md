@@ -7,3 +7,4 @@
   * [邮件短信发送接口](install/mail-sms.md)
   * [Sender](install/sender.md)
   * [Web前端](install/fe.md)
+  * [Portal](install/portal.md)
