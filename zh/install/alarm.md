@@ -76,4 +76,4 @@ log没问题就是没问题了，log在var目录
 
 ## 补充
 
-alarm搭建完成了，我们可以回去修改fe的配置：falconAlarm
+alarm搭建完成了，我们可以回去修改fe的配置，把fe模块的shortcut:falconAlarm配置成alarm的http地址，是浏览器可访问的alarm的http地址
