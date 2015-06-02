@@ -61,10 +61,10 @@ remain指定了judge内存中针对某个数据存多少个点，比如host01这
 
 ## 验证
 
-访问/health接口验证judge是否工作正常。
+访问/health接口验证Judge是否工作正常。
 
 ```bash
 curl 127.0.0.1:6081/health
 ```
 
-另外就是查看judge的log，log在var目录下
+另外就是查看Judge的log，log在var目录下

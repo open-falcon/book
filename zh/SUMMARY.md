@@ -10,3 +10,5 @@
   * [Portal](install/portal.md)
   * [Heartbeat Server](install/hbs.md)
   * [Judge](install/judge.md)
+  * [Links](install/links.md)
+  * [Alarm](install/alarm.md)
