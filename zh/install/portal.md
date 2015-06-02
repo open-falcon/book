@@ -22,7 +22,7 @@ $ ./env/bin/pip install -r pip_requirements.txt -i http://pypi.douban.com/simple
 
 ## 部署说明
 
-Portal是个web项目，无状态，可以水平扩展，至少部署两台机器已保证可用性，前面架设nginx或者lvs这种负载设备，申请一个域名，搞定！
+Portal是个web项目，无状态，可以水平扩展，至少部署两台机器以保证可用性，前面架设nginx或者lvs这种负载设备，申请一个域名，搞定！
 
 ## 配置说明
 
@@ -63,3 +63,6 @@ except Exception, e:
     print "[warning] %s" % e
 ```
 
+# 补充
+
+Portal正常启动之后，就可以回去配置Fe这个项目的shortcut了。当然，dashboard和alarm还没有搭建，这俩shortcut还没法配置。修改完了shortcut，要重启fe模块。
