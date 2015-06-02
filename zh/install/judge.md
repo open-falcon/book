@@ -43,7 +43,7 @@ Judge监听了一个http端口，提供了一个http接口：/count，访问之�
     },
     "alarm": {
         "enabled": true,
-        "minInterval": 300,
+        "minInterval": 300, # 连续两个报警之间至少相隔的秒数，维持默认即可
         "queuePattern": "event:p%v",
         "redis": {
             "dsn": "127.0.0.1:6379", # 与alarm、sender使用一个redis
