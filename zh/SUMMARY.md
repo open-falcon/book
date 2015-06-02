@@ -9,3 +9,4 @@
   * [Web前端](install/fe.md)
   * [Portal](install/portal.md)
   * [Heartbeat Server](install/hbs.md)
+  * [Judge](install/judge.md)

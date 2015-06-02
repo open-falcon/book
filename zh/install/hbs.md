@@ -31,7 +31,7 @@ hbs是可以水平扩展的，至少部署两个实例以保证可用性。一�
 {
     "debug": true,
     "database": "root:password@tcp(127.0.0.1:3306)/falcon_portal?loc=Local&parseTime=true", # Portal的数据库地址
-    "hosts": "", # portal数据库中有个host表，如果表中数据是从其他系统同步过来的，此时配置为sync，否则就维持默认，留空即可
+    "hosts": "", # portal数据库中有个host表，如果表中数据是从其他系统同步过来的，此处配置为sync，否则就维持默认，留空即可
     "maxIdle": 100,
     "listen": ":6030", # hbs监听的rpc地址
     "trustable": [""],
