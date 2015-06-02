@@ -1,3 +1,0 @@
-# hbs
-
-heartbeat server
