@@ -1,8 +1,8 @@
 # Agent
 
-agent是open-falcon在服务器上的代理，每台机器上都需要部署agent。agent会自动采集预先定义的采集项，每隔60秒push到transfer。
+agent用于采集机器负载监控指标，比如cpu.idle、load.1min、disk.io.util等等，每隔60秒push给Transfer。agent与Transfer建立了长连接，数据发送速度比较快，agent提供了一个http接口/v1/push用于接收用户手工push的一些数据，然后通过长连接迅速转发给Transfer。
 
-## 源码编译
+## 源码安装
 
 ```bash
 cd $GOPATH/src/github.com/open-falcon/agent
@@ -13,54 +13,33 @@ go get ./...
 
 最后一步会pack出一个tar.gz的安装包，拿着这个包去部署服务即可。
 
-## 服务部署
-服务部署，包括配置修改、启动服务、检验服务、停止服务等。这之前，需要将安装包解压到服务的部署目录下。
+## 部署说明
 
-```bash
-# 修改配置, 配置项含义见下文
-mv cfg.example.json cfg.json
-vim cfg.json
-
-# 启动服务
-./control start
-
-# 校验服务,这里假定agent开启了1988的http监听端口。检验结果为ok表明服务正常启动。
-curl -s "127.0.0.1:1988/health"
-
-...
-# 停止服务
-./control stop
-
-```
-通过日志可以查看服务的运行状态，日志文件地址为./var/app.log。如果需要详细的日志，可以将配置项debug设置为true。
+agent需要部署到所有要被监控的机器上，比如公司有10万台机器，那就要部署10万个agent。agent本身资源消耗很少，不用担心。
 
 ## 配置说明
-配置文件默认为./cfg.json。默认情况下，安装包会有一个cfg.example.json的配置文件示例。配置文件内容为，
+
 
 ```
-# 请勿直接拷贝此文本,因为go不支持带注释的json
 {
     "debug": true,
     "hostname": "",
     "ip": "",
-    # 插件采集配置,默认不开启
     "plugin": {
-        "enabled": false,
+        "enabled": false, # 默认不开启插件机制
         "dir": "./plugin",
         "git": "https://coding.net/ulricqin/plugin.git",
         "logs": "./logs"
     },
-    # 心跳服务配置,默认不开启
     "heartbeat": {
-        "enabled": false,
-        "addr": "",
+        "enabled": true, # 此处enabled要设置为true
+        "addr": "127.0.0.1:6030", # hbs的地址，端口是hbs的rpc端口
         "interval": 60,
         "timeout": 1000
     },
-    # 转发服务配置, 默认开启
     "transfer": {
-        "enabled": true,
-        "addr": "127.0.0.1:8433",
+        "enabled": true, # 此处enabled要设置为true
+        "addr": "127.0.0.1:8433", # transfer的地址，端口是transfer的rpc端口
         "interval": 60,
         "timeout": 1000
     },
@@ -69,9 +48,9 @@ curl -s "127.0.0.1:1988/health"
         "listen": ":1988"
     },
     "collector": {
-        "ifacePrefix": ["eth", "em"]
+        "ifacePrefix": ["eth", "em"] # 默认配置只会采集网卡名称前缀是eth、em的网卡流量，配置为空就会采集所有的，lo的也会采集。可以从/proc/net/dev看到各个网卡的流量信息
     },
-    "ignore": {
+    "ignore": { # 默认采集了200多个metric，可以通过ignore设置为不采集
         "cpu.busy": true,
         "mem.swapfree": true
     }
@@ -79,3 +58,18 @@ curl -s "127.0.0.1:1988/health"
 
 ```
 
+## 验证
+
+看var目录下的log是否正常，或者浏览器访问其1988端口。另外agent提供了一个`--check`参数，可以检查agent是否可以正常跑在当前机器上
+
+```bash
+./falcon-agent --check
+```
+
+## /v1/push接口
+
+我们设计初衷是不希望用户直接连到Transfer发送数据，而是通过agent的/v1/push接口转发，接口使用范例：
+
+```bash
+ts=`date +%s`; curl -X POST -d "[{\"metric\": \"metric.demo\", \"endpoint\": \"qd-open-falcon-judge01.hd\", \"timestamp\": $ts,\"step\": 60,\"value\": 9,\"counterType\": \"GAUGE\",\"tags\": \"project=falcon,module=judge\"}]" http://127.0.0.1:1988/v1/push
+```

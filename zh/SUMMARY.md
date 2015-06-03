@@ -9,6 +9,7 @@
   * [Graph](install/graph.md)
   * [Query](install/query.md)
   * [DashBoard](install/dashboard.md)
+  * [Task](install/task.md)
   * [邮件短信发送接口](install/mail-sms.md)
   * [Sender](install/sender.md)
   * [Web前端](install/fe.md)
@@ -17,4 +18,6 @@
   * [Judge](install/judge.md)
   * [Links](install/links.md)
   * [Alarm](install/alarm.md)
-  * [Task](install/task.md)
+  * [FAQ](faq/README.md)
+  * [报警相关](faq/alarm.md)
+
