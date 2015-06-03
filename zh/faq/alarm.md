@@ -3,7 +3,7 @@
 #### 配置了策略，一直没有报警，如何排查？
 
 1. 排查sender、alarm、judge、hbs、agent、transfer的log
-2. 浏览器访问alarm的http页面，看是否有未恢复的告警，如果有就是生成报警了，后面没发出去，很可能是邮件、短信发送接口出问题了
+2. 浏览器访问alarm的http页面，看是否有未恢复的告警，如果有就是生成报警了，后面没发出去，很可能是邮件、短信发送接口出问题了，检查sender中配置的api
 3. 打开agent的debug，看是否在正常push数据
 4. 看agent配置，是否正确配置了heartbeat(hbs)和transfer的地址，并enabled
 5. 看transfer配置，是否正确配置了judge地址
