@@ -13,3 +13,6 @@
   * [Judge](install/judge.md)
   * [Links](install/links.md)
   * [Alarm](install/alarm.md)
+* [FAQ](faq/README.md)
+  * [报警相关](faq/alarm.md)
+
