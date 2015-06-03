@@ -15,7 +15,7 @@ go get ./...
 
 ## 部署说明
 
-agent需要部署到所有要被监控的机器上，比如公司有10万台机器，那就要部署10万个agent喽。agent本身资源消耗很少，不用担心。
+agent需要部署到所有要被监控的机器上，比如公司有10万台机器，那就要部署10万个agent。agent本身资源消耗很少，不用担心。
 
 ## 配置说明
 
@@ -48,7 +48,7 @@ agent需要部署到所有要被监控的机器上，比如公司有10万台机�
         "listen": ":1988"
     },
     "collector": {
-        "ifacePrefix": ["eth", "em"] # 只会采集网卡名称前缀是eth、em的网卡流量，配置为空就会采集所有的，lo的也会采集。可以从/proc/net/dev看到哥哥网卡的流量信息
+        "ifacePrefix": ["eth", "em"] # 默认配置只会采集网卡名称前缀是eth、em的网卡流量，配置为空就会采集所有的，lo的也会采集。可以从/proc/net/dev看到各个网卡的流量信息
     },
     "ignore": { # 默认采集了200多个metric，可以通过ignore设置为不采集
         "cpu.busy": true,
@@ -64,4 +64,12 @@ agent需要部署到所有要被监控的机器上，比如公司有10万台机�
 
 ```bash
 ./falcon-agent --check
+```
+
+## /v1/push接口
+
+我们设计初衷是不希望用户直接连到Transfer发送数据，而是通过agent的/v1/push接口转发，接口使用范例：
+
+```bash
+ts=`date +%s`; curl -X POST -d "[{\"metric\": \"metric.demo\", \"endpoint\": \"qd-open-falcon-judge01.hd\", \"timestamp\": $ts,\"step\": 60,\"value\": 9,\"counterType\": \"GAUGE\",\"tags\": \"project=falcon,module=judge\"}]" http://127.0.0.1:1988/v1/push
 ```
