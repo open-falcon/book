@@ -25,6 +25,8 @@ Fe作为一个前端模块，无状态，可以水平扩展，至少部署两台
 
 ## 配置介绍
 
+配置文件必须叫cfg.json，可以基于cfg.example.json修改
+
 ```
 {
     "log": "debug",
@@ -56,6 +58,18 @@ Fe作为一个前端模块，无状态，可以水平扩展，至少部署两台
         "falconAlarm": "http://11.11.11.11:6060/" # 浏览器可访问的alarm的http地址
     }
 }
+```
+
+## 进程管理
+
+我们提供了一个control脚本来完成常用操作
+
+```bash
+./control start 启动进程
+./control stop 停止进程
+./control restart 重启进程
+./control status 查看进程状态
+./control tail 用tail -f的方式查看var/app.log
 ```
 
 ## 设置root账号的密码

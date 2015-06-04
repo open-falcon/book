@@ -23,6 +23,8 @@ Judge监听了一个http端口，提供了一个http接口：/count，访问之�
 
 ## 配置说明
 
+配置文件必须叫cfg.json，可以基于cfg.example.json修改
+
 ```
 {
     "debug": true,
@@ -58,6 +60,18 @@ Judge监听了一个http端口，提供了一个http接口：/count，访问之�
 
 remain这个配置详细解释一下：
 remain指定了judge内存中针对某个数据存多少个点，比如host01这个机器的cpu.idle的值在内存中最多存多少个，配置报警的时候比如all(#3)，这个#后面的数字不能超过remain-1，一般维持默认就够用了
+
+## 进程管理
+
+我们提供了一个control脚本来完成常用操作
+
+```bash
+./control start 启动进程
+./control stop 停止进程
+./control restart 重启进程
+./control status 查看进程状态
+./control tail 用tail -f的方式查看var/app.log
+```
 
 ## 验证
 

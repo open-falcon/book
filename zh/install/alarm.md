@@ -23,6 +23,8 @@ alarm是个单点。对于未恢复的告警是放到alarm的内存中的，alar
 
 ## 配置说明
 
+配置文件必须叫cfg.json，可以基于cfg.example.json修改
+
 ```
 {
     "debug": true,
@@ -61,6 +63,18 @@ alarm是个单点。对于未恢复的告警是放到alarm的内存中的，alar
 ```
 
 api部分portal和uic可以配置成内网可访问的地址，速度比较快，但是links要配置成外网可访问的地址，注意喽
+
+## 进程管理
+
+我们提供了一个control脚本来完成常用操作
+
+```bash
+./control start 启动进程
+./control stop 停止进程
+./control restart 重启进程
+./control status 查看进程状态
+./control tail 用tail -f的方式查看var/app.log
+```
 
 ## 报警合并
 

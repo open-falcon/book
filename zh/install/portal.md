@@ -63,6 +63,18 @@ except Exception, e:
     print "[warning] %s" % e
 ```
 
+## 进程管理
+
+我们提供了一个control脚本来完成常用操作
+
+```bash
+./control start 启动进程
+./control stop 停止进程
+./control restart 重启进程
+./control status 查看进程状态
+./control tail 用tail -f的方式查看var/app.log
+```
+
 # 补充
 
 Portal正常启动之后，就可以回去配置Fe这个项目的shortcut了。当然，dashboard和alarm还没有搭建，这俩shortcut还没法配置。修改完了shortcut，要重启fe模块。

@@ -17,8 +17,10 @@ go get ./...
 
 agent需要部署到所有要被监控的机器上，比如公司有10万台机器，那就要部署10万个agent。agent本身资源消耗很少，不用担心。
 
+
 ## 配置说明
 
+配置文件必须叫cfg.json，可以基于cfg.example.json修改
 
 ```
 {
@@ -56,6 +58,18 @@ agent需要部署到所有要被监控的机器上，比如公司有10万台机�
     }
 }
 
+```
+
+## 进程管理
+
+我们提供了一个control脚本来完成常用操作
+
+```bash
+./control start 启动进程
+./control stop 停止进程
+./control restart 重启进程
+./control status 查看进程状态
+./control tail 用tail -f的方式查看var/app.log
 ```
 
 ## 验证

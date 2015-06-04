@@ -49,6 +49,18 @@ except Exception, e:
     print "[warning] %s" % e
 ```
 
+## 进程管理
+
+我们提供了一个control脚本来完成常用操作
+
+```bash
+./control start 启动进程
+./control stop 停止进程
+./control restart 重启进程
+./control status 查看进程状态
+./control tail 用tail -f的方式查看var/app.log
+```
+
 ## 验证
 
 启动之后要看看log是否正常，log在var目录。
