@@ -8,13 +8,10 @@
 4. 看agent配置，是否正确配置了heartbeat(hbs)和transfer的地址，并enabled
 5. 看transfer配置，是否正确配置了judge地址
 6. jduge提供了一个http接口用于debug，可以检查某个数据是否正确push上来了，比如qd-open-falcon-judge01.hd这个机器的cpu.idle数据，可以这么查看
-
 ```bash
 curl 127.0.0.1:6081/history/qd-open-falcon-judge01.hd/cpu.idle
 ```
-
 上面的127.0.0.1:6081指的是judge的http端口
-
 7. 检查judge配置的hbs地址是否正确
 8. 检查hbs配置的数据库地址是否正确
 9. 检查portal中配置的策略模板是否配置了报警接收人
