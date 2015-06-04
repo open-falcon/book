@@ -65,3 +65,9 @@ curl 127.0.0.1:6031/health
 ```
 
 另外就是查看hbs的log，log在var目录下
+
+## 补充
+
+如果你先部署了agent，后部署的hbs，那咱们部署完hbs之后需要回去修改agent的配置，把agent配置中的heartbeat部分enabled设置为true，addr设置为hbs的地址。
+
+
