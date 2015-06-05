@@ -39,9 +39,7 @@ curl -s "127.0.0.1:8001/health"
 
 ```
 
-通过日志可以查看服务的运行状态，日志文件地址为./var/app.log。
-
-通过调试脚本```./test/debug```可以看服务器的内部状态数据，如 运行 ```bash ./test/debug``` 可以得到服务器内部状态的统计信息。
+服务启动后，可以通过日志查看服务的运行状态，日志文件地址为./var/app.log。可以通过调试脚本```./test/debug```查看服务器的内部状态数据，如 运行 ```bash ./test/debug``` 可以得到服务器内部状态的统计信息。
 
 
 ## 配置说明
@@ -73,3 +71,5 @@ collector
     - cluster: falcon后端服务列表，用具体的"module,hostname:port"表示，module取值可以为graph、transfer、task等       
 ```
 
+## 补充说明
+部署完成task组件后，请修改collector配置、使task能够正确采集transfer & graph的内部状态，请修改monitor配置、使task模块能够自检控Open-Falon的各组件(当前支持transfer、graph、query、judge等)。

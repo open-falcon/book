@@ -31,9 +31,7 @@ curl -s "127.0.0.1:9966/health"
 ./control stop
 
 ```
-通过日志可以查看服务的运行状态，日志文件地址为./var/app.log。
-
-通过查询脚本```./scripts/query```可以读取绘图数据，如 运行 ```bash ./scripts/query "ur.endpoint" "ur.counter"```可以查询Endpoint="ur.endpoint" & Counter="ur.counter"对应的绘图数据。
+服务启动后，可以通过日志查看服务的运行状态，日志文件地址为./var/app.log。可以通过查询脚本```./scripts/query```读取绘图数据，如 运行 ```bash ./scripts/query "ur.endpoint" "ur.counter"```可以查询Endpoint="ur.endpoint" & Counter="ur.counter"对应的绘图数据。
 
 ## 配置说明
 query需要两个配置文件。一个是常规的配置文件./cfg.json，另一个是graph组件的实例配置(用于一致性哈希)。./cfg.json各配置项配的含义，如下
@@ -71,3 +69,5 @@ graph-00 127.0.0.1:6070
 graph-01 127.0.0.2:6070
 ```
 
+## 补充说明
+部署完成query组件后，请修改dashboard组件的配置、使其能够正确寻址到query组件。请确保query组件的graph列表(backends文件中的列表)配置是正确的。

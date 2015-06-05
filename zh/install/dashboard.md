@@ -15,7 +15,7 @@ virtualenv ./env
 ./env/bin/pip install -r `pip_requirements.txt`
 
 ```
-对于ubuntu用户，安装mysql-python时可能会失败。请自行解决。
+对于ubuntu用户，安装mysql-python时可能会失败。请自行安装依赖libmysqld-dev、libmysqlclient-dev等。
 
 
 ## 服务部署
@@ -38,7 +38,7 @@ vim ./rrd/config.py
 ./control stop
 
 ```
-通过日志可以查看服务的运行状态，日志文件地址为./var/app.log。服务启动后，可以通过localhost:8081访问dashboard(这里假设 dashboard的http监听端口为8081)。
+服务启动后，可以通过日志查看服务的运行状态，日志文件地址为./var/app.log。可以通过```http://localhost:8081```访问dashboard主页(这里假设 dashboard的http监听端口为8081)。
 
 
 ## 配置说明
@@ -88,3 +88,5 @@ try:
 except:
     pass
 ```
+## 补充说明
+部署完成dashboard组件后，请修改dashboard组件的配置、使其能够正确寻址到query组件。
