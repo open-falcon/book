@@ -24,6 +24,7 @@
   * [话说数据采集](philosophy/data-collect.md)
   * [plugin机制](philosophy/plugin.md)
   * [Tag和HostGroup](philosophy/tags-and-hostgroup.md)
+* [部署实践](deploy/README.md)
 * [FAQ](faq/README.md)
   * [报警相关](faq/alarm.md)
 
