@@ -18,6 +18,8 @@
   * [Links](install/links.md)
   * [Alarm](install/alarm.md)
   * [Task](install/task.md)
+* [设计理念](philosophy/README.md)
+  * [Tag和HostGroup的设计理念](philosophy/tags-and-hostgroup.md)
 * [FAQ](faq/README.md)
   * [报警相关](faq/alarm.md)
 
