@@ -10,6 +10,8 @@
 	
 ### 初始化mysql表结构
 ```bash
+# open-falcon所有组件都无需root账号启动，推荐使用普通账号安装，提升安全性。此处我们使用普通账号：work来安装部署所有组件
+# 当然了，使用yum安装依赖的一些lib库的时候还是要有root权限的。
 export HOME=/home/work
 export WORKSPACE=$HOME/open-falcon
 mkdir -p $WORKSPACE
