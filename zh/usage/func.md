@@ -14,4 +14,4 @@ pdiff(#3): 拿最新push上来的点，与历史最新的3个点相减，得到3
 
 最常用的就是`all`函数了，比如cpu.idle `all(#3) < 5`，表示cpu.idle的值连续3次小于5%则报警。
 
-diff和pdiff理解起来没那么容易，设计diff和pdiff是为了解决流量徒增突降报警。实在看不懂，那只能去读代码了：https://github.com/open-falcon/judge/blob/master/store/func.go
+diff和pdiff理解起来没那么容易，设计diff和pdiff是为了解决流量突增突降报警。实在看不懂，那只能去读代码了：https://github.com/open-falcon/judge/blob/master/store/func.go
