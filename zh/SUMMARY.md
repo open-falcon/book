@@ -21,6 +21,8 @@
 * [使用手册](usage/README.md)
   * [快速入门](usage/getting-started.md)
 * [设计理念](philosophy/README.md)
+  * [话说数据采集](philosophy/data-collect.md)
+  * [plugin机制](philosophy/plugin.md)
   * [Tag和HostGroup](philosophy/tags-and-hostgroup.md)
 * [FAQ](faq/README.md)
   * [报警相关](faq/alarm.md)
