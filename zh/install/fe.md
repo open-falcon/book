@@ -17,7 +17,7 @@ go get ./...
 ./control pack
 ```
 
-最后一步会pack出一个tar.gz的包，拿着这个包去部署即可。
+最后一步会pack出一个tar.gz的包，拿着这个包去部署即可。如果觉得编译太麻烦，可以使用我们编译好的包：http://7xiumq.com1.z0.glb.clouddn.com/open-falcon-fe-0.0.2.tar.gz 64位Linux下可用
 
 ## 部署说明
 
