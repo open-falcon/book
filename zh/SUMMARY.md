@@ -21,6 +21,7 @@
 * [使用手册](usage/README.md)
   * [快速入门](usage/getting-started.md)
   * [报警触发函数](usage/func.md)
+  * [MySQL监控](usage/mymon.md)
 * [设计理念](philosophy/README.md)
   * [话说数据采集](philosophy/data-collect.md)
   * [plugin机制](philosophy/plugin.md)
