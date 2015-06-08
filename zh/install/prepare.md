@@ -75,4 +75,4 @@ for x in `find ./tmp/ -name "*.tar.gz"`;do \
 done
 ```
 
-二进制文件放在 ![七牛云存储上面的](http://assets.qiniu.com/qiniu-122x65.png) 感谢！
+二进制文件托管在 <a href="http://www.qiniu.com" target="_blank">![](http://assets.qiniu.com/qiniu-122x65.png)</a> 感谢！
