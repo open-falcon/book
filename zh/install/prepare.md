@@ -59,7 +59,7 @@ git clone --recursive https://github.com/XiaoMi/open-falcon.git
 我们把部分组件编译成了二进制，方便大家直接使用，这些二进制只能跑在64位Linux上
 
 ```bash
-DOWNLOAD="http://7xiumq.com1.z0.glb.clouddn.com/open-falcon-binary-0.0.3.tar.gz"
+DOWNLOAD="http://7xiumq.com1.z0.glb.clouddn.com/open-falcon-binary-0.0.4.tar.gz"
 cd $WORKSPACE
 
 mkdir ./tmp
