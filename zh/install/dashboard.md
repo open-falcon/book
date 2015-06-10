@@ -88,5 +88,7 @@ try:
 except:
     pass
 ```
+
 ## 补充说明
-部署完成dashboard组件后，请修改dashboard组件的配置、使其能够正确寻址到query组件。
+
+Dashboard正常启动之后，就可以回去配置Fe这个项目的shortcut了。省得以后还要单独输入ip:port来打开dashboard。修改完了shortcut，要重启fe模块。
