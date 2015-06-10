@@ -10,6 +10,8 @@
 	
 ### 初始化mysql表结构
 ```bash
+# open-falcon所有组件都无需root账号启动，推荐使用普通账号安装，提升安全性。此处我们使用普通账号：work来安装部署所有组件
+# 当然了，使用yum安装依赖的一些lib库的时候还是要有root权限的。
 export HOME=/home/work
 export WORKSPACE=$HOME/open-falcon
 mkdir -p $WORKSPACE
@@ -53,3 +55,24 @@ mkdir github.com
 cd github.com
 git clone --recursive https://github.com/XiaoMi/open-falcon.git
 ```
+
+我们把部分组件编译成了二进制，方便大家直接使用，这些二进制只能跑在64位Linux上
+
+```bash
+DOWNLOAD="http://7xiumq.com1.z0.glb.clouddn.com/open-falcon-binary-0.0.4.tar.gz"
+cd $WORKSPACE
+
+mkdir ./tmp
+#下载
+wget $DOWNLOAD -O open-falcon-latest.tar.gz
+
+#解压
+tar -zxf open-falcon-latest.tar.gz -C ./tmp/
+for x in `find ./tmp/ -name "*.tar.gz"`;do \
+    app=`echo $x|cut -d '-' -f2`; \
+    mkdir -p $app; \
+    tar -zxf $x -C $app; \
+done
+```
+
+二进制文件托管在 <a href="http://www.qiniu.com" target="_blank">![](http://assets.qiniu.com/qiniu-122x65.png)</a> 感谢！

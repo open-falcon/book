@@ -1,7 +1,13 @@
 # 绘图链路常见问题
-### 在dashboard中，看不到图表曲线
+### 在dashboard中，索引缺失、查询不到endpoint或counter
+手动更改graph的数据库后，可能会出现上述情况。这里的手动更改，包括：更改graph的数据库配置(数据库地址，名称等)、删除重建graph数据库/表、手动更改graph数据表的内容等。出现上述情况后，可以通过 如下两种途径的任一种 来解决问题，
+
+1. 删除graph已存储的数据，并重启graph。默认情况下，graph的数据存储目录为 ```/home/work/data/6070/```。这种方式，会使已上报的数据被删除。
+2. 触发graph的索引全量更新、补救用户手工操作带来的异常。触发方式为，运行```curl -s "http://$hostname:$port/index/updateAll"```，其中```$hostname```为graph所在的服务器地址，```$port```为graph的http监听端口。这种方式，不会删除已上报的监控数据，但是会对数据库造成短时间的读写压力。
+
+### 在dashboard中，图表曲线为空
 图表曲线，一般会有3-5个上报周期的延迟。如果5个周期后仍然没有图表曲线，请往下看。
-绘图链路，数据上报的流程为: ***agent -> transfer -> graph -> query -> dashboard***。这个流程中任何一环节出问题，都会导致用户在dashboard中看不到曲线。一个建议的问题排查流程，如下
+绘图链路，数据上报的流程为: agent -> transfer -> graph -> query -> dashboard。这个流程中任何一环节出问题，都会导致用户在dashboard中看不到曲线。一个建议的问题排查流程，如下
 
 1. 确保绘图链路的各组件，都处于启动状态。
 2. 排查dashboard的问题。首先查看dashboard的日志，默认地址为```./var/app.log```，常见的日志报错原因有dashboard依赖库安装不完整、本地http代理劫持访问请求等。然后查看dashboard的配置，默认为```./gunicorn.conf```和```./rrd/config.py```。确认gunicorn.conf中指定的访问地址，确认config.py中指定的query地址、dashboard数据库配置 和 graph数据库配置。
@@ -10,7 +16,7 @@
 5. 排查transfer的问题。首先看transfer的日志```./var/app.log```是否有报错。然后确认配置文件```./cfg.json```是否enable了对graph集群的发送功能、是否正确配置了graph集群列表。确认完毕后，仍没有发现问题，怎么办？启动对transfer的debug，具体见***transfer调试***一节。
 6. 排查agent的问题。打开agent的debug日志，观察数据上报情况。
 
-### 在dashboard中展示的图表曲线，有断点
+### 在dashboard中，图表曲线有断点
 dashboard出现断点，可能的原因为：
 
 1. 用户监控数据上报异常。可能是用户自动的数据采集 被中断，或者上报周期不规律等。
