@@ -45,12 +45,12 @@ vim ./rrd/config.py
 dashboard有两个需要更改的配置文件: ./gunicorn.conf 和 ./rrd/config.py。./gunicorn.conf各字段，含义如下
 
 ```bash
-		- workers,dashboard并发进程数
-		- bind,dashboard的http监听端口
-		- proc_name,进程名称
-		- pidfile,pid文件全名称
-		- limit_request_field_size,TODO
-		- limit_request_line,TODO
+- workers,dashboard并发进程数
+- bind,dashboard的http监听端口
+- proc_name,进程名称
+- pidfile,pid文件全名称
+- limit_request_field_size,TODO
+- limit_request_line,TODO
 ```
 
 配置文件./rrd/config.py，各字段含义为

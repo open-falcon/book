@@ -54,7 +54,8 @@ http
 
 index
     - enable: true/false, 表示是否开启索引更新任务
-    - dsn: 索引服务的MySQL的连接信息，默认用户名是root，密码为空，host为127.0.0.1，database为graph（如有必要，请修改）
+    - dsn: MySQL的连接信息，格式为 username:passwd@tcp(dbhostname:dbport)/database?args
+        默认username是root，passwd为空，dbhostname为127.0.0.1，dbport为3306，database为graph（如有必要，请修改）
     - maxIdle: MySQL连接池配置，连接池允许的最大空闲连接数，保持默认即可
     - cluster: 后端graph列表，用具体的hostname:port表示
 
