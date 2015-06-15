@@ -24,4 +24,5 @@ Open-Falcon是一个比较大的分布式系统，有十几个组件。按照功
 11. Dashboard
 12. Transfer
 13. Agent
+14. Task
 
