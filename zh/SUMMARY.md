@@ -28,6 +28,7 @@
   * [Tag和HostGroup](philosophy/tags-and-hostgroup.md)
 * [部署实践](deploy/README.md)
 * [FAQ](faq/README.md)
+  * [采集相关](faq/collect.md)
   * [报警相关](faq/alarm.md)
   * [绘图相关](faq/graph.md)
 
