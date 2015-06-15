@@ -12,7 +12,7 @@ yum install -y python-virtualenv
 # 安装依赖。不需要root权限、使用普通账号执行就可以。需要到dashboard的目录下执行。
 cd /path/to/dashboard/ 
 virtualenv ./env
-./env/bin/pip install -r `pip_requirements.txt`
+./env/bin/pip install -r pip_requirements.txt
 
 ```
 对于ubuntu用户，安装mysql-python时可能会失败。请自行安装依赖libmysqld-dev、libmysqlclient-dev等。
