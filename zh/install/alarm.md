@@ -31,7 +31,7 @@ alarm是个单点。对于未恢复的告警是放到alarm的内存中的，alar
     "uicToken": "",
     "http": {
         "enabled": true,
-        "listen": "0.0.0.0:6060" # 未恢复的告警就是通过alarm的http页面来看的
+        "listen": "0.0.0.0:9912" # 未恢复的告警就是通过alarm的http页面来看的
     },
     "queue": {
         "sms": "/sms", # 需要与sender配置成相同的，维持默认即可
