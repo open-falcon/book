@@ -6,9 +6,10 @@
 
 具体参看：http://ulricqin.com/project/ops-updater/ 
 
-如果你想学习如何使用Go语言编写一个完整的项目，也可以研究一下agent-updater，我甚至录制了一个视频教程来演示一步一步如何开发出来的。目前已经完成了3个课程，总共是4个课程，课程链接：
+如果你想学习如何使用Go语言编写一个完整的项目，也可以研究一下agent-updater，我甚至录制了一个视频教程来演示一步一步如何开发出来的。课程链接：
 
 - http://www.jikexueyuan.com/course/1336.html
 - http://www.jikexueyuan.com/course/1357.html
 - http://www.jikexueyuan.com/course/1462.html
+- http://www.jikexueyuan.com/course/1490.html
 
