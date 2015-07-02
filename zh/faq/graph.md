@@ -1,4 +1,37 @@
 # 绘图链路常见问题
+
+### 如何确定某个counter对应的rrd文件
+
+每个counter，上报到graph之后，都是以一个独立的rrd文件，存储在磁盘上。那么如何确定counter和rrd的对应关系呢？
+query组件提供了一个调试用的http接口，可以帮助我们查询到该对应关系
+
+`info.py`
+
+```python
+#!/usr/bin/env python
+
+import requests
+import json
+import sys
+
+d = [
+        {
+            "endpoint": sys.argv[1],
+            "counter": sys.argv[2],
+        },
+]
+url = "http://127.0.0.1:9966/graph/info"
+r = requests.post(url, data=json.dumps(d))
+print r.text
+
+```
+
+`使用方法`
+
+    python info.py host1 cpu.idle
+
+
+
 ### Dashboard索引缺失、查询不到endpoint或counter
 手动更改graph的数据库后，可能会出现上述情况。这里的手动更改，包括：更改graph的数据库配置(数据库地址，名称等)、删除重建graph数据库/表、手动更改graph数据表的内容等。出现上述情况后，可以通过 如下两种途径的任一种 来解决问题，
 
