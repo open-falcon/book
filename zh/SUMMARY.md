@@ -37,5 +37,6 @@
   * [采集相关](faq/collect.md)
   * [报警相关](faq/alarm.md)
   * [绘图相关](faq/graph.md)
+  * [Linux常用监控指标](faq/linux-metrics.md)
 * [changelog](changelog/README.md)
 
