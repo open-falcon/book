@@ -6,23 +6,14 @@ Open-Falcon是一个比较大的分布式系统，有十几个组件。按照功
 
 其中，基础组件以绿色标注圈住、作图链路组件以蓝色圈住、报警链路组件以红色圈住，橙色填充的组件为域名。OpenTSDB功能尚未完成。
 
-## quick install
+## 部分安装
 
-下面的各个小节每个小节安装一个组件，有些组件相互之间有依赖关系，均在文档中注明了。最快的无依赖安装顺序如下：
+Open-Falcon组件众多，如果你只想使用其绘图功能，只需要安装一下组件：
+Graph/Transfer/Agent/Query/Dashboard/Task
 
-0. 根据环境准备所述，下载编译好的二进制
-1. 邮件短信发送接口
-2. Sender
-3. Web前端
-4. Portal
-5. Heartbeat Server
-6. Judge
-7. Links
-8. Alarm
-9. Graph
-10. Query
-11. Dashboard
-12. Transfer
-13. Agent
-14. Task
+如果还想使用报警功能，则需把剩下的组件也一并安装：
+Sender/Web前端/Portal/Heartbeat Server/Judge/Alarm
+
+如果还想使用报警合并功能，那Links也要安装
+
 
