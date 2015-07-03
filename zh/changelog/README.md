@@ -4,7 +4,6 @@
 - [graph] bugfix: 当存储rrd数据文件的目录不存在或者没有读写权限的时候，程序作退出处理
 - [fe] 新增了Golang版本的uic组件
 
-----
 
 ## [0.0.3] 2015-06-02 
  - [dashboard] bugfix: search counters by tags in screen
