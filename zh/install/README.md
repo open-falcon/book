@@ -16,7 +16,7 @@ Sender/Web前端/Portal/Heartbeat Server/Judge/Alarm
 
 如果还想使用报警合并功能，那Links也要安装
 
-## Docker安装
+## Docker化的Open-Falcon安装
 
 参看：https://github.com/frostynova/open-falcon-docker
 
