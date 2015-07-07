@@ -23,6 +23,7 @@
   * [快速入门](usage/getting-started.md)
   * [报警触发函数](usage/func.md)
   * [历史数据查询](usage/query.md)
+  * [进程端口监控](usage/proc-port-monitor.md)
   * [MySQL监控](usage/mymon.md)
   * [Redis监控](usage/redis.md)
   * [Memcache监控](usage/memcache.md)
