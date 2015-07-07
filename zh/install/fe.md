@@ -50,7 +50,7 @@ Fe作为一个前端模块，无状态，可以水平扩展，至少部署两台
     "salt": "0i923fejfd3", # 搞一个随机字符串
     "canRegister": true,
     "uic": {
-        "addr": "root:password@tcp(127.0.0.1:3306)/fe?charset=utf8&loc=Asia%2FChongqing", # 数据库schema在scripts目录下
+        "addr": "root:password@tcp(127.0.0.1:3306)/uic?charset=utf8&loc=Asia%2FChongqing", # 数据库schema在scripts目录下
         "idle": 10,
         "max": 100
     },
