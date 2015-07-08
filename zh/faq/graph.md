@@ -258,3 +258,45 @@ curl -s "http://127.0.0.1:8433/statistics/all" | python -m json.tool
 }
 ```
 
+### 设置绘图数据的存储周期
+Graph组件默认保存5年的数据，存储数据的RRA配置为:
+
+```go
+// find this in 'graph/rrdtool/rrdtool.go'
+func create(filename string, item *model.GraphItem) error {
+	now := time.Now()
+	start := now.Add(time.Duration(-24) * time.Hour)
+	step := uint(item.Step)
+
+	c := rrdlite.NewCreator(filename, start, step)
+	c.DS("metric", item.DsType, item.Heartbeat, item.Min, item.Max)
+
+	// 设置各种归档策略
+	// 1分钟一个点存 12小时
+	c.RRA("AVERAGE", 0.5, 1, 720)
+
+	// 5m一个点存2d
+	c.RRA("AVERAGE", 0.5, 5, 576)
+	c.RRA("MAX", 0.5, 5, 576)
+	c.RRA("MIN", 0.5, 5, 576)
+
+	// 20m一个点存7d
+	c.RRA("AVERAGE", 0.5, 20, 504)
+	c.RRA("MAX", 0.5, 20, 504)
+	c.RRA("MIN", 0.5, 20, 504)
+
+	// 3小时一个点存3个月
+	c.RRA("AVERAGE", 0.5, 180, 766)
+	c.RRA("MAX", 0.5, 180, 766)
+	c.RRA("MIN", 0.5, 180, 766)
+
+	// 1天一个点存5year
+	c.RRA("AVERAGE", 0.5, 720, 730)
+	c.RRA("MAX", 0.5, 720, 730)
+	c.RRA("MIN", 0.5, 720, 730)
+
+	return c.Create(true)
+}
+
+```
+你可以通过修改rrdtool的RRA ``` c.RRA($CF, 0.5, $PN, $PCNT) ```，来设置Graph的数据存储周期。关于RRA的概念，请查阅rrdtool的相关资料。
