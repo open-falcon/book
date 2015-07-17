@@ -16,9 +16,13 @@ go get ./...
 服务部署，包括配置修改、启动服务、检验服务、停止服务等。这之前，需要将安装包解压到服务的部署目录下。
 
 ```bash
-# 修改配置, 配置项含义见下文
+# 修改配置, 配置项含义见下文, 注意graph集群的配置
 mv cfg.example.json cfg.json
 vim cfg.json
+
+## 修改graph集群配置, 默认在./graph_backends.txt中定义
+vim graph_backends.txt
+
 
 # 启动服务
 ./control start
