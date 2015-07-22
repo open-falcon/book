@@ -76,3 +76,8 @@ curl 127.0.0.1:6066/health
 ```
 
 另外就是查看sender的log，log在var目录下
+
+## 视频教程
+
+为sender模块录制了一个视频，做了源码级解读：http://www.jikexueyuan.com/course/1641.html
+
