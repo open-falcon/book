@@ -20,4 +20,7 @@ Sender/Web前端/Portal/Heartbeat Server/Judge/Alarm
 
 参看：https://github.com/frostynova/open-falcon-docker
 
+## 视频教程教你安装
+
+《[Open-Falcon部署与架构解析](http://www.jikexueyuan.com/course/1651.html)》
 
