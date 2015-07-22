@@ -1,7 +1,48 @@
 # 绘图链路常见问题
 
-### 如何确定某个counter对应的rrd文件
+### Dashboard索引缺失、查询不到endpoint或counter
+手动更改graph的数据库后，可能会出现上述情况。这里的手动更改，包括：更改graph的数据库配置(数据库地址，名称等)、删除重建graph数据库/表、手动更改graph数据表的内容等。出现上述情况后，可以通过 如下两种途径的任一种 来解决问题，
 
+1. 触发graph的索引全量更新、补救手工操作带来的异常。触发方式为，运行```curl -s "http://$hostname:$port/index/updateAll"```，其中```$hostname```为graph所在的服务器地址，```$port```为graph的http监听端口。这种方式，不会删除已上报的监控数据，但是会对数据库造成短时间的读写压力。
+2. 删除graph已存储的数据，并重启graph。默认情况下，graph的数据存储目录为 ```/home/work/data/6070/```。这种方式，会使已上报的数据被删除。
+
+
+
+### Dashboard图表曲线为空
+图表曲线，一般会有3-5个上报周期的延迟。如果5个周期后仍然没有图表曲线，请往下看。
+绘图链路，数据上报的流程为: agent -> transfer -> graph -> query -> dashboard。这个流程中任何一环节出问题，都会导致用户在dashboard中看不到曲线。一个建议的问题排查流程，如下
+
+1. 确保绘图链路的各组件，都已启动。
+2. 排查dashboard的问题。首先查看dashboard的日志，默认地址为```./var/app.log```，常见的日志报错原因有dashboard依赖库安装不完整、本地http代理劫持访问请求等。然后查看dashboard的配置，默认为```./gunicorn.conf```和```./rrd/config.py```。确认gunicorn.conf中指定的访问地址，确认config.py中指定的query地址、dashboard数据库配置 和 graph数据库配置。
+3. 排查query的问题。首先看下query的日志```./var/app.log```是否有报错信息。然后确认query的graph列表配置```./graph_backends.txt```和 服务配置```./cfg.json```。可以通过脚本```./scripts/query```来做一些定量的debug，比如你上报了一个 endpoint="ty-op-mon-cloud.us", metric="agent.alive" 的采集项，可以运行 ```bash ./scripts/query "ty-op-mon-cloud.us" "agent.alive" ``` 来查看该采集项的数据，如果能够查到数据 则说明query及之前的graph、transfer、agent很可能是正常的。
+4. 排查graph的问题。首先看下graph的日志```./var/app.log```是否有报错。然后确认下graph配置文件```./cfg.json```是否配置了正确的数据库db。没有发现问题?启动对graph的debug，方法见***Graph调试***一节。
+5. 排查transfer的问题。首先看transfer的日志```./var/app.log```是否有报错。然后确认配置文件```./cfg.json```是否enable了对graph集群的发送功能、是否正确配置了graph集群列表。确认完毕后，仍没有发现问题，怎么办？启动对transfer的debug，方法见***Transfer调试***一节。
+6. 排查agent的问题。打开agent的debug日志，观察数据上报情况。
+
+
+
+### Dashboard图表曲线有断点
+dashboard出现断点，可能的原因为：
+
+1. 用户监控数据上报异常。可能是用户自动的数据采集 被中断，或者上报周期不规律等。
+2. falcon系统异常，导致监控数据丢失。问题最可能发生在transfer到graph这个链路上，可以通过transfer&graph的debug接口来确认原因。
+
+
+### 绘图数据高可用
+默认情况下，绘图数据以分片的形式、存储在单个graph实例上。一旦graph实例所在的机器磁盘坏掉， 绘图数据就会永久丢失。
+
+为了解决这个问题，Open-Falcon提供了绘图数据高可用的解决方案: 数据双打/多打，即 将同一份绘图数据 同时打到2+个graph实例上、使这2+个graph实例的数据完全相同、互为镜像备份，当发生故障时 就可以用 镜像备份实例 来替换 故障的实例。具体的，绘图数据高可用的实现过程，如下:
+
+1. 配置transfer的graph节点列表，使每个节点都有2+个互为镜像的graph实例；transfer会向 互为镜像的几个graph实例 发送相同的数据。eg.你可以配置graph节点 形如``` "g-00" : "host1:6070,host2:6070"```，多个graph实例之间以逗号隔开，这样 ```host1:6070``` 和 ```host2:6070```就会互为镜像
+2. 启动/重启transfer，开始数据双打或者多打。transfer的压力，会随着镜像数量的增加而增大，所以 需要合理控制graph镜像的数量。
+3. 配置query的graph列表。当前，query只支持 **一个节点对应一个graph实例**。以第1步的transfer配置为例，你可以配置query的graph节点```g-00```的graph实例为 ```"g-00":"host1:6070"``` 或者 ```"g-00":"host2:6070"```、而不能是 ```"g-00":"host1:6070,host2:6070"```
+4. 当某个graph实例发生故障(eg.磁盘故障)时，修改query的graph列表、踢掉坏死的graph实例、并用其镜像实例顶替之。一方面，更上层的业务只会在query配置修改期间不可用，这个过程可以控制在分钟级别。另一方面，即使坏掉了一个graph实例，其上绘图数据 也可以从镜像实例上找到，从而实现了数据的高可用。
+
+当然，这个高可用方案 需要消费更多的graph实例、故障切换过程也是手动完成的。后续还有很多改进空间。
+
+
+
+### 如何确定某个counter对应的rrd文件
 每个counter，上报到graph之后，都是以一个独立的rrd文件，存储在磁盘上。那么如何确定counter和rrd的对应关系呢？
 query组件提供了一个调试用的http接口，可以帮助我们查询到该对应关系
 
@@ -31,29 +72,6 @@ print r.text
     python info.py host1 cpu.idle
 
 
-
-### Dashboard索引缺失、查询不到endpoint或counter
-手动更改graph的数据库后，可能会出现上述情况。这里的手动更改，包括：更改graph的数据库配置(数据库地址，名称等)、删除重建graph数据库/表、手动更改graph数据表的内容等。出现上述情况后，可以通过 如下两种途径的任一种 来解决问题，
-
-1. 触发graph的索引全量更新、补救手工操作带来的异常。触发方式为，运行```curl -s "http://$hostname:$port/index/updateAll"```，其中```$hostname```为graph所在的服务器地址，```$port```为graph的http监听端口。这种方式，不会删除已上报的监控数据，但是会对数据库造成短时间的读写压力。
-2. 删除graph已存储的数据，并重启graph。默认情况下，graph的数据存储目录为 ```/home/work/data/6070/```。这种方式，会使已上报的数据被删除。
-
-### Dashboard图表曲线为空
-图表曲线，一般会有3-5个上报周期的延迟。如果5个周期后仍然没有图表曲线，请往下看。
-绘图链路，数据上报的流程为: agent -> transfer -> graph -> query -> dashboard。这个流程中任何一环节出问题，都会导致用户在dashboard中看不到曲线。一个建议的问题排查流程，如下
-
-1. 确保绘图链路的各组件，都已启动。
-2. 排查dashboard的问题。首先查看dashboard的日志，默认地址为```./var/app.log```，常见的日志报错原因有dashboard依赖库安装不完整、本地http代理劫持访问请求等。然后查看dashboard的配置，默认为```./gunicorn.conf```和```./rrd/config.py```。确认gunicorn.conf中指定的访问地址，确认config.py中指定的query地址、dashboard数据库配置 和 graph数据库配置。
-3. 排查query的问题。首先看下query的日志```./var/app.log```是否有报错信息。然后确认query的graph列表配置```./graph_backends.txt```和 服务配置```./cfg.json```。可以通过脚本```./scripts/query```来做一些定量的debug，比如你上报了一个 endpoint="ty-op-mon-cloud.us", metric="agent.alive" 的采集项，可以运行 ```bash ./scripts/query "ty-op-mon-cloud.us" "agent.alive" ``` 来查看该采集项的数据，如果能够查到数据 则说明query及之前的graph、transfer、agent很可能是正常的。
-4. 排查graph的问题。首先看下graph的日志```./var/app.log```是否有报错。然后确认下graph配置文件```./cfg.json```是否配置了正确的数据库db。没有发现问题?启动对graph的debug，方法见***Graph调试***一节。
-5. 排查transfer的问题。首先看transfer的日志```./var/app.log```是否有报错。然后确认配置文件```./cfg.json```是否enable了对graph集群的发送功能、是否正确配置了graph集群列表。确认完毕后，仍没有发现问题，怎么办？启动对transfer的debug，方法见***Transfer调试***一节。
-6. 排查agent的问题。打开agent的debug日志，观察数据上报情况。
-
-### Dashboard图表曲线有断点
-dashboard出现断点，可能的原因为：
-
-1. 用户监控数据上报异常。可能是用户自动的数据采集 被中断，或者上报周期不规律等。
-2. falcon系统异常，导致监控数据丢失。问题最可能发生在transfer到graph这个链路上，可以通过transfer&graph的debug接口来确认原因。
 
 ### Graph调试
 graph以http的方式提供了多个调试接口。主要有 内部状态统计接口、历史数据查询接口等。脚本```./test/debug```将一些接口封装成了shell的形式，可自行查阅代码、不在此做介绍。
