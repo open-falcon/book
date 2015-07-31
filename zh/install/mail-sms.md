@@ -10,7 +10,7 @@
 method: post
 params:
   - content: 短信内容
-  - tos: 使用分号分隔的多个手机号
+  - tos: 使用逗号分隔的多个手机号
 ```
 
 邮件发送http接口：
@@ -20,6 +20,6 @@ method: post
 params:
   - content: 邮件内容
   - subject: 邮件标题
-  - tos: 使用分号分隔的多个邮件地址
+  - tos: 使用逗号分隔的多个邮件地址
 ```
 
