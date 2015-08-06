@@ -82,4 +82,7 @@ Fe作为一个前端模块，无状态，可以水平扩展，至少部署两台
 
 这里我们先安装了Fe这个模块，portal、dashboard、alarm等模块都还没有安装，所以shortcut中不知道如何配置才好。不用着急，先维持默认，等之后部署完了portal、dashboard、alarm等模块之后再回来修改fe的配置。
 
+## 视频教程
+
+为fe模块录制了一个视频，做了源码级解读：http://www.jikexueyuan.com/course/1780.html
 
