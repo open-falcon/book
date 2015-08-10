@@ -78,3 +78,9 @@ except Exception, e:
 # 补充
 
 Portal正常启动之后，就可以回去配置Fe这个项目的shortcut了。当然，dashboard和alarm还没有搭建，这俩shortcut还没法配置。修改完了shortcut，要重启fe模块。
+
+
+## 视频教程
+
+为该模块录制了一个视频，做了源码级解读：http://www.jikexueyuan.com/course/1796.html
+
