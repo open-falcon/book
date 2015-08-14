@@ -18,6 +18,7 @@
   * [Links](install/links.md)
   * [Alarm](install/alarm.md)
   * [Task](install/task.md)
+  * [Gateway](install/gateway.md)
   * [Agent-updater](install/agent-updater.md)
 * [使用手册](usage/README.md)
   * [快速入门](usage/getting-started.md)
