@@ -71,3 +71,7 @@ curl 127.0.0.1:6031/health
 如果你先部署了agent，后部署的hbs，那咱们部署完hbs之后需要回去修改agent的配置，把agent配置中的heartbeat部分enabled设置为true，addr设置为hbs的rpc地址。如果hbs的配置文件维持默认，rpc端口就是6030，http端口是6031，agent中应该配置为hbs的rpc端口，小心别弄错了。
 
 
+## 视频教程
+
+为hbs模块录制了一个视频，做了源码级解读：http://www.jikexueyuan.com/course/1873.html
+
