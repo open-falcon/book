@@ -55,24 +55,3 @@ mkdir github.com
 cd github.com
 git clone --recursive https://github.com/XiaoMi/open-falcon.git
 ```
-
-我们把部分组件编译成了二进制，方便大家直接使用，这些二进制只能跑在64位Linux上
-
-```bash
-DOWNLOAD="https://github.com/XiaoMi/open-falcon/releases/download/0.0.5/open-falcon-0.0.5.tar.gz"
-cd $WORKSPACE
-
-mkdir ./tmp
-#下载
-wget $DOWNLOAD -O open-falcon-latest.tar.gz
-
-#解压
-tar -zxf open-falcon-latest.tar.gz -C ./tmp/
-for x in `find ./tmp/ -name "*.tar.gz"`;do \
-    app=`echo $x|cut -d '-' -f2`; \
-    mkdir -p $app; \
-    tar -zxf $x -C $app; \
-done
-```
-
-二进制文件托管在 <a href="http://www.qiniu.com" target="_blank">![](http://assets.qiniu.com/qiniu-122x65.png)</a> 感谢！
