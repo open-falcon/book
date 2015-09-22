@@ -8,7 +8,7 @@
 
 ## 工作原理
 
-swcollector是一个Golang开发的后台程序，由京东网络平台组的gaochao设计开发。
+swcollector是一个Golang开发的后台程序，由@gaochao设计开发。
 
 swcollector根据配置文件中，配置好的交换机IP列表或者IP网段，每隔一个固定的周期，通过SNMP协议，来采集交换机的运行指标，并上报给Open-Falcon。
 

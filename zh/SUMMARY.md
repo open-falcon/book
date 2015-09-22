@@ -31,6 +31,7 @@
   * [Memcache监控](usage/memcache.md)
   * [RabbitMQ监控](usage/rabbitmq.md)
   * [交换机监控](usage/switch.md)
+  * [Windows主机监控](usage/win.md)
 * [设计理念](philosophy/README.md)
   * [话说数据采集](philosophy/data-collect.md)
   * [plugin机制](philosophy/plugin.md)
