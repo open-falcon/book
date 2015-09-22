@@ -2,7 +2,8 @@
 
 * [开篇](README.md)
 * [介绍](intro/README.md)
-* [安装](install/README.md)
+* [二进制快速安装](quick_install/README.md)
+* [源码安装](install_from_src/README.md)
   * [环境准备](install/prepare.md)
   * [Agent](install/agent.md)
   * [Transfer](install/transfer.md)
