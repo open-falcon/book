@@ -83,3 +83,8 @@ curl -s "127.0.0.1:6060/health"
 
 ## 补充说明
 部署完成transfer组件后，请修改agent的配置，使其指向正确的transfer地址。在安装完graph和judge后，请修改transfer的相应配置、使其能够正确寻址到这两个组件。
+
+
+## 视频教程
+
+为transfer模块录制了一个视频，做了源码级解读：http://www.jikexueyuan.com/course/2061.html
