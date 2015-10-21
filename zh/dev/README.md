@@ -31,13 +31,14 @@ go get ./...
 ```
 
 # 自定义修改归档策略
-1. 修改open-falcon/graph/rrdtool/rrdtool.go
+修改open-falcon/graph/rrdtool/rrdtool.go
+
 ![](https://raw.githubusercontent.com/open-falcon/doc/master/img/custom-rra-1.png)
 ![](https://raw.githubusercontent.com/open-falcon/doc/master/img/custom-rra-2.png)
 
-2. 重新编译graph组件，并替换原有的二进制
+重新编译graph组件，并替换原有的二进制
 
-3. 清理掉原来的所有rrd文件（默认在/home/work/data/6070/下面)
+清理掉原来的所有rrd文件（默认在/home/work/data/6070/下面)
 
 # 插件机制
 1. 找一个git存放公司的所有插件
