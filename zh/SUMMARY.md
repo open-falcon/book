@@ -44,6 +44,7 @@
 * [实践经验](practice/README.md)
   * [部署](practice/deploy.md)
   * [自监控](practice/monitor.md)
+* [二次开发](dev/README.md)
 * [FAQ](faq/README.md)
   * [采集相关](faq/collect.md)
   * [报警相关](faq/alarm.md)
