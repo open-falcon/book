@@ -2,6 +2,40 @@
 
 nodata用于检测监控数据的上报异常。nodata和实时报警judge模块协同工作，过程为: 配置了nodata的采集项超时未上报数据，nodata生成一条默认的模拟数据；用户配置相应的报警策略，收到mock数据就产生报警。采集项上报异常检测，作为judge模块的一个必要补充，能够使judge的实时报警功能更加可靠、完善。
 
+## 准备工作
+这一节是写给Open-Falcon老用户的，新用户请忽略本小节、直接跳到[源码编译](#源码编译)部分即可。如果你已经使用Open-Falcon有一段时间，本次只是新增加一个nodata服务，那么你需要依次完成如下工作:
+
++ 确保已经建立mysql数据表falcon_portal.mockcfg。其中，[falcon_portal](https://github.com/open-falcon/scripts/blob/master/db_schema/portal-db-schema.sql)为portal组件的mysql数据库，mockcfg为存放nodata配置的数据表。mockcfg的建表语句，如下。
++ 确保已经更新了portal组件。portal组件中，新增了对nodata配置的UI支持。
++ 安装nodata后端服务。即本文的[后续部分](#源码编译)。
+
+```sql
+USE falcon_portal;
+SET NAMES 'utf8';
+ 
+/**
+ * nodata mock config
+ */
+DROP TABLE IF EXISTS `mockcfg`;
+CREATE TABLE `mockcfg` (
+  `id`       BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name`     VARCHAR(255) NOT NULL DEFAULT '' COMMENT 'name of mockcfg, used for uuid',
+  `obj`      VARCHAR(10240) NOT NULL DEFAULT '' COMMENT 'desc of object',
+  `obj_type` VARCHAR(255) NOT NULL DEFAULT '' COMMENT 'type of object, host or group or other',
+  `metric`   VARCHAR(128) NOT NULL DEFAULT '',
+  `tags`     VARCHAR(1024) NOT NULL DEFAULT '',
+  `dstype`   VARCHAR(32)  NOT NULL DEFAULT 'GAUGE',
+  `step`     INT(11) UNSIGNED  NOT NULL DEFAULT 60,
+  `mock`     DOUBLE  NOT NULL DEFAULT 0  COMMENT 'mocked value when nodata occurs',
+  `creator`  VARCHAR(64)  NOT NULL DEFAULT '',
+  `t_create` DATETIME NOT NULL COMMENT 'create time',
+  `t_modify` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'last modify time',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uniq_name` (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+```
+
 ## 源码编译
 
 ```bash
@@ -80,4 +114,4 @@ curl -s "127.0.0.1:6090/health"
 }
        
 ```
-
+阻塞功能，是为了避免大规模的nodata误报警，详情请移步[这里](https://github.com/nieanan/nodata#阻塞设置)。
