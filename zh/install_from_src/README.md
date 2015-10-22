@@ -6,19 +6,17 @@ Open-Falcon是一个比较大的分布式系统，有十几个组件。按照功
 
 其中，基础组件以绿色标注圈住、作图链路组件以蓝色圈住、报警链路组件以红色圈住，橙色填充的组件为域名。OpenTSDB功能尚未完成。
 
-## 部分安装
+## 二进制快速安装
 
-Open-Falcon组件众多，如果你只想使用其绘图功能，只需要安装一下组件：
-Graph/Transfer/Agent/Query/Dashboard/Task
-
-如果还想使用报警功能，则需把剩下的组件也一并安装：
-Sender/Web前端/Portal/Heartbeat Server/Judge/Alarm
-
-如果还想使用报警合并功能，那Links也要安装
+请直接参考[quick_install](../quick_install/README.md)
 
 ## Docker化的Open-Falcon安装
 
 参看：https://github.com/frostynova/open-falcon-docker
+
+## 从源码安装
+
+从源码，编译安装每个模块，就是本章的内容，请按照本章节的顺序，安装每个组件。
 
 ## 视频教程教你安装
 

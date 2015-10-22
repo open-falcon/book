@@ -56,9 +56,9 @@ curl -s "127.0.0.1:6090/health"
         "requestTimeout": 30000, #查询数据时http请求处理超时时间,单位ms
         "queryAddr": "127.0.0.1:9966" #query组件的http监听地址,一般形如"domain.query.service:9966"
     },
-    "config": { #nodata配置相关的信息
+    "config": { #配置信息
         "enabled": true,
-        "dsn": "root:passwd@tcp(127.0.0.1:3306)/falcon_portal?loc=Local&parseTime=true&wait_timeout=604800", #mysql数据库配置
+        "dsn": "root:passwd@tcp(127.0.0.1:3306)/falcon_portal?loc=Local&parseTime=true&wait_timeout=604800", #portal的数据库连接信息,默认数据库为falcon_portal
         "maxIdle": 4 #mysql连接池空闲连接数
     },
     "collector":{ #nodata数据采集相关的配置
