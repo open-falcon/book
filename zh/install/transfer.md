@@ -5,6 +5,11 @@ transfer是数据转发服务。它接收agent上报的数据，然后按照哈�
 ## 源码编译
 
 ```bash
+# update common lib
+cd $GOPATH/src/github.com/open-falcon/common
+git pull
+
+# compile
 cd $GOPATH/src/github.com/open-falcon/transfer
 go get ./...
 ./control build
