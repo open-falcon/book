@@ -12,9 +12,11 @@ task是监控系统一个必要的辅助模块。定时任务，实现了如下�
 我们提供了本模块的[release包](https://github.com/open-falcon/task/releases)，你可以直接下载并部署。或者，你也可以按照如下方式进行源码编译，
 
 ```bash
-# update dependencies
-# cd $GOPATH/src/github.com/open-falcon/common && git pull
+# update common lib
+cd $GOPATH/src/github.com/open-falcon/common
+git pull
 
+# compile
 cd $GOPATH/src/github.com/open-falcon/task
 go get ./...
 ./control build

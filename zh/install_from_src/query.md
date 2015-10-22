@@ -4,6 +4,11 @@ query组件，提供统一的绘图数据查询入口。query组件接收查询�
 ## 源码编译
 
 ```bash
+# update common lib
+cd $GOPATH/src/github.com/open-falcon/common
+git pull
+
+# compile
 cd $GOPATH/src/github.com/open-falcon/query
 go get ./...
 ./control build

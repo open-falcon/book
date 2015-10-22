@@ -5,6 +5,11 @@ graph是存储绘图数据的组件。graph组件 接收transfer组件推送上�
 ## 源码编译
 
 ```bash
+# update common lib
+cd $GOPATH/src/github.com/open-falcon/common
+git pull
+
+# compile
 cd $GOPATH/src/github.com/open-falcon/graph
 go get ./...
 ./control build
