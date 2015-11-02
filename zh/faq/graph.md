@@ -86,7 +86,7 @@ print r.text
 
 `使用方法`
 
-    python info.py host1 cpu.idle
+    python info.py your.hostname your.metric/tag1=tag1-val,tag2=tag2-val
 
 
 
