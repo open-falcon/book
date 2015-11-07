@@ -54,5 +54,6 @@
   * [报警相关](faq/alarm.md)
   * [绘图相关](faq/graph.md)
   * [Linux常用监控指标](faq/linux-metrics.md)
+  * [QQ群问答整理](faq/qq.md)
 * [changelog](changelog/README.md)
 
