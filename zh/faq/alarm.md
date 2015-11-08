@@ -11,6 +11,8 @@
 ```bash
 curl 127.0.0.1:6081/history/qd-open-falcon-judge01.hd/cpu.idle
 ```
+7. 检查服务器的时间是否已经同步，可以用 [ntp](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/System_Administrators_Guide/sect-Understanding_chrony_and-its_configuration.html) 或 chrony 来实现
+
 上面的127.0.0.1:6081指的是judge的http端口
 7. 检查judge配置的hbs地址是否正确
 8. 检查hbs配置的数据库地址是否正确
