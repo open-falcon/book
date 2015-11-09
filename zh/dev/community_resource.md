@@ -13,6 +13,7 @@
 * [统计进程资源消耗的插件脚本](https://github.com/open-falcon/plugin/blob/master/common/60_proc_resource_status.py)
 * [针对falcon开发的监控脚本和服务](https://github.com/sageskr/monitor)
 * [Windows metrics collector](https://github.com/freedomkk-qfeng/falcon-scripts/tree/master/windows_collect)
+* [Dell服务器硬件状态监控脚本](https://github.com/51web/hwcheck)
 
 ## 其他
 * [SMS sender](http://book.open-falcon.com/zh/install/mail-sms.html)
