@@ -87,3 +87,7 @@ agent需要部署到所有要被监控的机器上，比如公司有10万台机�
 ```bash
 ts=`date +%s`; curl -X POST -d "[{\"metric\": \"metric.demo\", \"endpoint\": \"qd-open-falcon-judge01.hd\", \"timestamp\": $ts,\"step\": 60,\"value\": 9,\"counterType\": \"GAUGE\",\"tags\": \"project=falcon,module=judge\"}]" http://127.0.0.1:1988/v1/push
 ```
+
+## 视频教程
+
+为该模块录制了一个视频，做了源码级解读：http://www.jikexueyuan.com/course/2242.html
