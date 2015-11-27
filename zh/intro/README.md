@@ -178,7 +178,9 @@ c.RRA("MAX", 0.5, 720, 730)
 c.RRA("MIN", 0.5, 720, 730)
 ```
 
-对于原始数据，transfer会打一份到hbase，也可以直接使用opentsdb，transfer支持往opentsdb写入数据。
+京东金融集团杭州研发团队的同事针对graph组件扩容时间较长的问题，基于rrdtool开发了一个能够做到秒级扩容的轻量级[分布式环形数据服务组件](https://github.com/jdjr/drrs)（[DRRS](https://github.com/jdjr/drrs)）,并与open-falcon做了集成。仅需对DRRS进行简单的安装，通过修改transfer组件和query组件的配置文件即可方便的使用DRRS替换Graph组件进行数据存储。关于DRRS的详细信息请参考[https://github.com/jdjr/drrs](https://github.com/jdjr/drrs).
+
+对于原始数据，transfer会打一份到hbase，也可以直接使用opentsdb或DRRS，transfer支持往opentsdb或DRRS写入数据。
 
 # Contributors
 

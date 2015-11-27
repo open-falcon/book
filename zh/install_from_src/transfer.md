@@ -83,11 +83,25 @@ curl -s "127.0.0.1:6060/health"
         - migrating: true/false，当我们需要对graph后端列表进行扩容的时候，设置为true, transfer会根据扩容前后的实例信息，对每个数据采集项，进行两次一致性哈希计算，根据计算结果，来决定是否需要发送双份的数据，当新扩容的服务器积累了足够久的数据后，就可以设置为false。
         - cluster: key-value形式的字典，表示后端的graph列表，其中key代表后端graph名字，value代表的是具体的ip:port(多个地址 用逗号隔开, transfer会将同一份数据 发送至各个地址)
         - clusterMigrating: key-value形式的字典，表示新扩容的后端的graph列表，其中key代表后端graph名字，value代表的是具体的ip:port(多个地址 用逗号隔开, transfer会将同一份数据 发送至各个地址)
+
+	drrs #启用此功能前请确保DRRS已被正确安装配置（https://github.com/jdjr/drrs），不能与graph同时使用
+		- enable: true/false, 表示是否开启向DRRS发送数据 #不能和graph的enable同时为true
+		- useZk: 是否配置了zookeeper，若DRRS配置了多台master节点并且配置了zk，则配置为true
+		- dest: DRRS中master节点的地址，若没有配置zk，则这里需要配置master节点的地址，格式为ip:port
+		- replicas: 这是一致性hash算法需要的节点副本数量，建议不要变更，保持默认即可
+		- maxIdle: 连接池相关配置，最大空闲连接数，建议保持默认
+		- batch: 数据转发的批量大小，建议保持默认值
+		- zk: zookeeper的相关配置信息，若useZk设置为true，则需要配置以下信息
+			-ip: zk的ip地址，zk的端口需要保持默认的2181
+			-addr: zk中DRRS配置信息的存放位置
+			-timeout: zk的超时时间
        
 ```
 
 ## 补充说明
 部署完成transfer组件后，请修改agent的配置，使其指向正确的transfer地址。在安装完graph和judge后，请修改transfer的相应配置、使其能够正确寻址到这两个组件。
+
+DRRS为京东金融集团杭州研发团队的同事开发的一个轻量级的分布式环形数据服务组件，用于监控数据的持久化和绘图。该组件作用于graph组件类似，并且能够在保证绘图效率的前提下实现秒级扩容。DRRS组件与Graph组件无法同时使用。关于DRRS的内容请参考官方Github：[https://github.com/jdjr/drrs](https://github.com/jdjr/drrs)
 
 
 ## 视频教程
