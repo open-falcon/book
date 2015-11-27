@@ -99,7 +99,7 @@ echo "graph-00 127.0.0.1:6070" > graph_backends.txt
 ## 安装DRRS（可选）
  DRRS是京东金融杭州研发团队研发的轻量级分布式环形数据服务组件，用于存储绘图数据、历史数据。该组件作为Graph组件的替代组件，可以在保持高效绘图的前提下实现秒级扩容。若使用DRRS，transfer组件会把接收到的数据转发给DRRS，Query组件收到用户的查询请求后，会从DRRS查询相应的数据。
 
- DRRS的安装和配置及详细说明文档请参考[https://github.com/jdjr/drrs](https://github.com/jdjr/drrs)。
+ DRRS的安装和配置及详细说明文档请参考[安装DRRS](drrs_install.md)或[https://github.com/jdjr/drrs](https://github.com/jdjr/drrs)。
 
  DRRS和Graph不能同时使用，若使用DRRS，请相应修改Transfer和Query的cfg.json配置文件。具体修改方式请参考Transfer和Query的配置说明文档https://github.com/open-falcon/transfer/blob/master/README.md，https://github.com/open-falcon/query/blob/master/README.md
 
