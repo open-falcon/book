@@ -85,13 +85,12 @@ portal是用于配置报警策略的地方
 yum install -y python-virtualenv  # run as root
 
 cd $WORKSPACE/portal/
-$ virtualenv ./env
+virtualenv ./env
 
 # use douban pypi
-$ ./env/bin/pip install -r pip_requirements.txt -i http://pypi.douban.com/simple
+./env/bin/pip install -r pip_requirements.txt -i http://pypi.douban.com/simple
 
-cd frame
-# vi config.py
+# vi frame/config.py
 # 1. 修改DB配置
 # 2. SECRET_KEY设置为一个随机字符串
 # 3. UIC_ADDRESS有两个，internal配置为FE模块的内网地址，portal通常是和UIC在一个网段的，

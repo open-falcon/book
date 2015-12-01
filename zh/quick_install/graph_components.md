@@ -82,8 +82,9 @@ query组件，绘图数据的查询接口，query组件收到用户的查询请�
 cd $WORKSPACE/query/
 mv cfg.example.json cfg.json
 
-touch graph_backends.txt
-echo "graph-00 127.0.0.1:6070" > graph_backends.txt
+# v1.4.0 开始graph_backends.txt已经合并进cfg.json。
+#touch graph_backends.txt
+#echo "graph-00 127.0.0.1:6070" > graph_backends.txt
 
 # 默认情况下（所有组件都在同一台服务器上），保持cfg.json不变即可
 # cfg.json中的各配置项，可以参考 https://github.com/open-falcon/query/blob/master/README.md
@@ -107,7 +108,6 @@ cd $WORKSPACE/dashboard/
 virtualenv ./env
 
 ./env/bin/pip install -r pip_requirements.txt
-./env/bin/pip install mysql-python
 ```
 
 **Configuration**
@@ -117,10 +117,10 @@ virtualenv ./env
 ```
 
 **启动**
-	
+
 	./control start
 	--> goto http://127.0.0.1:8081
-	
+
 
 **查看日志**
 
