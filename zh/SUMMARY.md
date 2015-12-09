@@ -1,6 +1,6 @@
 # SUMMARY
 
-* [开篇](README.md)
+* [社区|捐赠](README.md)
   * [捐赠列表](donate.md)
   * [贡献列表](contributing.md)
   * [作者列表](authors.md)
