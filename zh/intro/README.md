@@ -182,12 +182,8 @@ c.RRA("MIN", 0.5, 720, 730)
 
 # Contributors
 
-- 小米运维部: 博客 http://noops.me
-- laiwei: https://github.com/laiwei 来炜没睡醒@微博 / hellolaiwei@微信
-- 秦晓辉: http://ulricqin.com/ UlricQin@微博 cnperl@微信
-- yubo: https://github.com/yubo x80386@微信
-- 聂安: https://github.com/niean niean_sail@微信
-- QQ群：373249123
+- [authors](authors.md)
+- [contributing](contributing.md)
 
 
 # License
