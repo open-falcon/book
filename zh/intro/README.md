@@ -182,8 +182,8 @@ c.RRA("MIN", 0.5, 720, 730)
 
 # Contributors
 
-- [authors](authors.md)
-- [contributing](contributing.md)
+- [authors](/zh/authors.html)
+- [contributing](/zh/contributing.html)
 
 
 # License
