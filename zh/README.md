@@ -1,6 +1,6 @@
-# 欢迎使用Open-Falcon
+# 欢迎加入Open-Falcon社区
 
-#### 在大家的热心支持和帮助下，[Open-Falcon](https://github.com/xiaomi/open-falcon)在一天天成长。目前：
+在大家的热心支持和帮助下，[Open-Falcon](https://github.com/xiaomi/open-falcon)在一天天成长。目前：
 
 1. 半年多时间，在github上取得了1000+ star
 1. 收到了几十个pull-request，上百个issue，用户讨论组成员1300+。
