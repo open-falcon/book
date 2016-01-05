@@ -44,6 +44,7 @@
   * [Windows主机监控](usage/win.md)
   * [HAProxy监控](usage/haproxy.md)
 * [设计理念](philosophy/README.md)
+  * [数据模型](philosophy/data-model.md)
   * [话说数据采集](philosophy/data-collect.md)
   * [plugin机制](philosophy/plugin.md)
   * [Tag和HostGroup](philosophy/tags-and-hostgroup.md)
