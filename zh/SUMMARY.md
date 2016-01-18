@@ -53,6 +53,7 @@
   * [自监控](practice/monitor.md)
 * [二次开发](dev/README.md)
     * [社区贡献](dev/community_resource.md)
+    * [修改绘图曲线精度](dev/change_graph_rra.md)
 * [API](api/README.md)
 * [FAQ](faq/README.md)
   * [采集相关](faq/collect.md)
