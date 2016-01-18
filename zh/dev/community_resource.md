@@ -1,4 +1,4 @@
-## 業務監控 
+## 业务监控
 * [Windows Agent](https://github.com/LeonZYang/agent)
 * [MySQL Monitor](https://github.com/open-falcon/mymon)
 * [RPC Monitor](https://github.com/iambocai/falcon-monit-scripts)
@@ -8,7 +8,7 @@
 * [Docker 監控Lib库](https://github.com/HunanTV/eru-metric)
 * [mesos 監控](https://github.com/mesos-utility/mesos-metrics)
 
-## 腳本
+## 脚本
 * [统计每个cpu core 详情的插件脚本](https://github.com/open-falcon/plugin/blob/master/common/60_stats_per_cpu_core.py)
 * [统计进程资源消耗的插件脚本](https://github.com/open-falcon/plugin/blob/master/common/60_proc_resource_status.py)
 * [针对falcon开发的监控脚本和服务](https://github.com/sageskr/monitor)
