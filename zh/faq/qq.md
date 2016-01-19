@@ -139,6 +139,9 @@ Q: QQ 群信息太多、很多重复问题、又容易发散，是否建个论�
 
 >A: 论坛现在大家比较少用了。常见问题大家可以 fork github.com/open-falcon/book.git 然后发 PR，其余的可以使用 Github issue 作为论坛使用。
 
+Q: `too many open files` 是什么问题？
+>A: 可以先透过 `ulimit -a` 检查 file descriptor 的限制，如果默认 1024 太小，可以透过 `ulimit -n 65536` 加大。
+
 Q: Open-Falcon 的未来计划？
 
 >A: https://github.com/XiaoMi/open-falcon/issues 一些接下来，要做的事情，我都会更新在这里（大家也可以提，思路更广一些） 有能力、有时间的朋友，可以认领一个或多个issue，或者配合撰写、贡献相关文档，都是热烈欢迎的。 特别是一些重度使用open-falcon的大户哈，希望能把你们自己的一些改进，也都推进到open-falcon的github仓库里哈：）【比如美团、金山云、快网、赶集之类的~~~】 接入并使用了Open-Falcon的公司，可以把相关信息追加到下面这个issue的评论中 https://github.com/XiaoMi/open-falcon/issues/4
