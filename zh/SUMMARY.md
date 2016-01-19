@@ -55,6 +55,8 @@
 * [二次开发](dev/README.md)
     * [社区贡献](dev/community_resource.md)
     * [修改绘图曲线精度](dev/change_graph_rra.md)
+    * [修改网卡流量单位](dev/change_net_unit.md)
+    * [支持 Grafana 视图展现](dev/support_grafana.md)
 * [API](api/README.md)
 * [FAQ](faq/README.md)
   * [采集相关](faq/collect.md)

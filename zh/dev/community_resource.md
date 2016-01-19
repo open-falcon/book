@@ -1,12 +1,14 @@
 ## 业务监控
 * [Windows Agent](https://github.com/LeonZYang/agent)
 * [MySQL Monitor](https://github.com/open-falcon/mymon)
+* [Redis Monitor](https://github.com/ZhuoRoger/redismon)
 * [RPC Monitor](https://github.com/iambocai/falcon-monit-scripts)
 * [Switch Monitor](https://github.com/gaochao1/swcollector)
 * [Falcon-Agent宕机监控](https://github.com/freedomkk-qfeng/falcon-scripts/tree/master/agent_monitor)
 * [memcached](https://github.com/iambocai/falcon-monit-scripts/tree/master/memcached)
 * [Docker 監控Lib库](https://github.com/HunanTV/eru-metric)
 * [mesos 監控](https://github.com/mesos-utility/mesos-metrics)
+* [Winodws/Linux 自动汇报资产](https://github.com/triaquae/MadKing)
 
 ## 脚本
 * [统计每个cpu core 详情的插件脚本](https://github.com/open-falcon/plugin/blob/master/common/60_stats_per_cpu_core.py)

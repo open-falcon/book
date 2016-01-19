@@ -48,7 +48,7 @@ Q: 同比环比报警可能会有一个问题, 就是误报的 case . 假设 A -
     
 Q: 报警通知（邮件、短信、等等）在 Open-Falcon 代码里面没有，该如何实现？
     
->A: alarm将报警邮件内容写入redis队列，sender负责读取并且发送，你可以二次开发sender，让它不通过调用http接口实现邮件发送，或参考本书中的'社区贡献'。
+>A: alarm将报警邮件内容写入redis队列，sender负责读取并且发送，你可以二次开发sender，让它不通过调用http接口实现邮件发送，或参考 [mail-provider](https://github.com/open-falcon/mail-provider) 以及本书中的'社区贡献'。
 
     
 ## 数据
@@ -138,6 +138,9 @@ Q: Open-Falcon 的架构图是用什么画的？
 Q: QQ 群信息太多、很多重复问题、又容易发散，是否建个论坛？
 
 >A: 论坛现在大家比较少用了。常见问题大家可以 fork github.com/open-falcon/book.git 然后发 PR，其余的可以使用 Github issue 作为论坛使用。
+
+Q: `too many open files` 是什么问题？
+>A: 可以先透过 `ulimit -a` 检查 file descriptor 的限制，如果默认 1024 太小，可以透过 `ulimit -n 65536` 加大。
 
 Q: Open-Falcon 的未来计划？
 
