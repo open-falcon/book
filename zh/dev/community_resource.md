@@ -1,6 +1,7 @@
 ## 业务监控
 * [Windows Agent](https://github.com/LeonZYang/agent)
 * [MySQL Monitor](https://github.com/open-falcon/mymon)
+* [Redis Monitor](https://github.com/ZhuoRoger/redismon)
 * [RPC Monitor](https://github.com/iambocai/falcon-monit-scripts)
 * [Switch Monitor](https://github.com/gaochao1/swcollector)
 * [Falcon-Agent宕机监控](https://github.com/freedomkk-qfeng/falcon-scripts/tree/master/agent_monitor)
