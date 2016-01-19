@@ -55,6 +55,8 @@ sender这个模块和redis队列部署在一台机器上即可。公司即使有
 }
 ```
 
+如果没有邮件发送接口，可以使用 [Open-Falcon mail-provider](https://github.com/open-falcon/mail-provider)。
+
 ## 进程管理
 
 我们提供了一个control脚本来完成常用操作
