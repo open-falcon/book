@@ -1,6 +1,6 @@
 ## 修改网卡流量单位
 
-目前是以 Mbps 为单位，如果要改为 MB 的话，可以修改 agent 代码。
+目前是以 Bytes 为单位，如果要改为 Bits 的话(如：Mbps)，可以修改 agent 代码。
 
 采集原始网卡流量数据的代码 `github.com/toolkits/nux/ifstat.go`，如下：
 
@@ -81,4 +81,10 @@ func CoreNetMetrics(ifacePrefix []string) []*model.MetricValue {
     }
     return ret
 }
+```
+
+舉例來說，我們可以直接在 agent 要上報數據的時候，將 Bit 轉換為 Byte，同時修改 Counter 的名稱，如下：
+
+```golang
+ret[idx*20+0] = CounterValue("net.if.in.bits", netIf.InBytes*8, iface)
 ```
