@@ -1,5 +1,5 @@
 - [laiwei](https://github.com/laiwei) 来炜没睡醒@微博 / hellolaiwei@微信
-- [秦晓辉](http://ulricqin.com)  UlricQin@微博 cnperl@微信
+- [秦晓辉](http://ulricqin.com)  UlricQin@微博 微信公众号：sa-dev，语音答疑
 - [yubo](https://github.com/yubo) x80386@微信
 - [niean](https://github.com/niean) niean_sail@微信
 
