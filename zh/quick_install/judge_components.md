@@ -63,7 +63,7 @@ mv cfg.example.json cfg.json
 # fe
 
 ```bash
-cd $WORKSPACE/transfer/
+cd $WORKSPACE/fe/
 mv cfg.example.json cfg.json
 # 请基于cfg.example.json 酌情修改相关配置项
 
