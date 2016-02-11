@@ -64,6 +64,17 @@ graph
     - max_conns: 连接池相关配置，最大连接数，建议保持默认
     - max_idle: 连接池相关配置，最大空闲连接数，建议保持默认
     - replicas: 这是一致性hash算法需要的节点副本数量，建议不要变更，保持默认即可
+
+drrs #启用此功能前请确保DRRS已被正确安装配置（https://github.com/jdjr/drrs），不能与graph同时使用
+	- enable: true/false, 表示是否开启向DRRS发送数据 #不能和graph的enable同时为true
+	- useZk: 是否配置了zookeeper，若DRRS配置了多台master节点并且配置了zk，则配置为true
+	- dest: DRRS中master节点的地址，若没有配置zk，则这里需要配置master节点的地址，格式为ip:port
+	- replicas: 这是一致性hash算法需要的节点副本数量，建议不要变更，保持默认即可
+	- maxIdle: 连接池相关配置，最大空闲连接数，建议保持默认
+	- zk: zookeeper的相关配置信息，若useZk设置为true，则需要配置以下信息
+		-ip: zk的ip地址，zk的端口需要保持默认的2181
+		-addr: zk中DRRS配置信息的存放位置
+		-timeout: zk的超时时间
   
 ```
 
@@ -80,3 +91,5 @@ graph-01 127.0.0.2:6070
 
 ## 补充说明
 部署完成query组件后，请修改dashboard组件的配置、使其能够正确寻址到query组件。请确保query组件的graph列表(backends文件中的列表)配置是正确的。
+
+DRRS为京东金融集团杭州研发团队的同事开发的一个轻量级的分布式环形数据服务组件，用于监控数据的持久化和绘图。该组件作用于graph组件类似，并且能够在保证绘图效率的前提下实现秒级扩容。DRRS组件与Graph组件无法同时使用。关于DRRS的内容请参考官方Github：[https://github.com/jdjr/drrs](https://github.com/jdjr/drrs)

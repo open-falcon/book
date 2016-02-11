@@ -6,6 +6,7 @@
 * [二进制快速安装](quick_install/README.md)
   * [环境准备](quick_install/prepare.md)
   * [安装绘图组件](quick_install/graph_components.md)
+  		* [安装DRRS](quick_install/drrs_install.md) 
   * [安装告警组件](quick_install/judge_components.md)
   * [配置告警合并](quick_install/links.md)
 * [源码安装](install_from_src/README.md)
