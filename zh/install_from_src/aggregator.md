@@ -4,7 +4,9 @@
 
 ## 准备工作
 
-该模块是后来加入的，检查你的portal中是否有这个代码：https://github.com/open-falcon/portal/blob/master/web/model/cluster.py，如果有了，说明版本OK，否则，需要升级原来的portal为最新版代码。
+> 如果你已经安装过open-falcon了，那么请检查：
+
+> 检查你的portal中是否有这个代码：https://github.com/open-falcon/portal/blob/master/web/model/cluster.py，如果有了，说明版本OK，否则，需要升级原来的portal为最新版代码。
 
 falcon_portal数据库中加入了一张新表：
 
@@ -36,7 +38,7 @@ CREATE TABLE cluster
 ## 源码编译
 
 ```bash
-cd $GOPATH/src/github.com/open-falcom
+cd $GOPATH/src/github.com/open-falcon
 git clone https://github.com/open-falcon/sdk.git
 git clone https://github.com/open-falcon/aggregator.git
 cd aggregator

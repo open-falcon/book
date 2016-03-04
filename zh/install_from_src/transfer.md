@@ -43,9 +43,8 @@ curl -s "127.0.0.1:6060/health"
 ## 配置说明
 配置文件默认为./cfg.json。默认情况下，安装包会有一个cfg.example.json的配置文件示例。各配置项的含义，如下
 
-```
 ## Configuration
-
+```
     debug: true/false, 如果为true，日志中会打印debug信息
 
     http
@@ -80,9 +79,17 @@ curl -s "127.0.0.1:6060/health"
         - maxConns: 连接池相关配置，最大连接数，建议保持默认
         - maxIdle: 连接池相关配置，最大空闲连接数，建议保持默认
         - replicas: 这是一致性hash算法需要的节点副本数量，建议不要变更，保持默认即可
-        - migrating: true/false，当我们需要对graph后端列表进行扩容的时候，设置为true, transfer会根据扩容前后的实例信息，对每个数据采集项，进行两次一致性哈希计算，根据计算结果，来决定是否需要发送双份的数据，当新扩容的服务器积累了足够久的数据后，就可以设置为false。
-        - cluster: key-value形式的字典，表示后端的graph列表，其中key代表后端graph名字，value代表的是具体的ip:port(多个地址 用逗号隔开, transfer会将同一份数据 发送至各个地址)
-        - clusterMigrating: key-value形式的字典，表示新扩容的后端的graph列表，其中key代表后端graph名字，value代表的是具体的ip:port(多个地址 用逗号隔开, transfer会将同一份数据 发送至各个地址)
+        - cluster: key-value形式的字典，表示后端的graph列表，其中key代表后端graph名字，value代表的是具体的ip:port(多个地址用逗号隔开, transfer会将同一份数据发送至各个地址，利用这个特性可以实现数据的多重备份)
+
+    tsdb
+        - enabled: true/false, 表示是否开启向open tsdb发送数据
+        - batch: 数据转发的批量大小，可以加快发送速度
+        - connTimeout: 单位是毫秒，与后端建立连接的超时时间，可以根据网络质量微调，建议保持默认
+        - callTimeout: 单位是毫秒，发送数据给后端的超时时间，可以根据网络质量微调，建议保持默认
+        - maxConns: 连接池相关配置，最大连接数，建议保持默认
+        - maxIdle: 连接池相关配置，最大空闲连接数，建议保持默认
+        - retry: 连接后端的重试次数和发送数据的重试次数
+        - address: tsdb地址或者tsdb集群vip地址, 通过tcp连接tsdb. 
        
 ```
 

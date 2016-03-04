@@ -43,7 +43,7 @@ mv cfg.example.json cfg.json
 
 vim cfg.json
 - 修改 transfer这个配置项的enabled为 true，表示开启向transfer发送数据的功能
-- 修改 transfer这个配置项的addr为：127.0.0.1:8433 (改地址为transfer组件的监听地址)
+- 修改 transfer这个配置项的addr为：["127.0.0.1:8433"] (改地址为transfer组件的监听地址, 为列表形式，可配置多个transfer实例的地址，用逗号分隔)
 
 # 默认情况下（所有组件都在同一台服务器上），保持cfg.json不变即可
 # cfg.json中的各配置项，可以参考 https://github.com/open-falcon/agent/blob/master/README.md
@@ -82,13 +82,8 @@ query组件，绘图数据的查询接口，query组件收到用户的查询请�
 cd $WORKSPACE/query/
 mv cfg.example.json cfg.json
 
-# v1.4.0 开始graph_backends.txt已经合并进cfg.json。
-#touch graph_backends.txt
-#echo "graph-00 127.0.0.1:6070" > graph_backends.txt
-
 # 默认情况下（所有组件都在同一台服务器上），保持cfg.json不变即可
 # cfg.json中的各配置项，可以参考 https://github.com/open-falcon/query/blob/master/README.md
-# graph_backends.txt 的格式，也请一并参考README
 
 # 启动
 ./control start
