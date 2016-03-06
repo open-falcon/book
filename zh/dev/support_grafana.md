@@ -5,10 +5,10 @@
 
 ### 开始之前
 
-Open-Falcon 跟 Grafana 目前并不互相支持，所以您需要以下两个最新的 PR：
+Open-Falcon 跟 Grafana 目前并不互相支持，所以您需要下面的PR
 
 - Grafana [PR#3787](https://github.com/grafana/grafana/pull/3787) (支持到 v2.6 版) 
-- Query [PR#5](https://github.com/open-falcon/query/pull/5)（支持到 v0.5 版）
+- Query [PR#5](https://github.com/open-falcon/query/pull/5)（已合并到最新的query代码中了，请检查您是否使用的是最新版)
 
 ### 设定 Datasource
 
