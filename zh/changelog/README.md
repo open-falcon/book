@@ -1,5 +1,7 @@
 ## [0.1.0] 2016-03-08
 
+> https://github.com/open-falcon/of-release/releases/tag/v0.1.0
+
 ### highlights
 - `文档` API梳理和文档完善 http://docs.openfalcon.apiary.io `OpenFalcon-team @hitripod`
 - `优化` graph集群扩容时，历史数据自动迁移 `OpenFalcon-team @yubo laiwei niean`
