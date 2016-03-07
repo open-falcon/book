@@ -43,40 +43,34 @@ curl -s "127.0.0.1:9966/health"
 服务启动后，可以通过日志查看服务的运行状态，日志文件地址为./var/app.log。可以通过查询脚本```./scripts/query```读取绘图数据，如 运行 ```bash ./scripts/query "ur.endpoint" "ur.counter"```可以查询Endpoint="ur.endpoint" & Counter="ur.counter"对应的绘图数据。
 
 ## 配置说明
-query需要两个配置文件。一个是常规的配置文件./cfg.json，另一个是graph组件的实例配置(用于一致性哈希)。./cfg.json各配置项配的含义，如下
 
-```
-log_level: 可选 error/warn/info/debug/trace，默认为info
+注意: 请确保 `graph.replicas`和`graph.cluster` 的内容与transfer的配置**完全一致**
 
-slow_log: 单位是毫秒，query的时候，较慢的请求，会被打印到日志中，默认是2000ms
-
-debug: true/false, 如果为true，日志中会打印debug信息
-
-http
-    - enable: true/false, 表示是否开启该http端口，该端口为数据查询接口（即提供http api给用户查询数据）
-    - listen: 表示监听的http端口
-
-graph
-    - backends: 后端graph列表文件，格式参考下面的介绍，该文件默认是./graph_backends.txt
-    - reload_interval: 单位是秒，表示每隔多久自动reload一次backends列表文件中的内容
-    - timeout: 单位是毫秒，表示和后端graph组件交互的超时时间，可以根据网络质量微调，建议保持默认
-    - pingMethod: 后端提供的ping接口，用来探测连接是否可用，必须保持默认
-    - max_conns: 连接池相关配置，最大连接数，建议保持默认
-    - max_idle: 连接池相关配置，最大空闲连接数，建议保持默认
-    - replicas: 这是一致性hash算法需要的节点副本数量，建议不要变更，保持默认即可
-  
-```
-
-graph组件实例配置文件，默认为./graph_backends.txt。其格式可以描述为
-
-1.每行由空格分割的两列组成，第一列表示graph的名字，第二列表示具体的hostname:port
-2.该文件需要和transfer配置文件中的cluster的配置项，保持一致
-
-```
-$ cat ./graph_backends.txt
-graph-00 127.0.0.1:6070
-graph-01 127.0.0.2:6070
+```bash
+{
+    "debug": "false",   // 是否开启debug日志
+    "http": {
+        "enabled":  true,          // 是否开启http.server
+        "listen":   "0.0.0.0:9966" // http.server监听地址&端口
+    },
+    "graph": {
+        "connTimeout": 1000, // 单位是毫秒，与后端graph建立连接的超时时间，可以根据网络质量微调，建议保持默认
+        "callTimeout": 5000, // 单位是毫秒，从后端graph读取数据的超时时间，可以根据网络质量微调，建议保持默认
+        "maxConns": 32,      // 连接池相关配置，最大连接数，建议保持默认
+        "maxIdle": 32,       // 连接池相关配置，最大空闲连接数，建议保持默认
+        "replicas": 500,     // 这是一致性hash算法需要的节点副本数量，应该与transfer配置保持一致
+        "cluster": {         // 后端的graph列表，应该与transfer配置保持一致；不支持一条记录中配置两个地址
+            "graph-00": "test.hostname01:6070",
+            "graph-01": "test.hostname02:6070"
+        },
+        "api": {  // 适配grafana需要的API配置
+            "query": "http://127.0.0.1:9966",     // query的http地址
+            "dashboard": "http://127.0.0.1:8081", // dashboard的http地址
+            "max": 500                            //API返回结果的最大数量
+        }
+    }
+}
 ```
 
 ## 补充说明
-部署完成query组件后，请修改dashboard组件的配置、使其能够正确寻址到query组件。请确保query组件的graph列表(backends文件中的列表)配置是正确的。
+部署完成query组件后，请修改dashboard组件的配置、使其能够正确寻址到query组件。请确保query组件的graph列表 与 transfer的配置 一致。

@@ -19,3 +19,8 @@ Windows主机的运行指标的采集，可以写Python脚本，通过windows的
 - windows 10
 - windows 7
 - windows server 2012
+
+
+------
+
+或者也可以直接使用golang版本windows agent： https://github.com/LeonZYang/agent
