@@ -31,3 +31,4 @@
 * [OpenFalcon交流：一个适合在公司内部推广OpenFalcon的PPT](http://pan.baidu.com/s/1o7wsrUi)
 * [OpenFalcon @ SACC-2015](http://pan.baidu.com/s/1o6S6t1C)
 * <a href="https://mp.weixin.qq.com/s?__biz=MjM5OTcxMzE0MQ==&mid=400225178&idx=1&sn=c98609a9b66f84549e41cd421b4df74d&scene=1&srcid=1028BIXhzmVdUytAJoaq6qZE&uin=MjU1NDcwNQ%3D%3D&key=41ecb04b05111003fd5a3f41abeb54744fcdc958bb5498e45bdf4bcfe69fffc5b737a26787c6a03eb9d2e5bf48b9bfeb&devicetype=iMac+MacBookAir7%2C2+OSX+OSX+10.11.1+build(15B42)&version=11020201&lang=zh_CN&pass_ticket=eT8590ZnPRFXfkkZjuk6SKIa3vohkNxGHiHeZrzECIs%3D"> OpenFalcon编写的整个脑洞历程: 开发过程中的权衡与折中 </a>
+* [OpenFalcon操作录屏演示](http://pan.baidu.com/s/1dEsW54P)
