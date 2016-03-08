@@ -84,7 +84,7 @@ collector
 部署完成task组件后，请修改collector配置、使task能够正确采集transfer & graph的内部状态，请修改monitor配置、使task模块能够自检控Open-Falon的各组件(当前支持transfer、graph、query、judge等)。
 
 ### 关于自监控报警
-因为多点监控的需求，自版本v0.0.10开始，我们将自监控报警功能 从Task模块移除。关于Open-Falcon自监控的详情，请参见[这里](http://book.open-falcon.com/zh/practice/monitor.html)。
+因为多点监控的需求，自版本v0.0.10开始，我们将自监控报警功能 从Task模块移除。关于Open-Falcon自监控的详情，请参见[这里](http://book.open-falcon.org/zh/practice/monitor.html)。
 
 ### 关于过期索引清除
 监控数据停止上报后，该数据对应的索引也会停止更新、变为过期索引。过期索引，影响视听，部分用户希望删除之。
