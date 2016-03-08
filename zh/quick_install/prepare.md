@@ -33,6 +33,9 @@ mysql -h localhost -u root --password="" < db_schema/uic-db-schema.sql
 ### 下载编译好的组件
 ** 我们把相关组件编译成了二进制，方便大家直接使用，这些二进制只能跑在64位Linux上 **
 
+> 国内用户点这里高速下载编[译好的二进制版本](http://pan.baidu.com/s/1kTY121D)
+
+
 ```bash
 DOWNLOAD="https://github.com/open-falcon/of-release/releases/download/v0.1.0/open-falcon-v0.1.0.tar.gz"
 cd $WORKSPACE
