@@ -9,6 +9,8 @@
 * [Docker 監控Lib库](https://github.com/HunanTV/eru-metric)
 * [mesos 監控](https://github.com/mesos-utility/mesos-metrics)
 * [Winodws/Linux 自动汇报资产](https://github.com/triaquae/MadKing)
+* [Nginx监控: 企业级监控标准](https://github.com/GuyCheung/falcon-ngx_metric)
+
 
 ## 脚本
 * [统计每个cpu core 详情的插件脚本](https://github.com/open-falcon/plugin/blob/master/common/60_stats_per_cpu_core.py)
