@@ -44,7 +44,7 @@
   * [Windows主机监控](usage/win.md)
   * [HAProxy监控](usage/haproxy.md)
   * [docker容器监控](usage/docker.md)
-  * [Nginx监控](usage/ngx_metrix.md)
+  * [Nginx监控](usage/ngx_metric.md)
 * [设计理念](philosophy/README.md)
   * [数据模型](philosophy/data-model.md)
   * [话说数据采集](philosophy/data-collect.md)
