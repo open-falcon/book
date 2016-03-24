@@ -35,6 +35,7 @@
   * [进程端口监控](usage/proc-port-monitor.md)
   * [MySQL监控](usage/mymon.md)
   * [Redis监控](usage/redis.md)
+  * [MongoDB监控](usage/MongoDB.md)
   * [Memcache监控](usage/memcache.md)
   * [RabbitMQ监控](usage/rabbitmq.md)
   * [交换机监控](usage/switch.md)
