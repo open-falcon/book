@@ -53,7 +53,7 @@ mongomon部署
 MongoDB falcon screen
 ----------
 
-![](https://github.com/ZhuoRoger/mongomon/blob/master/misc/falcon%20screen.jpg)
+![](https://raw.githubusercontent.com/ZhuoRoger/mongomon/master/misc/falcon%20screen.jpg)
 
 采集的MongoDB指标
 ----------------------------------------
