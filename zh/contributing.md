@@ -41,7 +41,8 @@
 - [赶集](http://www.ganji.com)
 - [金山办公](http://www.wps.cn)
 - [爱奇艺](http://iqiyi.com)
-- 一点资讯
+- [链家网](http://www.lianjia.com)
+- [一点资讯](http://yidianzixun.com)
 - 快牙
 - 开心网
 - 借贷宝
