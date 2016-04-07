@@ -1,4 +1,11 @@
-##个人
+> 如何更新这个列表？
+
+1. 如果您在使用Open-Falcon，那么可以修改 [contributing.md](https://github.com/open-falcon/book/blob/master/zh/contributing.md) , 然后提交pull-request到[open-falcon/book](https://github.com/open-falcon/book)，等待merge过后，即可在这里显示。
+2. 如果您想删除相关信息，操作步骤同步骤1描述
+3. 如何在github上提交一个pull-request？请参考 [creating-a-pull-request](https://help.github.com/articles/creating-a-pull-request/) 和  [using-pull-requests](https://help.github.com/articles/using-pull-requests/)
+
+> 个人
+
 - [laiwei](https://github.com/laiwei)
 - [ulricqin](https://github.com/ulricqin)
 - [yubo](https://github.com/yubo)
@@ -17,28 +24,34 @@
 - [gaochao1](https://github.com/gaochao1)
 - [yindashan](https://github.com/yindashan)
 - [LeonZYang](https://github.com/LeonZYang)
+- [itxx00](https://github.com/itxx00)
 
-##公司
-- 小米
-- 美团
-- 快网
-- 滴滴
-- 金山云
-- 宜信
-- 七牛
-- 又拍云
-- 赶集
-- 金山办公
-- 爱奇艺
+----
+
+> 公司
+
+- [小米](http://mi.com)
+- [美团](http://meituan.com)
+- [快网](http://fastweb.com.cn)
+- [滴滴](http://didichuxing.com)
+- [金山云](http://www.ksyun.com)
+- [宜信](http://www.creditease.cn)
+- [七牛](http://www.qiniu.com)
+- [又拍云](https://www.upyun.com)
+- [赶集](http://www.ganji.com)
+- [金山办公](http://www.wps.cn)
+- [爱奇艺](http://iqiyi.com)
 - 一点资讯
 - 快牙
 - 开心网
 - 借贷宝
 - 百度
 - 迅雷 
+- 美丽说
 - 猿题库
 - 芒果TV
 - 豆瓣
+- 灵犀
 - trendmicro 趋势科技
 - 聚力方舟科技
 - 点金互联网金融
