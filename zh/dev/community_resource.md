@@ -38,4 +38,10 @@
 
 
 ## 会议
-* <a href="http://mp.weixin.qq.com/s?__biz=MzIxMzIyNDkyMw==&mid=406405258&idx=1&sn=ca7637464da03df1ff4038f5b85963c1&scene=2&srcid=0323czMe2MFs5HfBIsImXqCG&from=timeline&isappinstalled=0#wechat_redirect"> 麒麟会技术沙龙-Open-Falcon v0.1.0 发布</a>
+
+#### <a href="http://mp.weixin.qq.com/s?__biz=MzIxMzIyNDkyMw==&mid=406405258&idx=1&sn=ca7637464da03df1ff4038f5b85963c1&scene=2&srcid=0323czMe2MFs5HfBIsImXqCG&from=timeline&isappinstalled=0#wechat_redirect"> 麒麟会技术沙龙-Open-Falcon v0.1.0 发布</a>
+* [来炜——Open-Falcon新版特性解析和规划](http://pan.baidu.com/s/1dFsJa5j)
+* [谢丹博——Open-Falcon在美团的落地与升华](http://pan.baidu.com/s/1o8Cd3MM)
+* [欧曜玮——企业级监控平台的变革与演进](http://pan.baidu.com/s/1hsvuHKg)
+
+
