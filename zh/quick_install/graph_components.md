@@ -99,6 +99,9 @@ dashboard是面向用户的查询界面，在这里，用户可以看到push到g
 ```bash
 yum install -y python-virtualenv mysql-devel  # run as root
 
+# ubuntu
+# apt-get install python-dev libmysqld-dev python-virtualenv
+
 cd $WORKSPACE/dashboard/
 virtualenv ./env
 
