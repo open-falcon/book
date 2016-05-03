@@ -7,8 +7,10 @@
 
 Open-Falcon 跟 Grafana 目前并不互相支持，所以您需要下面的PR
 
-- Grafana [PR#3787](https://github.com/grafana/grafana/pull/3787) (支持到 v2.6 版) 
+- Grafana [PR#3787](https://github.com/grafana/grafana/pull/3787) (支持到 v2.6 版)
 - Query [PR#5](https://github.com/open-falcon/query/pull/5)（已合并到最新的query代码中了，请检查您是否使用的是最新版)
+
+> 详细可以参考[优酷同学写的教程](http://blueswind8306.iteye.com/blog/2287561)
 
 ### 设定 Datasource
 
@@ -37,3 +39,4 @@ Open-Falcon 跟 Grafana 目前并不互相支持，所以您需要下面的PR
 有了 Templating 变量之后，我们就可以以它来代替 Endpoint 名称，选择我们关注的监控项，完成图表的新增。
 
 ![grafana4](https://raw.githubusercontent.com/hitripod/kordan.common.store/master/images/open-falcon/grafana_setting_4.png)
+
