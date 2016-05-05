@@ -10,6 +10,7 @@
 * [mesos 監控](https://github.com/mesos-utility/mesos-metrics)
 * [Winodws/Linux 自动汇报资产](https://github.com/triaquae/MadKing)
 * [Nginx监控: 企业级监控标准](https://github.com/GuyCheung/falcon-ngx_metric)
+* [JMX监控: 基于open-falcon的jmx监控插件](https://github.com/toomanyopenfiles/jmxmon)
 
 
 ## 脚本

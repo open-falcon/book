@@ -46,6 +46,7 @@
   * [HAProxy监控](usage/haproxy.md)
   * [docker容器监控](usage/docker.md)
   * [Nginx监控](usage/ngx_metric.md)
+  * [JMX监控](usage/jmx.md)
   * [硬件监控](usage/hwcheck.md)
 * [设计理念](philosophy/README.md)
   * [数据模型](philosophy/data-model.md)

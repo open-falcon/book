@@ -13,8 +13,7 @@ Links个Python的项目，无需像Go的项目那样去做编译。不过Go的�
 $ cd /path/to/links/
 $ virtualenv ./env
 
-# use douban pypi
-$ ./env/bin/pip install -r pip_requirements.txt -i http://pypi.douban.com/simple
+$ ./env/bin/pip install -r pip_requirements.txt
 ```
 
 安装完依赖的lib之后就可以用control脚本启动了，log在var目录。不过启动之前要先把配置文件修改成相应配置。另外，监听的端口在gunicorn.conf中配置。
