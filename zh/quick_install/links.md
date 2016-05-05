@@ -33,7 +33,7 @@ links组件的作用：当多个告警被合并为一条告警信息时，短信
     # yum install -y python-virtualenv
     $ cd $WORKSPACE/links/
     $ virtualenv ./env
-    $ ./env/bin/pip install -r pip_requirements.txt -i http://pypi.douban.com/simple
+    $ ./env/bin/pip install -r pip_requirements.txt
 
 
 ### init database and config

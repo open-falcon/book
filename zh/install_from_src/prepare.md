@@ -53,5 +53,5 @@ source .bashrc
 cd $GOPATH/src
 mkdir github.com
 cd github.com
-git clone --recursive https://github.com/XiaoMi/open-falcon.git
+git clone --recursive https://github.com/open-falcon/of-release.git
 ```

@@ -87,8 +87,7 @@ yum install -y python-virtualenv  # run as root
 cd $WORKSPACE/portal/
 virtualenv ./env
 
-# use douban pypi
-./env/bin/pip install -r pip_requirements.txt -i http://pypi.douban.com/simple
+./env/bin/pip install -r pip_requirements.txt
 
 # vi frame/config.py
 # 1. 修改DB配置

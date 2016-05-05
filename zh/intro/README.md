@@ -184,11 +184,3 @@ c.RRA("MIN", 0.5, 720, 730)
 
 - [authors](/zh/authors.html)
 - [contributing](/zh/contributing.html)
-
-
-# License
-
-Copyright 2014-2015 Xiaomi, Inc.
-Licensed under the Apache License,
-Version 2.0:
-http://www.apache.org/licenses/LICENSE-2.0
