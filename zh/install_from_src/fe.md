@@ -60,14 +60,14 @@ Fe作为一个前端模块，无状态，可以水平扩展，至少部署两台
         "attributes": ["sn","mail","telephoneNumber"] 
     },
     "uic": {
-        "addr": "root:password@tcp(127.0.0.1:3306)/fe?charset=utf8&loc=Asia%2FChongqing",
+        "addr": "root:password@tcp(127.0.0.1:3306)/uic?charset=utf8&loc=Asia%2FChongqing",
         "idle": 10,
         "max": 100
     },
     "shortcut": {
-        "falconPortal": "http://11.11.11.11:5050/", 浏览器可访问的portal地址
-        "falconDashboard": "http://11.11.11.11:7070/", 浏览器可访问的dashboard地址
-        "falconAlarm": "http://11.11.11.11:6060/" 浏览器可访问的alarm的http地址
+        "falconPortal": "http://11.11.11.11:5050/", #浏览器可访问的portal地址
+        "falconDashboard": "http://11.11.11.11:7070/", #浏览器可访问的dashboard地址
+        "falconAlarm": "http://11.11.11.11:6060/" #浏览器可访问的alarm的http地址
     }
 }
 ```
