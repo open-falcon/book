@@ -22,7 +22,7 @@
 
 # Architecture
 
-![open-falcon architecture](http://upload-images.jianshu.io/upload_images/3678-502bbef299826b63.png)
+![open-falcon architecture](https://raw.githubusercontent.com/open-falcon/doc/master/screenshots/falcon-arch.png)
 备注：虚线所在的aggregator组件还在设计开发阶段。
 
 每台服务器，都有安装falcon-agent，falcon-agent是一个golang开发的daemon程序，用于自发现的采集单机的各种数据和指标，这些指标包括不限于以下几个方面，共计200多项指标。
@@ -90,6 +90,9 @@ transfer的数据来源，一般有三种：
 
 说明：上面这三种数据，都会先发送给本机的proxy-gateway，再由gateway转发给transfer。
 
+>基础监控是指只要是个机器就能加的监控，比如cpu mem net io disk等，这些监控采集的方式固定，不需要配置，也不需要用户提供额外参数指定，只要agent跑起来就可以直接采集上报上去；
+非基础监控则相反，比如端口监控，你不给我端口号就不行，不然我上报所有65535个端口的监听状态你也用不了，这类监控需要用户配置后才会开始采集上报的监控（包括类似于端口监控的配置触发类监控，以及类似于mysql的插件脚本泪监控），一般就不算基础监控的范畴了。
+
 # Alerting
 
 报警判定，是由judge组件来完成。用户在web portal来配置相关的报警策略，存储在MySQL中。heartbeat server 会定期加载MySQL中的内容。judge也会定期和heartbeat server保持沟通，来获取相关的报警策略。
@@ -114,13 +117,13 @@ query面向终端用户，收到查询请求后，会去多个graph里面，查�
 
 
 dashboard首页，用户可以以多个维度来搜索endpoint列表，即可以根据上报的tags来搜索关联的endpoint。
-![open-falcon  dashboard homepage](http://upload-images.jianshu.io/upload_images/3678-57753ccac6dff8f8.png)
+![open-falcon  dashboard homepage](https://raw.githubusercontent.com/open-falcon/doc/master/screenshots/falcon-homepage.png)
 
 用户可以自定义多个metric，添加到某个screen中，这样每天早上只需要打开screen看一眼，服务的运行情况便尽在掌握了。
-![open-falcon dashboard screen](http://upload-images.jianshu.io/upload_images/3678-7f6705e51ea59611.png)
+![open-falcon dashboard screen](https://raw.githubusercontent.com/open-falcon/doc/master/screenshots/falcon-screen.png)
 
 当然，也可以查看清晰大图，横坐标上zoom in/out，快速筛选反选。总之用户的“使用效率”是第一要务。
-![open-falcon big graph](http://upload-images.jianshu.io/upload_images/3678-8279c8ed2ed39396.png)
+![open-falcon big graph](https://raw.githubusercontent.com/open-falcon/doc/master/screenshots/falcon-big-chart.png)
 
 
 # Web portal
@@ -128,16 +131,16 @@ dashboard首页，用户可以以多个维度来搜索endpoint列表，即可以
 一个高效的portal，对于提升用户的“使用效率”，加成很大，平时大家都这么忙，能给各位SRE、Devs减轻一些负担，那是再好不过了。
 
 这是host group的管理页面，可以和服务树结合，机器进出服务树节点，相关的模板会自动关联或者解除。这样服务上下线，都不需要手动来变更监控，大大提高效率，降低遗漏和误报警。
-![open-falcon portal HostGroup](http://upload-images.jianshu.io/upload_images/3678-96f777c1363585bb.png)
+![open-falcon portal HostGroup](https://raw.githubusercontent.com/open-falcon/doc/master/screenshots/portal-hostgrp.png)
 
 一个最简单的模板的例子，模板支持继承和策略覆盖，模板和host group绑定后，host group下的机器会自动应用该模板的所有策略。
-![open-falcon template](http://upload-images.jianshu.io/upload_images/3678-1ff6cc744bdd8076.png)
+![open-falcon template](https://raw.githubusercontent.com/open-falcon/doc/master/screenshots/portal-tpl.png)
 
 当然，也可以写一个简单的表达式，就能达到监控的目的，这对于那些endpoint不是机器名的场景非常方便。
-![open-falcon expression](http://upload-images.jianshu.io/upload_images/3678-7b0f317788687f1d.png)
+![open-falcon expression](https://raw.githubusercontent.com/open-falcon/doc/master/screenshots/falcon-exp.png)
 
 添加一个表达式也是很简单的。
-![open-falcon add an expression](http://upload-images.jianshu.io/upload_images/3678-9b636e99d19df16d.png)
+![open-falcon add an expression](https://raw.githubusercontent.com/open-falcon/doc/master/screenshots/falcon-add-exp.png)
 
 # Storage
 
@@ -169,7 +172,7 @@ c.RRA("AVERAGE", 0.5, 180, 766)
 c.RRA("MAX", 0.5, 180, 766)
 c.RRA("MIN", 0.5, 180, 766)
 
-// 1天一个点存5year
+// 1天一个点存1year
 c.RRA("AVERAGE", 0.5, 720, 730)
 c.RRA("MAX", 0.5, 720, 730)
 c.RRA("MIN", 0.5, 720, 730)
@@ -179,17 +182,5 @@ c.RRA("MIN", 0.5, 720, 730)
 
 # Contributors
 
-- 小米运维部: 博客 http://noops.me
-- laiwei: https://github.com/laiwei 来炜没睡醒@微博 / hellolaiwei@微信
-- 秦晓辉: http://ulricqin.com/ UlricQin@微博 UlricQin@Twitter
-- yubo: https://github.com/yubo x80386@微信
-- 聂安: https://github.com/niean niean_sail@微信
-- QQ群：373249123
-
-
-# License
-
-Copyright 2014-2015 Xiaomi, Inc.
-Licensed under the Apache License,
-Version 2.0:
-http://www.apache.org/licenses/LICENSE-2.0
+- [authors](/zh/authors.html)
+- [contributing](/zh/contributing.html)
