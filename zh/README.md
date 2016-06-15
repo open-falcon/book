@@ -16,3 +16,7 @@
 
 ----
 ![微信公众号](http://open-falcon.org/images/open-falcon-qrcode_258.jpg)
+
+
+----
+该文档的[英文版本](http://book.open-falcon.org/en/index.html)由[宋立龄](https://github.com/songliling)翻译和维护，非常感谢！
