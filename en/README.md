@@ -18,4 +18,4 @@ With everyone's enthusiastic support and help,Open-Falcon is developing at full 
 
 # acknowledgement
 
-This english document is translated and maintained by [宋立龄](https://github.com/songliling),thanks a lot.
+This english document is translated and maintained by [宋立岭](https://github.com/songliling),thanks a lot.

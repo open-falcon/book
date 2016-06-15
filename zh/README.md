@@ -19,4 +19,4 @@
 
 
 ----
-该文档的[英文版本](http://book.open-falcon.org/en/index.html)由[宋立龄](https://github.com/songliling)翻译和维护，非常感谢！
+该文档的[英文版本](http://book.open-falcon.org/en/index.html)由[宋立岭](https://github.com/songliling)翻译和维护，非常感谢！
