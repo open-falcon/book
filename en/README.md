@@ -1,4 +1,4 @@
-# welcome to Open-Falcon community
+# Welcome to Open-Falcon community
 
 With everyone's enthusiastic support and help,Open-Falcon is developing at full speed . Now:
 
@@ -16,6 +16,6 @@ With everyone's enthusiastic support and help,Open-Falcon is developing at full 
 * QQ 2th group:516088946(JOIN US)
 
 
-# acknowledgement
+# Acknowledgement
 
 This english document is translated and maintained by [宋立岭](https://github.com/songliling),thanks a lot.
