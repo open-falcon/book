@@ -25,6 +25,7 @@
 - [yindashan](https://github.com/yindashan)
 - [LeonZYang](https://github.com/LeonZYang)
 - [itxx00](https://github.com/itxx00)
+- [neco](https://github.com/2008chny)
 
 ----
 
@@ -93,4 +94,5 @@
 - 微众银行
 - 网化商城
 - [小世界](http://lil.world/)
+- [寻医问药网](http://www.xywy.com)
 
