@@ -26,6 +26,12 @@ swcollector根据配置文件中，配置好的交换机IP列表或者IP网段�
 * IfHCOutBroadcastPkts
 * IfHCInMulticastPkts
 * IfHCOutMulticastPkts
+* IfInDiscards
+* IfOutDiscards
+* IfInErrors
+* IfOutErros
+* IfInUnknownProtos
+* IfOutQLen
 * IfOperStatus(接口状态，1 up, 2 down, 3 testing, 4 unknown, 5 dormant, 6 notPresent, 7 lowerLayerDown)
 	
 
@@ -47,13 +53,15 @@ CPU和内存的OID私有，根据设备厂家和OS版本可能不同。目前测
 * H3C(Version 5.20)
 * H3C(Version 7)
 
-##二进制安装
+## 二进制安装
 从[这里](https://github.com/gaochao1/swcollector/releases) 下载编译好的最新二进制版本即可。注意：这些二进制只能跑在64位Linux上
 
-##源码安装
+## 源码安装
+```
 	依赖$GOPATH/src/github.com/gaochao1/sw
 	cd $GOPATH/src/github.com/gaochao1/swcollector
 	go get ./...
+	chmod +x control
 	./control build
 	./control pack
 	最后一步会pack出一个tar.gz的安装包，拿着这个包去部署服务即可。
@@ -61,41 +69,64 @@ CPU和内存的OID私有，根据设备厂家和OS版本可能不同。目前测
 	升级时，确保先更新sw
 	cd $GOPATH/src/github.com/gaochao1/sw
 	git pull
+```
 
-##部署说明
+## 部署说明
 
 swcollector需要部署到有交换机SNMP访问权限的服务器上。
 
 使用Go原生的ICMP协议进行Ping探测，swcollector需要root权限运行。
 
-部分交换机使用Go原生SNMP协议会超时。暂时解决方法是SNMP接口流量查询前先判断设备型号，对部分此类设备，调用snmpwalk命令进行数据收集。(一些华为设备和思科的IOS XR)
-因此最好在监控探针服务器上也装个snmpwalk命令
+支持使用 Gosnmp 或 snmpwalk 进行数据采集，如果使用 snmpwalk 模式，需要在监控探针服务器上安装个snmpwalk命令
 
-
-#配置说明
+## 配置说明
 
 配置文件请参照cfg.example.json，修改该文件名为cfg.json，将该文件里的IP换成实际使用的IP。
 
-switch配置项说明：
-
+配置说明：
+```
+{
+    "debug": true,
+	"debugmetric":{                   # 在日志中 debug 具体的指标
+		"endpoints":["192.168.56.101","192.168.56.102"],  # 必填
+		"metrics":["switch.if.In","switch.if.Out"],      # 必填
+		"tags":"ifName=Fa0/1"         # 有则匹配 tag,如为 "" 则打印该 metric 的全部信息
+	},
 	"switch":{
-	   "enabled": true,          
-		"ipRange":[						#交换机IP地址段，对该网段有效IP，先发Ping包探测，对存活IP发SNMP请求
-           "192.168.1.0/24",      
-           "192.168.56.102/32",
-           "172.16.114.233" 
+	   "enabled": true,				#交换机IP地址段，对该网段有效IP，先发Ping包探测，对存活IP发SNMP请求
+		"ipRange":[
+            "192.168.56.101/32",      
+            "192.168.56.102/32",
+            "172.16.114.233" 
  		],
- 		"pingTimeout":300, 			   #Ping超时时间，单位毫秒
-		"pingRetry":4,				   #Ping探测重试次数
-		"community":"public",			#SNMP认证字符串
-		"snmpTimeout":2000,				#SNMP超时时间，单位毫秒
-		"snmpRetry":5,					#SNMP重试次数
-		"ignoreIface": ["Nu","NU","Vlan","Vl","LoopBack"],    #忽略的接口，如Nu匹配ifName为*Nu*的接口
-		"ignorePkt": true,            #不采集IfHCInUcastPkts和IfHCOutUcastPkts
-		"ignoreBroadcastPkt": true,   #不采集IfHCInBroadcastPkts和IfHCOutBroadcastPkts
-		"ignoreMulticastPkt": true,   #不采集IfHCInMulticastPkts和IfHCOutMulticastPkts
-		"ignoreOperStatus": true,     #不采集IfOperStatus
-		"displayByBit": true,		  #true时，上报的流量单位为bit，为false则单位为byte。
-		"fastPingMode": false,	      #是否开启 fastPing 模式，开启 Ping 的效率更高，并能解决高并发时，会有小概率 ping 通宕机的交换机地址的情况。但 fastPing 可能被防火墙过滤。	
- 		"limitConcur": 1000           #限制SNMP请求并发数
+		"gosnmp":true,              #是否使用 gosnmp 采集, false 则使用 snmpwalk
+ 		"pingTimeout":300,          #Ping超时时间，单位毫秒
+		"pingRetry":4,				#Ping探测重试次数
+		"community":"public",		#SNMP认证字符串
+		"snmpTimeout":1000,			#SNMP超时时间，单位毫秒
+		"snmpRetry":5,				#SNMP重试次数
+		"ignoreIface": ["Nu","NU","Vlan","Vl"],	#忽略的接口，如Nu匹配ifName为*Nu*的接口
+		"ignorePkt": true,			#不采集IfHCInUcastPkts和IfHCOutUcastPkts
+		"ignoreBroadcastPkt": true,	#不采集IfHCInBroadcastPkts和IfHCOutBroadcastPkts
+		"ignoreMulticastPkt": true,	#不采集IfHCInMulticastPkts和IfHCOutMulticastPkts
+		"ignoreDiscards": true,		#不采集IfInDiscards和IfOutDiscardss
+		"ignoreErrors": true,		#不采集IfInErrors和IfOutErros
+		"ignoreOperStatus": true,   #不采集IfOperStatus
+		"ignoreUnknownProtos":true, #不采集IfInUnknownProtos
+		"ignoreOutQLen":true,       #不采集IfOutQLen
+		"displayByBit": true,       #true时，上报的流量单位为bit，为false则单位为byte。
+		"fastPingMode": false,		#是否开启 fastPing 模式，开启 Ping 的效率更高，并能解决高并发时，会有小概率 ping 通宕机的交换机地址的情况。但 fastPing 可能被防火墙过滤。 
+		"limitConcur": 1000			#限制并发数
+ 	}, 
+    "transfer": {
+        "enabled": true,
+        "addr": "127.0.0.1:8433",
+        "interval": 60,
+        "timeout": 1000
+    },
+    "http": {
+        "enabled": true,
+        "listen": ":1989"
     }
+}
+```
