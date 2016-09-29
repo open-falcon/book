@@ -4,7 +4,11 @@
 
 Windows主机的运行指标的采集，可以写Python脚本，通过windows的计划任务来每分钟执行采集各项运行指标，包括内存占用、CPU使用、磁盘使用量、网卡流量等。
 
-可以直接使用 [windows_collect脚本](https://github.com/freedomkk-qfeng/falcon-scripts/tree/master/windows_collect)或 [windwos-agent](https://github.com/LeonZYang/agent) 来实现对windows主机的监控指标采集。
+可以直接使用 
+
+- [windows_collect脚本](https://github.com/freedomkk-qfeng/falcon-scripts/tree/master/windows_collect)
+- 或 [windwos-agent](https://github.com/LeonZYang/agent) 来实现对windows主机的监控指标采集。
+- 或汽车之家开源的作为Windows Service运行的Agent，[Windows-Agent](https://github.com/AutohomeRadar/Windows-Agent)
 
 
 ## 使用方式
