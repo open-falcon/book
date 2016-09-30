@@ -4,27 +4,10 @@
 
 Windows主机的运行指标的采集，可以写Python脚本，通过windows的计划任务来每分钟执行采集各项运行指标，包括内存占用、CPU使用、磁盘使用量、网卡流量等。
 
-可以直接使用 
+可以直接使用以下 window 监控程序进行 windows 主机的监控指标采集。
 
 - [windows_collect脚本](https://github.com/freedomkk-qfeng/falcon-scripts/tree/master/windows_collect)
-- 或 [windwos-agent](https://github.com/LeonZYang/agent) 来实现对windows主机的监控指标采集。
-- 或汽车之家开源的作为Windows Service运行的Agent，[Windows-Agent](https://github.com/AutohomeRadar/Windows-Agent)
+- [windwos-agent](https://github.com/LeonZYang/agent) 
+- 汽车之家开源的作为Windows Service运行的Agent，[Windows-Agent](https://github.com/AutohomeRadar/Windows-Agent)
+- [windwos-agent]([windwos-agent](https://github.com/freedomkk-qfeng/windows-agent),另一个 go 语言实现的 windows-agent。支持端口，进程监控，支持后台服务运行。
 
-
-## 使用方式
-
-- 根据实际部署情况，修改脚本开头的配置参数
-- 修改 graph 的 mysql 编码为utf8，以支持中文的。由于 windows 的网卡有可能存在中文，所以这一步很重要。。。
-- 测试： python windows_collect.py
-- 丢进 windows 计划任务完事
-
-## 已经测试过的环境有
-
-- windows 10
-- windows 7
-- windows server 2012
-
-
-------
-
-或者也可以直接使用golang版本windows agent： https://github.com/LeonZYang/agent
