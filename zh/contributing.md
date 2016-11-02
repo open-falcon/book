@@ -43,11 +43,16 @@
 - [爱奇艺](http://iqiyi.com)
 - [链家网](http://www.lianjia.com)
 - [一点资讯](http://yidianzixun.com)
+- [汽车之家](http://autohome.com.cn)
+- [360](http://360.com)
+- [迅雷](http://xunlei.com)
+- [微博](http://weibo.com)
+- 斗鱼
+- 平安云
 - 快牙
 - 开心网
 - 借贷宝
 - 百度
-- 迅雷 
 - 美丽说
 - 猿题库
 - 芒果TV
@@ -84,13 +89,8 @@
 - 誉存科技
 - 酷开
 - 农信互联
-- 斗鱼
-- 微博
 - 青云
 - 沃云
-- 汽车之家
-- 平安云
 - 微众银行
 - 网化商城
 - [小世界](http://lil.world/)
-
