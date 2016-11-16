@@ -11,9 +11,11 @@
 * [Winodws/Linux 自动汇报资产](https://github.com/triaquae/MadKing)
 * [Nginx监控: 企业级监控标准](https://github.com/GuyCheung/falcon-ngx_metric)
 * [JMX监控: 基于open-falcon的jmx监控插件](https://github.com/toomanyopenfiles/jmxmon)
+* [适配Open-Falcon的综合监控SuitAgent](https://github.com/cqyijifu/OpenFalcon-SuitAgent)
 
 
 ## 脚本
+
 * [统计每个cpu core 详情的插件脚本](https://github.com/open-falcon/plugin/blob/master/common/60_stats_per_cpu_core.py)
 * [统计进程资源消耗的插件脚本](https://github.com/open-falcon/plugin/blob/master/common/60_proc_resource_status.py)
 * [针对falcon开发的监控脚本和服务](https://github.com/sageskr/monitor)
