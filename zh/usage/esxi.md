@@ -1,14 +1,14 @@
-# Esxi监控
+# ESXi监控
 
-VMware的主体机器(host machine)是运行Esxi作业系统。没有办法安装Open-Falcon agent来监控，所以不能用普通的方式来做监控。
+VMware的主体机器(host machine)是运行ESXi作业系统。没有办法安装Open-Falcon agent来监控，所以不能用普通的方式来做监控。
 
-Esxi作业系统设备的运行指标的采集，可以透过写脚本，通过SNMP协议来采集交换机的各项运行指标，包括内存占用、CPU使用、流量、磁盘用量等。[esxicollector](https://github.com/humorless/esxicollector)就是這樣子的腳本。
+ESXi作业系统设备的运行指标的采集，可以透过写脚本，通过SNMP协议来采集交换机的各项运行指标，包括内存占用、CPU使用、流量、磁盘用量等。[esxicollector](https://github.com/humorless/esxicollector)就是這樣子的腳本。
 
 ## 工作原理
 
 esxicollector是一系列整理过的脚本。由[humorless](https://github.com/humorless/)设计开发。
 
-esxicollector需要透过cronjob来配置。在一台可以跑cronjob的机器上，配置好cronjob。并且在esxi_collector.sh这个脚本中，写清楚要监控的设备、用来接受监控结果的Open-Falcon agent的位址。esxicollector就会照cronjob的时间间隔，预设是每分钟一次，定期地去采集Esxi作业系统设备的监控项，并透过上报到Open-Falcon的agent。
+esxicollector需要透过cronjob来配置。在一台可以跑cronjob的机器上，配置好cronjob。并且在esxi_collector.sh这个脚本中，写清楚要监控的设备、用来接受监控结果的Open-Falcon agent的位址。esxicollector就会照cronjob的时间间隔，预设是每分钟一次，定期地去采集ESXi作业系统设备的监控项，并透过上报到Open-Falcon的agent。
 
 采集的metric列表：
 
