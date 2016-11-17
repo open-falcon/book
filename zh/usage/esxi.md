@@ -13,36 +13,36 @@ esxicollector需要透过cronjob来配置。在一台可以跑cronjob的机器�
 采集的metric列表：
 
 * CPU利用率
-  esxi.cpu.core 
-* 内存總量/利用率 
-  esxi.cpu.memory.kliobytes.size
-  esxi.cpu.memory.kliobytes.used
-  esxi.cpu.memory.kliobytes.avail
+  ```esxi.cpu.core```
+* 内存總量/利用率
+  ```esxi.cpu.memory.kliobytes.size```
+  ```esxi.cpu.memory.kliobytes.used```
+  ```esxi.cpu.memory.kliobytes.avail```
 * 运行的进程数
-  esxi.current.process
+  ```esxi.current.process```
 * 登入的使用者数
-  esxi.current.user
+  ```esxi.current.user```
 * 虚拟机器数
-  esxi.current.vhost
+  ```esxi.current.vhost```
 * 磁盤總量/利用率
-  esxi.df.size.kilobytes
-  esxi.df.used.percentage
+  ```esxi.df.size.kilobytes```
+  ```esxi.df.used.percentage```
 * 磁盤錯誤
-  esxi.disk.allocationfailure
+  ```esxi.disk.allocationfailure```
 * 網卡的輸出入流量/封包數
-  esxi.net.in.octets
-  esxi.net.in.ucast.pkts
-  esxi.net.in.multicast.pkts
-  esxi.net.in.broadcast.pkts
-  esxi.net.out.octets
-  esxi.net.out.ucast.pkts
-  esxi.net.out.multicast.pkts
-  esxi.net.out.broadcast.pkts
+  ```esxi.net.in.octets```
+  ```esxi.net.in.ucast.pkts```
+  ```esxi.net.in.multicast.pkts```
+  ```esxi.net.in.broadcast.pkts```
+  ```esxi.net.out.octets```
+  ```esxi.net.out.ucast.pkts```
+  ```esxi.net.out.multicast.pkts```
+  ```esxi.net.out.broadcast.pkts```
 	
 
 ## 安装
 
-从[这里](https://github.com/humorless/esxicollector) 下载。
+从[这里](https://github.com/humorless/esxicollector)下载。
 
   1. 安装SNMP指令  
      ```yum -y install net-snmp net-snmp-utils```
