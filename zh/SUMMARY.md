@@ -42,6 +42,7 @@
   * [Memcache监控](usage/memcache.md)
   * [RabbitMQ监控](usage/rabbitmq.md)
   * [交换机监控](usage/switch.md)
+  * [Esxi监控](usage/esxi.md)
   * [Windows主机监控](usage/win.md)
   * [HAProxy监控](usage/haproxy.md)
   * [docker容器监控](usage/docker.md)
