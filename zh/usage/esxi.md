@@ -13,30 +13,38 @@ esxicollector需要透过cronjob来配置。在一台可以跑cronjob的机器�
 采集的metric列表：
 
 * CPU利用率
+
   `esxi.cpu.core`
 
 * 内存總量/利用率
+
   `esxi.cpu.memory.kliobytes.size`
   `esxi.cpu.memory.kliobytes.used`
   `esxi.cpu.memory.kliobytes.avail`
 
-* 运行的进程数 
+* 运行的进程数
+
   `esxi.current.process`
 
-* 登入的使用者数 
+* 登入的使用者数
+
   `esxi.current.user`
 
-* 虚拟机器数 
+* 虚拟机器数
+
   `esxi.current.vhost`
 
-* 磁盤總量/利用率 
+* 磁盤總量/利用率
+
   `esxi.df.size.kilobytes`
   `esxi.df.used.percentage`
 
-* 磁盤錯誤 
+* 磁盤錯誤
+
   `esxi.disk.allocationfailure`
 
-* 網卡的輸出入流量/封包數 
+* 網卡的輸出入流量/封包數
+
   `esxi.net.in.octets`
   `esxi.net.in.ucast.pkts`
   `esxi.net.in.multicast.pkts`
@@ -52,18 +60,21 @@ esxicollector需要透过cronjob来配置。在一台可以跑cronjob的机器�
 从[这里](https://github.com/humorless/esxicollector)下载。
 
   1. 安装SNMP指令
-     `yum -y install net-snmp net-snmp-utils`
+
+  `yum -y install net-snmp net-snmp-utils`
 
   2. 下载VMware ESXi MIB档案，并且复制它们到资料夹`/usr/share/snmp/mibs`
 
   3. 设置SNMP的环境
-     `mkdir ~/.snmp`  
-     `echo "mibs +ALL" > ~/.snmp/snmp.conf`
+
+  `mkdir ~/.snmp`  
+  `echo "mibs +ALL" > ~/.snmp/snmp.conf`
 
   4. 在`esxi_collector.sh`填入合适的参数
 
   5. 设置cronjobs 
-     ` * * * * * esxi_collector.sh `
+  
+  ` * * * * * esxi_collector.sh `
 
 
 ## 延伸开发新的监控项
