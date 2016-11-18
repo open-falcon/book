@@ -10,4 +10,4 @@ solr_monitor是一个cron，每分钟跑一次脚本```solr_monitor.py```，主�
 
 脚本可以部署到Solr的各个实例，每个实例上运行一个cron，定时执行数据收集，即：与Solr实例一一对应
 
-如果一条服务器存在多个实例，可以通过修改```solr_monitor.py```中的```servers```属性，指定solr在当前服务器的实例地址，可完成本地一对多的数据收集
+如果一台服务器存在多个Solr实例，可以通过修改```solr_monitor.py```中的```servers```属性，增加Solr实例的地址完成本地一对多的数据收集
