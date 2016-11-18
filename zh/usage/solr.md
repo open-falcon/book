@@ -9,4 +9,5 @@ Solr的数据采集可以通过脚本[solr_monitor](https://github.com/shanshouc
 solr_monitor是一个cron，每分钟跑一次脚本```solr_monitor.py```，主要采集一些solr实例内存信息和缓存命中信息等等，然后组装为open-falcon规定的格式的数据，post给本机的falcon-agent。
 
 脚本可以部署到Solr的各个实例，每个实例上运行一个cron，定时执行数据收集，即：与Solr实例一一对应
+
 如果一条服务器存在多个实例，可以通过修改```solr_monitor.py```中的```servers```属性，指定solr在当前服务器的实例地址，可完成本地一对多的数据收集
