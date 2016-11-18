@@ -41,6 +41,7 @@
   * [MongoDB监控](usage/MongoDB.md)
   * [Memcache监控](usage/memcache.md)
   * [RabbitMQ监控](usage/rabbitmq.md)
+  * [Solr监控](usage/solr.md)
   * [交换机监控](usage/switch.md)
   * [Windows主机监控](usage/win.md)
   * [HAProxy监控](usage/haproxy.md)
@@ -71,4 +72,3 @@
   * [Linux常用监控指标](faq/linux-metrics.md)
   * [QQ群问答整理](faq/qq.md)
 * [changelog](changelog/README.md)
-
