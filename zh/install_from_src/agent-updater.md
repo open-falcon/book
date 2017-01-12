@@ -4,7 +4,7 @@
 
 个人开发了agent-updater这个工具，用于管理falcon-agent，agent-updater也有一个agent：ops-updater，可以看做是一个超级agent，用于管理其他agent的agent，呵呵，ops-updater推荐在装机的时候一起安装上。ops-updater通常是不会升级的。
 
-具体参看：http://ulricqin.com/project/ops-updater/ 
+具体参看：https://github.com/open-falcon/ops-updater 
 
 如果你想学习如何使用Go语言编写一个完整的项目，也可以研究一下agent-updater，我甚至录制了一个视频教程来演示一步一步如何开发出来的。课程链接：
 

@@ -21,7 +21,7 @@
 
 **3. 检查agent配置**
 
-大家之前部署agent的时候应该注意到agent配置文件中有配置plugin吧，现在到了用的时候了，把git仓库地址配置上，enabled设置为true。注意，配置的git仓库地址需要是任何机器上都可以拉取的，即`git://`或者`https://`打头的。如果agent之前已经部署到公司所有机器上了，那现在手工改配置可能略麻烦，之前讲过的嘛，用[ops-updater](http://ulricqin.com/project/ops-updater/)管理起来~
+大家之前部署agent的时候应该注意到agent配置文件中有配置plugin吧，现在到了用的时候了，把git仓库地址配置上，enabled设置为true。注意，配置的git仓库地址需要是任何机器上都可以拉取的，即`git://`或者`https://`打头的。如果agent之前已经部署到公司所有机器上了，那现在手工改配置可能略麻烦，之前讲过的嘛，用[ops-updater](https://github.com/open-falcon/ops-updater)管理起来~
 
 **4. 拉取plugin脚本**
 
