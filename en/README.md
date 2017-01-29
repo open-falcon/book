@@ -15,6 +15,8 @@ With everyone's enthusiastic support and help,Open-Falcon is developing at full 
 * QQ 3rd group:469342415(FULL)
 * QQ 2th group:516088946(JOIN US)
 
+* IRC : #open-falcon on freenode.net 
+
 
 # Acknowledgement
 
