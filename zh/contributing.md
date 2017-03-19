@@ -99,4 +99,5 @@
 - 安徽移动： 已部署使用500台
 - [博图纵横](http://www.wsp360.org)
 - [优软科技](http://www.usoftchina.com)
-
+- [瓜子二手车](https://www.guazi.com)
+- [58](http://www.58.com)
