@@ -48,17 +48,22 @@ We have compiled relevant component into binary version to make it easier to use
 
 Domestic users please click here to quickly download the compiled binary version.
 ```
-DOWNLOAD="https://github.com/open-falcon/of-release/releases/download/v0.1.0/open-falcon-v0.1.0.tar.gz"cd $WORKSPACE
+DOWNLOAD="https://github.com/open-falcon/of-release/releases/download/v0.1.0/open-falcon-v0.1.0.tar.gz"
+cd $WORKSPACE 
 
-mkdir ./tmp#download
+mkdir ./tmp
 wget $DOWNLOAD -O open-falcon-latest.tar.gz
 #uncompress
-tar -zxf open-falcon-latest.tar.gz -C ./tmp/for x in `find ./tmp/ -name "*.tar.gz"`;do \
-    app=`echo $x|cut -d '-' -f2`; \
-    mkdir -p $app; \
-    tar -zxf $x -C $app; \
-    done
-    ```
+tar -zxf open-falcon-latest.tar.gz -C ./tmp/
+
+for x in `find ./tmp/ -name "*.tar.gz"`; do
+    app=`echo $x|cut -d '-' -f2`;
+    mkdir -p $app;
+    tar -zxf $x -C $app;
+done
+
+rm -rf ./tmp && rm -f open-falcon-latest.tar.gz
+```
     
 ##Changelog
 
