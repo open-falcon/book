@@ -28,3 +28,4 @@ _testmain.go
 *.log
 .idea
 .DS_Store
+_book
