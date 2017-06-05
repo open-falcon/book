@@ -39,3 +39,4 @@ Open-Falcon 跟 Grafana 目前并不互相支持，所以您需要下面的PR
 有了 Templating 变量之后，我们就可以以它来代替 Endpoint 名称，选择我们关注的监控项，完成图表的新增。
 
 ![grafana4](https://raw.githubusercontent.com/hitripod/kordan.common.store/master/images/open-falcon/grafana_setting_4.png)
+
