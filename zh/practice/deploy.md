@@ -3,7 +3,7 @@
 
 ## 概述
 Open-Falcon组件，包括基础组件、作图链路、报警链路。小米公司部署Open-Falcon的架构，如下：
-![deploy-structure](http://www.tycloudstart.com/xiaomi/deploy/pict/falcon-deploy.png)
+![deploy-structure](https://raw.githubusercontent.com/open-falcon/book/master/zh/images/practice/deploy.png)
 
 其中，基础组件以绿色标注圈住、作图链路以蓝色圈住、报警链路以红色圈住，橙色填充的组件为域名。每个模块(子服务)都有自己的特性，根据其特性来制定部署策略。接下来，我们首先以白话的方式、**定性**描述Open-Falcon的部署演进，然后试图量化地分析每个组件的特点并给出一些部署建议。
 
