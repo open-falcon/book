@@ -1,6 +1,6 @@
 # 欢迎加入Open-Falcon社区
 
-在大家的热心支持和帮助下，[Open-Falcon](https://github.com/open-falcon/of-release)在一天天成长。目前：
+在大家的热心支持和帮助下，[Open-Falcon](https://github.com/open-falcon/falcon-plus) 在一天天成长。目前：
 
 1. 半年多时间，在github上取得了1300+ star
 1. 收到了几十个pull-request，上百个issue，用户讨论组成员4000+。
@@ -10,12 +10,12 @@
 
 ----
 - QQ三群：469342415 （请加该群）
-- QQ群：  373249123 （已满员）
 - QQ二群：516088946 （已满员）
+- QQ一群：373249123 （已满员）
 
 
 ----
-![微信公众号](http://open-falcon.org/images/open-falcon-qrcode_258.jpg)
+<img src="image/OpenFalcon_wechat.jpg" width = "250" height = "250" alt="微信公众号" align=center />
 
 
 ----
