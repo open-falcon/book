@@ -6,17 +6,17 @@
 
 ### Nodata配置
 进入Nodata配置主页，可以看到Nodata配置列表
-![nodata.list](../image/nodata_func_1.png)
+![nodata.list](../image/func_nodata_1.png)
 
 点击右上角的添加按钮，添加nodata配置。
-![nodata.config](../image/nodata_func_2.png)
+![nodata.config](../image/func_nodata_2.png)
 
 进行完上述配置后，分组`cop.xiaomi_owt.inf_pdl.falcon`下的所有机器，其采集项 `agent.alive`上报中断后，nodata服务就会补发一个取值为 `-1.0`、agent.alive的监控数据给监控系统。
 
 ### 策略配置
 配置了Nodata后，如果有数据上报中断的情况，Nodata配置中的默认值就会被上报。我们可以针对这个默认值，设置报警；只要收到了默认值，就认为发生了数据上报的中断（如果你设置的默认值，可能与正常上报的数据相等，那么请修改你的Nodata配置、使默认值有别于正常值）。将此策略，绑定到分组`cop.xiaomi_owt.inf_pdl.falcon`即可。
 
-![nodata.template](../image/nodata_func_3.png)
+![nodata.template](../image/func_nodata_3.png)
 
 ### 注意事项
 1. 配置名称name，要全局唯一。这是为了方便Nodata配置的管理。

@@ -74,17 +74,17 @@
 
 ### 集群聚合配置
 访问HostGroup，搜索节点cop.xiaomi_owt.inf_pdl.falcon，点击后面的aggregator链接，进入当前节点对应的aggregator列表，如下图所示：
-![aggregator.config](../image/aggregator_func_1.png)
+![aggregator.config](../image/func_aggregator_1.png)
 
 点击右上角的“新建”按钮，可进入aggregator编辑页面，如下图所示：
-![aggregator.edit](../image/aggregator_func_2.png)
-![aggregator.edit](../image/aggregator_func_3.png)
+![aggregator.edit](../image/func_aggregator_2.png)
+![aggregator.edit](../image/func_aggregator_3.png)
 注：Endpoint最好是跟HostGroup有绑定关系，这样方便使用模板来配置报警；否则需要Expression来配置报警
 
 ### 模板策略配置
 下面以报警模板为例，配置了aggregator后，如果想收到关于聚合的值的报警，需要在 **Endpoint所在的节点** 绑定的模板里面配下监控策略：
-![aggregator.alarm](../image/aggregator_func_4.png)
+![aggregator.alarm](../image/func_aggregator_4.png)
 
 ### 策略表达式配置
 如果已经配置模板策略，就不用再配置 [策略表达式](../philosophy/tags-and-hostgroup.md)
-![aggregator.expressions](../image/aggregator_func_5.png)
+![aggregator.expressions](../image/func_aggregator_5.png)
