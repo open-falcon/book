@@ -1,35 +1,6 @@
-# go开发环境搭建
-```bash
-cd ~
-wget http://dinp.qiniudn.com/go1.4.1.linux-amd64.tar.gz
-tar zxf go1.4.1.linux-amd64.tar.gz
-mkdir -p workspace/src
+# 环境准备
 
-echo "" >> .bashrc
-echo 'export GOROOT=$HOME/go' >> .bashrc
-echo 'export GOPATH=$HOME/workspace' >> .bashrc
-echo 'export PATH=$GOROOT/bin:$GOPATH/bin:$PATH' >> .bashrc
-echo "" >> .bashrc
-
-source .bashrc
-```
-
-# clone代码
-
-```bash
-cd $GOPATH/src
-mkdir github.com
-cd github.com
-git clone --recursive https://github.com/XiaoMi/open-falcon.git
-```
-
-# 编译一个组件(以agent为例)
-```bash
-cd $GOPATH/src/github.com/open-falcon/agent
-go get ./...
-./control build
-```
-
+请参考[环境准备](quick_install/prepare.md)
 # 自定义修改归档策略
 修改open-falcon/graph/rrdtool/rrdtool.go
 

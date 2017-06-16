@@ -10,16 +10,6 @@ falcon-agent有一个很大的特点，就是自发现，不用配置它应该�
 
 之后我们会介绍一个用于判断报警的组件：Judge，Judge需要获取所有的报警策略，让Judge去读取Portal的DB么？不太好。因为Judge的实例数目比较多，如果公司有几十万机器，Judge实例数目可能会是几百个，几百个Judge实例去访问Portal数据库，也是一个比较大的压力。既然HBS无论如何都要访问Portal的数据库了，那就让HBS去获取所有的报警策略缓存在内存里，然后Judge去向HBS请求。这样一来，对Portal DB的压力就会大大减小。
 
-## 源码安装
-
-```bash
-cd $GOPATH/src/github.com/open-falcon/hbs
-go get ./...
-./control build
-./control pack
-```
-
-最后一步会pack出一个tar.gz的包，拿着这个包去部署即可。
 
 ## 部署说明
 
@@ -46,25 +36,17 @@ hbs是可以水平扩展的，至少部署两个实例以保证可用性。一�
 
 ## 进程管理
 
-我们提供了一个control脚本来完成常用操作
-
-```bash
-./control start 启动进程
-./control stop 停止进程
-./control restart 重启进程
-./control status 查看进程状态
-./control tail 用tail -f的方式查看var/app.log
 ```
+# 启动
+./open-falcon start hbs
 
-## 验证
+# 停止
+./open-falcon stop hbs
 
-访问/health接口验证hbs是否工作正常。
+# 查看日志
+./open-falcon monitor hbs 
 
-```bash
-curl 127.0.0.1:6031/health
 ```
-
-另外就是查看hbs的log，log在var目录下
 
 ## 补充
 

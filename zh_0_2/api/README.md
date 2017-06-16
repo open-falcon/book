@@ -1,3 +1,2 @@
 # open-falcon api
-
-请移步[docs.openfalcon.apiary.io](http://docs.openfalcon.apiary.io)
+- [api v0.2](http://open-falcon.org/falcon-plus/)

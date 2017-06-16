@@ -1,3 +1,43 @@
+##[v0.2.0] 2017-06-17
+
+> https://github.com/open-falcon/falcon-plus/releases/tag/v0.2.0
+
+> http://www.jianshu.com/p/6fb2c2b4d030
+
+> **全新的前端**
+
+- Open-Falcon 所有前端组件进行了统一整合，包括dashboard、screen、portal、alarm-dashboard、UIC、fe、links等统一整合到了 [dashboard](https://github.com/open-falcon/dashboard) 组件；
+- Dashboard 全站增加权限控制；
+- Dashboard 增加删除指定 endpoint、counter 以及对应的 rrd 文件的功能；
+- Dashboard 首页默认展示 endpoint 列表，并支持 endpoint 列表和 counter 列表翻页功能；
+- Dashboard 增加删除一级 screen 的功能；
+- 支持将报警的 callback 参数和内容在 Dashboard 页面上展示；
+- 支持微信报警通道；
+- Dashboard 支持展示过往的历史报警信息；
+
+> **统一的后端**
+
+- alarm支持报警历史信息入库存储和展示；
+- 「报警合并」模块`links`的功能合并到统一前端 Dashboard 中，降低用户配置和维护成本；
+- 「报警发送」模块`sender`的功能合并到 alarm 中，降低用户配置和维护成本；
+- query的功能合并到了falcon-api组件中；
+- 支持非周期性上报数据存储；
+- agent支持通过自定义配置，只采集指定磁盘挂载点的磁盘监控数据；
+- agent支持配置一个默认 tag，这样通过该 agent 上报的所有数据都会自动追加这个tag；
+- judge新增报警判断函数`lookup(#num, limit)`，如果检测到过去num个周期内，有limit次符合条件就报警；
+
+> **过去那些等待已久的bugfix**
+
+- 修复grafana不支持metric含有大写字母的bug；
+- 修复agent写多个transfer高可用不生效的bug；
+- 修复agent发送数据给transfer的超时设置不合理的问题；
+
+> **全新的 [RESTful API](http://open-falcon.org/falcon-plus)**：让 open-falcon 没有难自动化的操作
+
+- 发布了全新设计的组件 falcon-api，falcon-plus 所有的功能都可以通过 RESTful API 来完成；
+- 统一前端 Dashboard 绝大部分功能都是通过 [falcon-plus](https://github.com/open-falcon/falcon-plus) [api](http://open-falcon.org/falcon-plus) 来实现；
+
+
 ## [0.1.0] 2016-03-08
 
 > https://github.com/open-falcon/of-release/releases/tag/v0.1.0

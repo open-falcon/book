@@ -6,52 +6,47 @@
 ### 安装mysql
 	yum install -y mysql-server
 
-### 创建工作目录
-```bash
-export HOME=/home/work
-export WORKSPACE=$HOME/open-falcon
-mkdir -p $WORKSPACE
-cd $WORKSPACE
+**注意，请确保redis和MySQL已启动。**
+
+### 初始化MySQL表结构
+
+```
+cd /tmp/ && git clone https://github.com/open-falcon/falcon-plus.git 
+cd /tmp/falcon-plus/scripts/mysql/db_schema/
+mysql -h 127.0.0.1 -u root -p < uic-db-schema.sql
+mysql -h 127.0.0.1 -u root -p < portal-db-schema.sql
+mysql -h 127.0.0.1 -u root -p < graph-db-schema.sql
+mysql -h 127.0.0.1 -u root -p < dashboard-db-schema.sql
+mysql -h 127.0.0.1 -u root -p < alarms-db-schema.sql
+rm -rf /tmp/falcon-plus/
 ```
 
-### 初始化mysql表结构
-```bash
-# open-falcon所有组件都无需root账号启动，推荐使用普通账号安装，提升安全性。此处我们使用普通账号：work来安装部署所有组件
-# 当然了，使用yum安装依赖的一些lib库的时候还是要有root权限的。
+**如果你是从v0.1.0升级到当前版本v0.2.0，那么只需要执行如下命令：**
 
-git clone https://github.com/open-falcon/scripts.git
-cd ./scripts/
-mysql -h localhost -u root --password="" < db_schema/graph-db-schema.sql
-mysql -h localhost -u root --password="" < db_schema/dashboard-db-schema.sql
-
-mysql -h localhost -u root --password="" < db_schema/portal-db-schema.sql
-mysql -h localhost -u root --password="" < db_schema/links-db-schema.sql
-mysql -h localhost -u root --password="" < db_schema/uic-db-schema.sql
+```
+mysql -h 127.0.0.1 -u root -p < alarms-db-schema.sql
 ```
 
+# 从源码编译
 
-### 下载编译好的组件
-** 我们把相关组件编译成了二进制，方便大家直接使用，这些二进制只能跑在64位Linux上 **
+首先，请确保你已经安装好了golang环境，如果没有安装，请参考 https://golang.org/doc/install
 
-> 国内用户点这里高速下载编[译好的二进制版本](http://pan.baidu.com/s/1eR1cNj8)
+```
+cd $GOPATH/src/github.com/open-falcon/falcon-plus/
 
-```bash
-DOWNLOAD="https://github.com/open-falcon/of-release/releases/download/v0.1.0/open-falcon-v0.1.0.tar.gz"
-cd $WORKSPACE
+# make all modules
+make all
 
-mkdir ./tmp
-#下载
-wget $DOWNLOAD -O open-falcon-latest.tar.gz
+# pack all modules
+make pack
 
-#解压
-tar -zxf open-falcon-latest.tar.gz -C ./tmp/
-for x in `find ./tmp/ -name "*.tar.gz"`;do \
-    app=`echo $x|cut -d '-' -f2`; \
-    mkdir -p $app; \
-    tar -zxf $x -C $app; \
-done
 ```
 
-### Changelog
+这时候，你会在当前目录下面，得到open-falcon-v0.2.0.tar.gz的压缩包，就表示已经编译和打包成功了。
 
-	http://book.open-falcon.org/zh/changelog/README.html
+# 下载编译好的二进制版本
+
+如果你不想自己编译的话，那么可以下载官方编译好的[二进制版本(x86 64位平台)](https://github.com/open-falcon/falcon-plus/releases)。
+
+
+到这一步，准备工作就完成了。 open-falcon-v0.2.0.tar.gz 这个二进制包，请大家解压到合适的位置，暂时保存，后续步骤需要使用。

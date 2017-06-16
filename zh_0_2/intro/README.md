@@ -23,7 +23,6 @@
 # Architecture
 
 ![open-falcon architecture](../image/func_intro_1.png)
-备注：虚线所在的aggregator组件还在设计开发阶段。
 
 每台服务器，都有安装falcon-agent，falcon-agent是一个golang开发的daemon程序，用于自发现的采集单机的各种数据和指标，这些指标包括不限于以下几个方面，共计200多项指标。
 
@@ -43,7 +42,7 @@
 
 另外，falcon-agent提供了一个proxy-gateway，用户可以方便的通过http接口，push数据到本机的gateway，gateway会帮忙高效率的转发到server端。
 
-falcon-agent，可以在我们的github上找到 :  https://github.com/open-falcon/agent
+falcon-agent，可以在我们的github上找到 :  https://github.com/open-falcon/falcon-plus
 
 # Data model
 
@@ -52,6 +51,7 @@ Data Model是否强大，是否灵活，对于监控系统用户的“使用效�
 hostA的磁盘空间，小于5%，就告警。一般的服务器上，都会有两个主要的分区，根分区和home分区，在zabbix里面，就得加两条规则；如果是hadoop的机器，一般还会有十几块的数据盘，还得再加10多条规则，这样就会痛苦，不幸福，不利于自动化（当然zabbix可以通过配置一些自动发现策略来搞定这个，不过比较麻烦）。
 
 open-falcon，采用和opentsdb相同的数据格式：metric、endpoint加多组key value tags，举两个例子：
+
 ```
 {
     metric: load.1min,
@@ -105,13 +105,13 @@ transfer转发到judge的每条数据，都会触发相关策略的判定，来�
 
 另外也支持突升突降类的判定和告警。
 
-# Query
+# API
 
 到这里，数据已经成功的存储在了graph里。如何快速的读出来呢，读过去1小时的，过去1天的，过去一月的，过去一年的，都需要在1秒之内返回。
 
-这些都是靠graph和query组件来实现的，transfer会将数据往graph组件转发一份，graph收到数据以后，会以rrdtool的数据归档方式来存储，同时提供查询RPC接口。
+这些都是靠graph和API组件来实现的，transfer会将数据往graph组件转发一份，graph收到数据以后，会以rrdtool的数据归档方式来存储，同时提供查询RPC接口。
 
-query面向终端用户，收到查询请求后，会去多个graph里面，查询不同metric的数据，汇总后统一返回给用户。
+API面向终端用户，收到查询请求后，会去多个graph里面，查询不同metric的数据，汇总后统一返回给用户。
 
 # Dashboard
 
@@ -125,12 +125,11 @@ dashboard首页，用户可以以多个维度来搜索endpoint列表，即可以
 当然，也可以查看清晰大图，横坐标上zoom in/out，快速筛选反选。总之用户的“使用效率”是第一要务。
 ![open-falcon big graph](../image/func_intro_4.png)
 
-# Web portal
-
 一个高效的portal，对于提升用户的“使用效率”，加成很大，平时大家都这么忙，能给各位SRE、Devs减轻一些负担，那是再好不过了。
 
 这是host group的管理页面，可以和服务树结合，机器进出服务树节点，相关的模板会自动关联或者解除。这样服务上下线，都不需要手动来变更监控，大大提高效率，降低遗漏和误报警。
 ![open-falcon portal HostGroup](../image/func_intro_5.png)
+
 一个最简单的模板的例子，模板支持继承和策略覆盖，模板和host group绑定后，host group下的机器会自动应用该模板的所有策略。
 ![open-falcon template](../image/func_intro_6.png)
 
@@ -151,7 +150,7 @@ open-falcon在这块，投入了较大的精力。我们把数据按照用途分
 
 对于绘图的数据来讲，查询要快是关键，同时不能丢失信息量。对于用户要查询100个metric，在过去一年里的数据时，数据量本身就在那里了，很难1秒之类能返回，另外就算返回了，前端也无法渲染这么多的数据，还得采样，造成很多无谓的消耗和浪费。我们参考rrdtool的理念，在数据每次存入的时候，会自动进行采样、归档。我们的归档策略如下，历史数据保存5年。同时为了不丢失信息量，数据归档的时候，会按照平均值采样、最大值采样、最小值采样存三份。
 
-```go
+```
 // 1分钟一个点存 12小时
 c.RRA("AVERAGE", 0.5, 1, 720)
 

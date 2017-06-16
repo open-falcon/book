@@ -1,4 +1,4 @@
-# 邮件短信发送接口
+# 邮件、短信、微信发送接口
 
 这个组件没有代码，需要各个公司自行提供。
 
@@ -23,3 +23,17 @@ params:
   - tos: 使用逗号分隔的多个邮件地址
 ```
 
+
+im发送http接口：
+
+```
+method: post
+params:
+  - content: im内容
+  - tos: 使用逗号分隔的多个im号码
+```
+
+不过你可以使用社区提供的`邮件发送网关`和`微信网关`
+
+- [邮件网关](https://github.com/open-falcon/mail-provider)
+- [微信网关](https://github.com/Yanjunhui/chat)
