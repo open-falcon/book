@@ -4,8 +4,8 @@
 
 ### 创建工作目录
 ```bash
-export HOME=/home/work
-export WORKSPACE=$HOME/open-falcon
+export FALCON_HOME=/home/work
+export WORKSPACE=$FALCON_HOME/open-falcon
 mkdir -p $WORKSPACE
 ```
 
@@ -15,6 +15,12 @@ tar -xzvf open-falcon-v0.2.0.tar.gz -C $WORKSPACE
 ```
 
 ### 在一台机器上启动所有的后端组件
+# 首先确认配置文件中数据库账号密码与实际相同，否则需要修改配置文件。
+```
+cd $WORKSPACE
+grep -Ilr 3306  ./ | xargs -n1 -- sed -i 's/root:password/real_user:real_password/g')
+```
+# 启动
 ```bash
 cd $WORKSPACE
 ./open-falcon start
