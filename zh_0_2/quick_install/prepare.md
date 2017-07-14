@@ -13,18 +13,18 @@
 ```
 cd /tmp/ && git clone https://github.com/open-falcon/falcon-plus.git 
 cd /tmp/falcon-plus/scripts/mysql/db_schema/
-mysql -h 127.0.0.1 -u root -p < uic-db-schema.sql
-mysql -h 127.0.0.1 -u root -p < portal-db-schema.sql
-mysql -h 127.0.0.1 -u root -p < graph-db-schema.sql
-mysql -h 127.0.0.1 -u root -p < dashboard-db-schema.sql
-mysql -h 127.0.0.1 -u root -p < alarms-db-schema.sql
+mysql -h 127.0.0.1 -u root -p < 1_uic-db-schema.sql
+mysql -h 127.0.0.1 -u root -p < 2_portal-db-schema.sql
+mysql -h 127.0.0.1 -u root -p < 3_dashboard-db-schema.sql
+mysql -h 127.0.0.1 -u root -p < 4_graph-db-schema.sql
+mysql -h 127.0.0.1 -u root -p < 5_alarms-db-schema.sql
 rm -rf /tmp/falcon-plus/
 ```
 
 **如果你是从v0.1.0升级到当前版本v0.2.0，那么只需要执行如下命令：**
 
 ```
-mysql -h 127.0.0.1 -u root -p < alarms-db-schema.sql
+mysql -h 127.0.0.1 -u root -p < 5_alarms-db-schema.sql
 ```
 
 # 从源码编译

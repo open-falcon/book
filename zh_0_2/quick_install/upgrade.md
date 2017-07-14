@@ -3,7 +3,7 @@
 ###新增数据库表
 ```
 cd $GOPATH/src/github.com/open-falcon/falcon-plus/scripts/mysql/db_schema/
-mysql -h 127.0.0.1 -u root -p < alarms-db-schema.sql
+mysql -h 127.0.0.1 -u root -p < 5_alarms-db-schema.sql
 ```
 
 **NOTE:** 
