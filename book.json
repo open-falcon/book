@@ -1,5 +1,6 @@
 {
     "variables": {
         "contact": "help@open-falcon.org"
-    }
+    },
+    "plugins": ["collapsible-menu"]
 }
