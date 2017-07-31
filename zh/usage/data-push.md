@@ -58,6 +58,57 @@ r = requests.post("http://127.0.0.1:1988/v1/push", data=json.dumps(payload))
 print r.text
 ```
 
+
+## 一个go的、自定义push数据到open-falcon的例子
+
+```
+package main
+
+import (
+	"bytes"
+	"encoding/json"
+	"fmt"
+	"io/ioutil"
+	"net/http"
+)
+
+func main() {
+	apiurl := "http://117.23.56.5:1988/v1/push"
+	type item struct {
+		Endpoint    string `json:"endpoint"`
+		Metric      string `json:"metric"`
+		Timestamp   int64  `json:"timestamp"`
+		Step        int    `json:"step"`
+		Value       int64  `json:"value"`
+		CounterType string `json:"counterType"`
+		Tags        string `json:"tags"`
+	}
+
+	type message struct {
+		Item []item `json:"item"`
+	}
+
+	//json序列化
+	var post message
+	post.Item = append(post.Item, item{Endpoint: "test-endpoint", Metric: "test-metric", Timestamp: 1500804940,
+		Step: 60, Value: 10, CounterType: "GAUGE", Tags: "idc=xixian"})
+	jsonStr, _ := json.Marshal(post.Item)
+	req, err := http.NewRequest("POST", apiurl, bytes.NewBuffer([]byte(jsonStr)))
+	req.Header.Set("Content-Type", "application/json")
+
+	client := &http.Client{}
+	resp, err := client.Do(req)
+
+	if err != nil {
+		panic(err)
+	}
+	defer resp.Body.Close()
+
+}
+
+```
+
+
 ## API详解
 
 - metric: 最核心的字段，代表这个采集项具体度量的是什么, 比如是cpu_idle呢，还是memory_free, 还是qps
