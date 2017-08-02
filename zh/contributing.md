@@ -96,7 +96,7 @@
 - [小世界](http://lil.world/)
 - [新东方在线](http://koolearn.com)
 - [唯品会](http://vip.com)
-- 安徽移动： 已部署使用500台
+- 安徽移动电子渠道
 - [博图纵横](http://www.wsp360.org)
 - [优软科技](http://www.usoftchina.com)
 - [瓜子二手车](https://www.guazi.com)
