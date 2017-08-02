@@ -28,7 +28,7 @@ yum groupinstall "Development tools"
 cd $WORKSPACE/dashboard/
 virtualenv ./env
 
-./env/bin/pip install -r pip_requirements.txt
+./env/bin/pip install -r pip_requirements.txt -i https://pypi.douban.com/simple
 ```
 
 ### 初始化数据库
