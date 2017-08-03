@@ -73,7 +73,7 @@ import (
 )
 
 func main() {
-	apiurl := "http://117.23.56.5:1988/v1/push"
+	apiurl := "http://127.0.0.1:1988/v1/push"
 	type item struct {
 		Endpoint    string `json:"endpoint"`
 		Metric      string `json:"metric"`
