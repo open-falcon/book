@@ -4,7 +4,7 @@ It is required to deploy "falcon-agent" for each machine. If there are just a sm
 
 A tool named "agent-updater" is developed, which can be used to manage "falcon-agent". "agent-updater" also has an agent: "ops-updater", which can be regarded as a super agent and used to manage the agents of other agents. It is recommended to install ops-updater together when setting the machine up. Usually, ops-upgrader doesn't need upgrades.
 
-Please refer to http://ulricqin.com/project/ops-updater/ for details.
+Please refer to https://github.com/open-falcon/ops-updater for details.
 
 If you want to learn how to use the Go language to write a complete project, you can study "agent-updater". I have even recorded a Video course to demonstrate how to develop it step by step. Tutorial link:
 

@@ -41,7 +41,9 @@
   * [MongoDB监控](usage/MongoDB.md)
   * [Memcache监控](usage/memcache.md)
   * [RabbitMQ监控](usage/rabbitmq.md)
+  * [Solr监控](usage/solr.md)
   * [交换机监控](usage/switch.md)
+  * [ESXi监控](usage/esxi.md)
   * [Windows主机监控](usage/win.md)
   * [HAProxy监控](usage/haproxy.md)
   * [docker容器监控](usage/docker.md)
@@ -50,6 +52,7 @@
   * [硬件监控](usage/hwcheck.md)
   * [LVS监控](usage/lvs.md)
   * [Url监控](usage/urlooker.md)
+  * [mesos](usage/mesos.md)
 * [设计理念](philosophy/README.md)
   * [数据模型](philosophy/data-model.md)
   * [话说数据采集](philosophy/data-collect.md)
@@ -71,4 +74,3 @@
   * [Linux常用监控指标](faq/linux-metrics.md)
   * [QQ群问答整理](faq/qq.md)
 * [changelog](changelog/README.md)
-
