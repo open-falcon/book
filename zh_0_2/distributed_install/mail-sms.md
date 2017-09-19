@@ -41,7 +41,7 @@ params:
 # LinkedSee灵犀云通道短信/语音通知接入
 目前open falcon支持LinkedSee灵犀云通道短信/语音通知API快速接入，只需一个API即可快速对接Open Falcon，快速让您拥有告警通知功能，90%的告警压缩比。云通道短信/语音通知接口接入步骤如下：
 ### 1、注册开通LinkedSee灵犀云通道
-LinkedSee灵犀云通道是专为IT运维打造的专属告警通道，多通道接入，最大程度避免堵塞，支持基于通知内容关键字的分析，合并同类事件，可以帮助您快速定位故障问题。访问LinkedSee灵犀标准版官网地址：https://www.linkedsee.com/site/entry#/register
+LinkedSee灵犀云通道是专为IT运维打造的专属告警通道，多通道接入，最大程度避免堵塞，支持基于通知内容关键字的分析，合并同类事件，可以帮助您快速定位故障问题。访问LinkedSee灵犀标准版官网地址：[注册地址](http://t.cn/RpkS0d2)
 ,注册灵犀账号，直接开通云通道服务。若已有账号，则直接登录即可。
 
 ![灵犀注册](../image/linkedsee_1.png)
