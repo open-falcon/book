@@ -66,3 +66,15 @@
 ----
 - Q: open-falcon 能监控交换机吗？
 - A: 可以的，请参考社区对 [交换机监控的解决方案](https://book.open-falcon.org/zh_0_2/usage/switch.html)。
+
+----
+- Q: open-falcon v0.2 中没有sender模块了吗？
+- A: 是的，为了减少维护成本和安装成本，在open-falcon v0.2 中，移除了sender模块，将该功能集成在alarm模块中了。
+
+----
+- Q: 
+- A: 
+
+----
+- Q: open-falcon 的报警历史是存储在什么地方的？ 
+- A: 在v0.1版本中，历史报警信息是不存储的，发送后就丢弃了；在v0.2中，做了改进，报警发送后会将历史报警存储在数据库中，请参考 `alarms` 库下面的表。当然，也可以通过 [API](http://open-falcon.org/falcon-plus/#/alarm_eventcases_list) 来访问这些信息。
