@@ -48,6 +48,7 @@
   * [LVS监控](usage/lvs.md)
   * [Url监控](usage/urlooker.md)
   * [mesos](usage/mesos.md)
+  * [vSphere监控](usage/vsphere.md)
 * [设计理念](philosophy/README.md)
   * [数据模型](philosophy/data-model.md)
   * [话说数据采集](philosophy/data-collect.md)
