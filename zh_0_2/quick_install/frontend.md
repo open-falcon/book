@@ -70,7 +70,7 @@ bash control stop
 bash control tail
 ```
 
-###dashbord管理
+### dashbord管理
 ```
 dashbord没有默认创建任何账号包括管理账号，需要你通过页面进行注册账号。
 想拥有管理全局的超级管理员账号，需要手动注册用户名为root的账号。
