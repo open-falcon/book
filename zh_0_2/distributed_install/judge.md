@@ -1,3 +1,5 @@
+<!-- toc -->
+
 # Judge
 
 Judge用于告警判断，agent将数据push给Transfer，Transfer不但会转发给Graph组件来绘图，还会转发给Judge用于判断是否触发告警。

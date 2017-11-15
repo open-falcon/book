@@ -1,3 +1,5 @@
+<!-- toc -->
+
 > 如何更新这个列表？
 
 1. 如果您在使用Open-Falcon，那么可以修改 [contributing.md](https://github.com/open-falcon/book/blob/master/zh/contributing.md) , 然后提交pull-request到[open-falcon/book](https://github.com/open-falcon/book)，等待merge过后，即可在这里显示。

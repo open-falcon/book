@@ -1,3 +1,5 @@
+<!-- toc -->
+
 # 历史数据查询
 
 任何push到open-falcon中的数据，事后都可以通过api组件提供的restAPI，来查询得到。

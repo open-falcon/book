@@ -1,3 +1,5 @@
+<!-- toc -->
+
 # Alarm
 
 alarm模块是处理报警event的，judge产生的报警event写入redis，alarm从redis读取处理，并进行不同渠道的发送。

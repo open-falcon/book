@@ -1,3 +1,5 @@
+<!-- toc -->
+
 # 自定义push数据到open-falcon
 
 不仅仅是falcon-agent采集的数据可以push到监控系统，一些场景下，我们自定义的一些数据指标，也可以push到open-falcon中，比如：

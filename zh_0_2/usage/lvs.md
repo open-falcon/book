@@ -1,3 +1,5 @@
+<!-- toc -->
+
 # lvs-metrics 简介
 lvs-metrics是一个基于open-falcon的LVS监控插件，通过这个插件，结合open-falcon agent/transfer，可以采集LVS服务状态，并将采集信息自动上报给open-falcon服务端
 

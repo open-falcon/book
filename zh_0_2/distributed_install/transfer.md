@@ -1,3 +1,5 @@
+<!-- toc -->
+
 # Transfer
 
 transfer是数据转发服务。它接收agent上报的数据，然后按照哈希规则进行数据分片、并将分片后的数据分别push给graph&judge等组件。

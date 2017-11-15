@@ -1,3 +1,5 @@
+<!-- toc -->
+
 > **如何从OpenFalcon v0.1 平滑升级到 FalconPlus v0.2?**
 
 ###新增数据库表

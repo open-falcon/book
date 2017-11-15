@@ -1,0 +1,14 @@
+versions-select
+splitter
+tbfed-pagefooter
+expandable-chapters-small
+sectionx
+github-buttons
+ace
+simple-page-toc
+anchors
+todo
+alerts
+emphasize
+anchor-navigation-ex
+ad"

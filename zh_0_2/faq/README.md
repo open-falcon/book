@@ -1,3 +1,5 @@
+<!-- toc -->
+
 # 大家最常问的问题
 
 - Q: open-falcon v0.2的api文档是如何生成的？API文档地址 http://open-falcon.org/falcon-plus/

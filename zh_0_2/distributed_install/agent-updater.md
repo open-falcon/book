@@ -1,3 +1,5 @@
+<!-- toc -->
+
 # Agent-updater
 
 每台机器都要部署falcon-agent，如果公司机器量比较少，用pssh、ansible、fabric之类的工具手工安装问题也不大。但是公司机器量多了之后，手工安装、升级、回滚falcon-agent将成为噩梦。

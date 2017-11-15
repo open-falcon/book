@@ -1,3 +1,5 @@
+<!-- toc -->
+
 [MongoDB performance monitor plugin for Open-Falcon](https://github.com/ZhuoRoger/mongomon)
 --------------------------------
 

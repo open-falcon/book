@@ -1,3 +1,5 @@
+<!-- toc -->
+
 # ESXi监控
 
 VMware的主体机器(host machine)是运行ESXi作业系统。没有办法安装Open-Falcon agent来监控，所以不能用普通的方式来做监控。

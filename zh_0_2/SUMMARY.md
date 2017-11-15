@@ -1,8 +1,12 @@
 # SUMMARY
-* [社区](README.md)
-  * [贡献列表](contributing.md)
-* [介绍](intro/README.md)
-* [安装](quick_install/README.md)
+
+### 第 Ⅰ 部分：社区
+* [社区介绍](README.md)
+* [贡献列表](contributing.md)
+* [项目介绍](intro/README.md)
+
+### 第 Ⅱ 部分：安装
+* [单机安装](quick_install/README.md)
   * [环境准备](quick_install/prepare.md)
   * [启动后端](quick_install/backend.md)
   * [安装前端](quick_install/frontend.md)
@@ -23,6 +27,8 @@
   * [Nodata](distributed_install/nodata.md)
   * [Aggregator](distributed_install/aggregator.md)
   * [Agent-updater](distributed_install/agent-updater.md)
+
+### 第 Ⅲ  部分：手册
 * [使用手册](usage/README.md)
   * [快速入门](usage/getting-started.md)
   * [Nodata配置](usage/nodata.md)
@@ -49,20 +55,25 @@
   * [Url监控](usage/urlooker.md)
   * [mesos](usage/mesos.md)
   * [vSphere监控](usage/vsphere.md)
+
+### 第 Ⅳ  部分：理念
 * [设计理念](philosophy/README.md)
   * [数据模型](philosophy/data-model.md)
   * [话说数据采集](philosophy/data-collect.md)
   * [plugin机制](philosophy/plugin.md)
   * [Tag和HostGroup](philosophy/tags-and-hostgroup.md)
+* [二次开发](dev/README.md)
+  * [社区贡献](dev/community_resource.md)
+  * [修改绘图曲线精度](dev/change_graph_rra.md)
+  * [修改网卡流量单位](dev/change_net_unit.md)
+  * [支持 Grafana 视图展现](dev/support_grafana.md)
+  * [API](api/README.md)
 * [实践经验](practice/README.md)
   * [部署](practice/deploy.md)
   * [自监控](practice/monitor.md)
-* [二次开发](dev/README.md)
-    * [社区贡献](dev/community_resource.md)
-    * [修改绘图曲线精度](dev/change_graph_rra.md)
-    * [修改网卡流量单位](dev/change_net_unit.md)
-    * [支持 Grafana 视图展现](dev/support_grafana.md)
-* [API](api/README.md)
+  * [Falcon-Graph扩容二三事](practice/graph-scaling.md)
+
+### 第 Ⅴ  部分：FAQ
 * [FAQ](faq/README.md)
   * [采集相关](faq/collect.md)
   * [报警相关](faq/alarm.md)

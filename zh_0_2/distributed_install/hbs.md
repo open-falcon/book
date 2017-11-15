@@ -1,3 +1,5 @@
+<!-- toc -->
+
 # HBS(Heartbeat Server)
 
 心跳服务器，公司所有agent都会连到HBS，每分钟发一次心跳请求。

@@ -1,3 +1,5 @@
+<!-- toc -->
+
 [OpenFalcon](http://open-falcon.org)是一款企业级、高可用、可扩展的开源监控解决方案。
 
 在大家的热心支持和帮助下，OpenFalcon 已经成为国内最流行的监控系统之一。

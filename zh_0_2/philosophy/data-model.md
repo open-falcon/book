@@ -1,3 +1,5 @@
+<!-- toc -->
+
 # Data model
 
 Open-Falcon，采用和OpenTSDB相似的数据格式：metric、endpoint加多组key value tags，举两个例子：

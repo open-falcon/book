@@ -2,5 +2,84 @@
     "variables": {
         "contact": "help@open-falcon.org"
     },
-    "plugins": ["-search"]
+    "styles": {
+        "website": "styles/website.css",
+        "ebook": "styles/ebook.css",
+        "pdf": "styles/pdf.css",
+        "mobi": "styles/mobi.css",
+        "epub": "styles/epub.css"
+    },
+    "plugins": [
+         "-search",
+         "versions-select",
+         "splitter",
+         "tbfed-pagefooter",
+         "expandable-chapters-small",
+         "sectionx",
+         "github-buttons",
+         "ace",
+         "simple-page-toc",
+         "anchors",
+         "todo",
+         "alerts",
+         "emphasize",
+         "anchor-navigation-ex",
+         "ad"
+    ],
+    "pluginsConfig": {
+        "fontsettings": {
+            "family": "serif",
+            "size": 1
+        },
+        "sectionx": {
+            "tag": "b"
+        },
+        "tbfed-pagefooter": {
+             "copyright":"Copyright &copy 2017 falcon-plus community",
+             "modify_label": "该文件修订时间：",
+             "modify_format": "YYYY-MM-DD HH:mm:ss"
+        },
+        "expandable-chapters-small":{},
+        "github-buttons": {
+            "buttons": [
+                {
+                    "user": "laiwei",
+                    "type": "follow",
+                    "size": "small",
+                    "width": "150",
+                    "count": true
+                },
+                {
+                    "user": "open-falcon",
+                    "repo": "falcon-plus",
+                    "type": "star",
+                    "size": "small"
+                }
+            ]
+        },
+        "simple-page-toc": {
+            "maxDepth": 3,
+            "skipFirstH1": true
+        },
+        "versions": {
+            "options": [
+                {
+                    "value": "/zh_0_2/",
+                    "text": "简体中文 v0.2（最新版）"
+                },
+                {
+                    "value": "/zh/",
+                    "text": "简体中文 v0.1"
+                },
+                {
+                    "value": "/en/",
+                    "text": "English v0.1"
+                }
+            ]
+        },
+        "ad": {
+            "contentTop": "<div>open-falcon</div>",
+            "contentBottom": ""
+        }
+    }
 }
