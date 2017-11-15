@@ -78,7 +78,7 @@
             ]
         },
         "ad": {
-            "contentTop": "<div>open-falcon</div>",
+            "contentTop": "",
             "contentBottom": ""
         }
     }
