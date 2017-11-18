@@ -66,7 +66,7 @@ Open-Falcon的底层存储，使用RRDTool时间序列数据库。在Transfer & 
     扩容台数：2台 => 4台
     压测过程中：单机持续写入130万点/秒，持续查询100W点/秒
 
-![压测结论](/zh_0_2/image/practice_graph-scaling_quantity.png)
+![压测结论](../image/practice_graph-scaling_quantity.png)
 
 压测结论，各项指标正常，各项资源使用并没有明显增加。
 concurrency的提高，并没有对扩容效率带来明显的提升。也从侧面说明，此方案，在读写比1:1的情况下，可以完美热扩容。
@@ -92,7 +92,7 @@ concurrency的提高，并没有对扩容效率带来明显的提升。也从侧
 
 每次扩容，都严格遵守扩容步骤，观察所有性能指标及数据的稳定性，并没有出现严重的断层及数据异常。下面将我们多次扩容的性能及指标数据分享给大家：（所有concurrency配置为:5）
 
-![扩容细节](/zh_0_2/image/practice_graph-scaling_stats.png)
+![扩容细节](../image/practice_graph-scaling_stats.png)
 
 * 说明1：此处主要说明性能上限，IO及内存的值，均为**峰值**
 * 说明2：由于笔者公司的监控系统持续有新指标的写入，因此**迁移指标稳定时间**这个值，对开源版Graph无太大参考意义
@@ -127,16 +127,16 @@ concurrency的提高，并没有对扩容效率带来明显的提升。也从侧
 
 
 RRD文件迁移量变化:
-![](/zh_0_2/image/practice_graph-scaling_rrd.png)
+![](../image/practice_graph-scaling_rrd.png)
 
 老集群IO.util:
-![](/zh_0_2/image/practice_graph-scaling_io01.png)
+![](../image/practice_graph-scaling_io01.png)
 
 老集群IO.read.MB:
-![](/zh_0_2/image/practice_graph-scaling_io02.png)
+![](../image/practice_graph-scaling_io02.png)
 
 新集群IO.write.MB:
-![](/zh_0_2/image/practice_graph-scaling_io03.png)
+![](../image/practice_graph-scaling_io03.png)
 
 
 作者：[高家升](http://blog.gaojiasheng.com/) [聂安](https://github.com/niean) [钱威](https://github.com/n4mine)
