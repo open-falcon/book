@@ -1,2 +1,1 @@
-<!-- toc -->
-
+../zh/donate.md
