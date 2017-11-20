@@ -102,4 +102,4 @@
 - [瓜子二手车](https://www.guazi.com)
 - [58](http://www.58.com)
 - [艺龙](http://www.elong.com)
-- 科大讯飞股份有限公司
+- [科大讯飞股份有限公司]（http://www.iflytek.com/）
