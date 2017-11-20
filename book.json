@@ -17,7 +17,6 @@
          "expandable-chapters-small",
          "sectionx",
          "github-buttons",
-         "ace",
          "simple-page-toc",
          "anchors",
          "todo",
@@ -35,7 +34,7 @@
             "tag": "b"
         },
         "tbfed-pagefooter": {
-             "copyright":"Copyright &copy 2017 falcon-plus community",
+             "copyright":"Copyright &copy 2017 FalconPlus Community",
              "modify_label": "该文件修订时间：",
              "modify_format": "YYYY-MM-DD HH:mm:ss"
         },
@@ -43,10 +42,10 @@
         "github-buttons": {
             "buttons": [
                 {
-                    "user": "laiwei",
+                    "user": "open-falcon",
                     "type": "follow",
                     "size": "small",
-                    "width": "150",
+                    "width": "180",
                     "count": true
                 },
                 {
