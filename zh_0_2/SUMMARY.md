@@ -71,7 +71,7 @@
 * [实践经验](practice/README.md)
   * [部署](practice/deploy.md)
   * [自监控](practice/monitor.md)
-  * [Falcon-Graph扩容二三事](practice/graph-scaling.md)
+  * [Graph扩容二三事](practice/graph-scaling.md)
 
 ### 第 Ⅴ  部分：FAQ
 * [FAQ](faq/README.md)
