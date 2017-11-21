@@ -139,7 +139,10 @@ RRD文件迁移量变化:
 ![](../image/practice_graph-scaling_io03.png)
 
 
-作者：[高家升](http://blog.gaojiasheng.com/) [聂安](https://github.com/niean) [钱威](https://github.com/n4mine)
+> 作者：[高家升](http://blog.gaojiasheng.com/) [聂安](https://github.com/niean) [钱威](https://github.com/n4mine)
 
-链接：http://www.jianshu.com/p/a87ab10e09c7
-來源：简书
+    链接：http://www.jianshu.com/p/a87ab10e09c7
+    來源：简书
+
+> 参考资料：
+- [graph扩容历史数据自动迁移 - laiwei](http://www.jianshu.com/p/16baba04c959)

@@ -181,5 +181,5 @@ c.RRA("MIN", 0.5, 720, 730)
 
 # Contributors
 
-- [authors](/zh/authors.html)
-- [contributing](/zh/contributing.html)
+- [authors](../authors.html)
+- [contributing](../contributing.html)
