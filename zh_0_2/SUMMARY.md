@@ -55,6 +55,7 @@
   * [Url监控](usage/urlooker.md)
   * [mesos](usage/mesos.md)
   * [vSphere监控](usage/vsphere.md)
+  * [Flume监控](usage/flume.md)
 
 ### 第 Ⅳ  部分：理念
 * [设计理念](philosophy/README.md)
