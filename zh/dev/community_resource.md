@@ -12,6 +12,10 @@
 * [Nginx监控: 企业级监控标准](https://github.com/GuyCheung/falcon-ngx_metric)
 * [JMX监控: 基于open-falcon的jmx监控插件](https://github.com/toomanyopenfiles/jmxmon)
 * [适配Open-Falcon的综合监控SuitAgent](https://github.com/cqyijifu/OpenFalcon-SuitAgent)
+* [Baidu-RPC Monitor](https://github.com/solrex/brpc-open-falcon)
+* [Elasticsearch Monitor](https://github.com/solrex/es-open-falcon)
+* [Redis Monitor (多实例)](https://github.com/solrex/redis-open-falcon)
+* [SSDB Monitor](https://github.com/solrex/ssdb-open-falcon)
 
 
 ## 脚本
