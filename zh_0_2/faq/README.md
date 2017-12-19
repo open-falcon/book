@@ -74,8 +74,28 @@
 - A: 是的，为了减少维护成本和安装成本，在open-falcon v0.2 中，移除了sender模块，将该功能集成在alarm模块中了。
 
 ----
-- Q: 
-- A: 
+- Q: graph中，对于同一个Counter，在收到数据的时候，如果该数据的Timestamp小于Store中第一个数据的Timestamp，则该数据会被丢弃，这是为什么呢？ 我想知道，这个地方出于这个考虑，是因为rrdtool的限制么，不能在Store中插入数据，只能追加数据吗？ [issue](https://github.com/open-falcon/falcon-plus/issues/292)
+- A: 是的，在rrdtool的设计模式下，数据只能追加，不能插入。所以falcon在graph中提前对数据做了一个按照时间戳的排序。
+
+----
+- Q: 宕机后，nodata报警有一定时间的延迟和滞后，是什么原因？ [issue](https://github.com/open-falcon/falcon-plus/issues/294)
+- A: nodata的工作逻辑是：通过api去graph中查询数据，如果没有查询到数据，则对这个counter补发设定后的值。nodata的补发数据 和 用户正常上报数据，都是靠时钟来对齐的，因此在nodata的代码中，强行延迟了一到两个周期，以免造成 nodata 补发的值先到达graph，这样就会造成正常的值失效。
+
+----
+- Q: counter中的tag字段，里面的所有空格都被去掉这是出于什么考虑呢? [issue](https://github.com/open-falcon/falcon-plus/issues/289)
+- A: 这算作一个最佳实践的约定吧，并非代码实现层面的考虑。空格建议大家在上报之前自行替换为-号。
+
+----
+- Q: 报警信息里磁盘信息是以bit计数的，怎么控制单位呢？ [issue](https://github.com/open-falcon/falcon-plus/issues/275)
+- A: open-falcon中没有「单位」的概念，数据都是遵从用户上报时的含义，理解上要保持一致。
+
+----
+- Q: 上报数据中有中文时，graph 读取数据报错：errno: 0x023a, str:opening error [issue](https://github.com/open-falcon/falcon-plus/issues/274)
+- A: 这和中文没有关系，这个错误，应该是读取不存在的counter造成的，可以忽略。
+
+----
+- Q: 按天为单位，上报数据如何正确上报和展现？[issue](https://github.com/open-falcon/falcon-plus/issues/271)
+- A: step要设置为86400，并且坚持每天push一次数据；push上去后，服务端会对时间戳做归一化，即服务端记录的时间戳 = int(当前时间戳/86400)。
 
 ----
 - Q: open-falcon 的报警历史是存储在什么地方的？ 
