@@ -13,6 +13,11 @@
 * Winodws/Linux automatically report the property
 * Nginx monitoring: enterprise-level monitoring standard
 * JMX monitoring: monitoring plug-in based on open-falcon
+* [Baidu-RPC Monitor](https://github.com/solrex/brpc-open-falcon)
+* [Elasticsearch Monitor](https://github.com/solrex/es-open-falcon)
+* [Redis Monitor (Multiple Instance)](https://github.com/solrex/redis-open-falcon)
+* [SSDB Monitor](https://github.com/solrex/ssdb-open-falcon)
+
 ##Script
 * Summarize the plugin script of each cpu core 
 * Summarize the plugin script the process wastes 
