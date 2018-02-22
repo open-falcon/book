@@ -6,6 +6,9 @@ h1 , h2{
 .markdown-section>:first-child {
     margin-top: 0!important;
 }
+.markdown-section blockquote:last-child {
+    margin-bottom: 0.85em!important;
+}
 .page-wrapper {
     margin-top: -1.275em;
 }
@@ -36,7 +39,7 @@ pre[class*="language-"] {
 }
 
 .book .book-body .page-wrapper .page-inner section.normal {
-    font-size: 16px;
+    font-size: 14px;
     font-family:  "ubuntu", "Tahoma", "Microsoft YaHei", arial, sans-serif;
 }
 
