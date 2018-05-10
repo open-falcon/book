@@ -159,13 +159,13 @@ Transfer provides a plurality of debugging interfaces by way of http. There main
 **Transmitting data trace interface** ```HTTP:GET, curl -s "http://hostname:port/trace/$endpoint/$metric/$tags"```, output data by json format. Transfer can filter the data marked by ```/$endpoint/$metric/$tags```. You should set the filtration condition at the first calling and it doesn’t return any data, then it returns the received data once calling, at most 3 points. This interface is mainly used to debug.
 ```
 # trace without tags data,$endpoint=test.host, $metric=agent.alive
-curl -s "http://127.0.0.1:8433/trace/test.host/agent.alive"  | python -m json.tool
+curl -s "http://127.0.0.1:6060/trace/test.host/agent.alive"  | python -m json.tool
 # trace with tags data,$tags='module=graph,pdl=falcon'
-curl -s "http://127.0.0.1:8433/trace/test.host/qps/module=graph,pdl=falcon"  | python -m json.tool
+curl -s "http://127.0.0.1:6060/trace/test.host/qps/module=graph,pdl=falcon"  | python -m json.tool
 ```
 **Internal state statistics interface** ```HTTP:GET, curl -s "http://hostname:port/statistics/all"```, output the internal state data of json format, as follows. These data are collected by task component and pushed to the falcon system to show drawing and make alert. 
 ```
-curl -s "http://127.0.0.1:8433/statistics/all" | python -m json.tool
+curl -s "http://127.0.0.1:6060/statistics/all" | python -m json.tool
 # output
 {
     "data": [

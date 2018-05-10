@@ -165,16 +165,16 @@ transfer以http的方式提供了多个调试接口。主要有 内部状态统�
 
 ```bash
 # trace没有tags的数据,$endpoint=test.host, $metric=agent.alive
-curl -s "http://127.0.0.1:8433/trace/test.host/agent.alive"  | python -m json.tool
+curl -s "http://127.0.0.1:6060/trace/test.host/agent.alive"  | python -m json.tool
 
 # trace有tags的数据,$tags='module=graph,pdl=falcon'
-curl -s "http://127.0.0.1:8433/trace/test.host/qps/module=graph,pdl=falcon"  | python -m json.tool
+curl -s "http://127.0.0.1:6060/trace/test.host/qps/module=graph,pdl=falcon"  | python -m json.tool
 ```
 
 **内部状态统计接口**```HTTP:GET, curl -s "http://hostname:port/statistics/all"```，输出json格式的内部状态数据，格式如下。这些内部状态数据，被task组件采集后push到falcon系统，用于绘图展示、报警等。
 
 ```bash
-curl -s "http://127.0.0.1:8433/statistics/all" | python -m json.tool
+curl -s "http://127.0.0.1:6060/statistics/all" | python -m json.tool
 
 # output
 {
