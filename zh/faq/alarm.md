@@ -9,7 +9,7 @@
 5. 看transfer配置，是否正确配置了judge地址
 6. jduge提供了一个http接口用于debug，可以检查某个数据是否正确push上来了，比如qd-open-falcon-judge01.hd这个机器的cpu.idle数据，可以这么查看
 ```bash
-curl 127.0.0.1:6081/history/qd-open-falcon-judge01.hd/cpu.idle
+curl http://127.0.0.1:6081/history/qd-open-falcon-judge01.hd/cpu.idle
 ```
 7. 检查服务器的时间是否已经同步，可以用 [ntp](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/System_Administrators_Guide/sect-Understanding_chrony_and-its_configuration.html) 或 chrony 来实现
 
@@ -27,4 +27,3 @@ curl 127.0.0.1:6081/history/qd-open-falcon-judge01.hd/cpu.idle
 2. 检查hbs log
 3. 检查hbs配置的数据库地址是否正确
 4. 检查hbs的配置hosts是否配置为sync了，只有留空的时候hbs才会去写host表，host表中有数据才能在页面上添加机器
-

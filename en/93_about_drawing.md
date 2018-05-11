@@ -12,10 +12,10 @@ In order to solve these problems, we stopped the function that the task module c
 
 1. Run the task module, and correctly deploy graph cluster and its http port, namely the content in index.cluster in task deploy document. We shouldn’t delete any index if it is not correctly deployed here, or it will lead to the result that the index data are deleted by mistake. 
 
-2. Update all the index data. The method is: ```curl -s "$Hostname.Of.Task:$Http.Port/index/updateAll"```.
-Here, "$Hostname.Of.Task:$Http.Port" is the http address of task. PS: index data is stored in graph instance. Here, all the index updating of every graph instance is trigged by task. The more straightforward method is to run ```curl -s "127.0.0.1:6071/index/updateAll"``` on every graph instance to directly trigger the graph instance to update all the data (here, assuming that the http monitoring port of graph is 6071).
+2. Update all the index data. The method is: ```curl -s "http://$Hostname.Of.Task:$Http.Port/index/updateAll"```.
+Here, "$Hostname.Of.Task:$Http.Port" is the http address of task. PS: index data is stored in graph instance. Here, all the index updating of every graph instance is trigged by task. The more straightforward method is to run ```curl -s "http://127.0.0.1:6071/index/updateAll"``` on every graph instance to directly trigger the graph instance to update all the data (here, assuming that the http monitoring port of graph is 6071).
 
-3. After updating all the index data, start the expired index elimination ```curl -s "$Hostname.Of.Task:$Http.Port/index/delete"```.Before you delete the index, make sure that the total amount of the index update is complete. Typical method is to update all the indexes every Saturday and elimination index every Sunday. Leave enough time between index updating and deleting.
+3. After updating all the index data, start the expired index elimination ```curl -s "http://$Hostname.Of.Task:$Http.Port/index/delete"```.Before you delete the index, make sure that the total amount of the index update is complete. Typical method is to update all the indexes every Saturday and elimination index every Sunday. Leave enough time between index updating and deleting.
 4. 
 Here, we recommend that: if it is not necessary, do not delete the index; if you are sure to delete the index, be sure to update all the indexes of all the graph instances before deleting.
 

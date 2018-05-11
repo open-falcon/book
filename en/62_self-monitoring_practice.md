@@ -2,7 +2,7 @@
 
 ##Self-Monitoring Practice
 
-This section introduces some practical experience of Xiaomi in self-monitoring of the Open-Open-Falcon cluster.
+This section introduces some practical experience of Xiaomi in self-monitoring of the Open-Falcon cluster.
 
 ##Overview
 

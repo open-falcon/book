@@ -11,10 +11,10 @@
 
 1.运行task模块，并正确配置graph集群及其http端口，即task配置文件中index.cluster的内容。此处配置不正确，不应该进行索引删除操作，否则将导致索引数据的误删除。
 
-2.进行一次索引数据的全量更新。方法为 ``` curl -s "$Hostname.Of.Task:$Http.Port/index/updateAll" ```。这里，"$Hostname.Of.Task:$Http.Port"是task的http接口地址。
-PS:索引数据存放在graph实例上，这里，只是通过task，触发了各个graph实例的索引全量更新。更直接的办法，是，到每个graph实例上，运行```curl -s "127.0.0.1:6071/index/updateAll"```，直接触发graph实例 进行索引全量更新(这里假设graph的http监听端口为6071)。
+2.进行一次索引数据的全量更新。方法为 ``` curl -s "http://$Hostname.Of.Task:$Http.Port/index/updateAll" ```。这里，"$Hostname.Of.Task:$Http.Port"是task的http接口地址。
+PS:索引数据存放在graph实例上，这里，只是通过task，触发了各个graph实例的索引全量更新。更直接的办法，是，到每个graph实例上，运行```curl -s "http://127.0.0.1:6071/index/updateAll"```，直接触发graph实例 进行索引全量更新(这里假设graph的http监听端口为6071)。
 
-3.待索引全量更新完成后，发起过期索引删除 ``` curl -s "$Hostname.Of.Task:$Http.Port/index/delete" ```。运行索引删除前，请务必**确保索引全量更新已完成**。典型的做法为，周六运行一次索引全量更新，周日运行一次索引删除；索引更新和删除之间，留出足够的时间。
+3.待索引全量更新完成后，发起过期索引删除 ``` curl -s "http://$Hostname.Of.Task:$Http.Port/index/delete" ```。运行索引删除前，请务必**确保索引全量更新已完成**。典型的做法为，周六运行一次索引全量更新，周日运行一次索引删除；索引更新和删除之间，留出足够的时间。
 
 在此，建议您: **若无必要，请勿删除索引**；若确定要删除索引，请确保删除索引之前，对所有的graph实例进行一次索引全量更新。
 
@@ -113,7 +113,7 @@ curl -s "http://127.0.0.1:6071/statistics/all" | python -m json.tool
 # output
 {
     "data": [
-        { // counter of received items 
+        { // counter of received items
             "Cnt": 7,						// cnt
             "Name": "GraphRpcRecvCnt",	// name of counter
             "Other": {},					// other infos
