@@ -73,6 +73,10 @@
                 {
                     "value": "/en/",
                     "text": "English v0.1"
+                },
+                {
+                    "value": "/en_0_2/",
+                    "text": "English v0.2"
                 }
             ]
         },
