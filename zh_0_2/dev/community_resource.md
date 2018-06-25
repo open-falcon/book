@@ -8,8 +8,8 @@
 * [Switch Monitor](https://github.com/gaochao1/swcollector)
 * [Falcon-Agent宕机监控](https://github.com/freedomkk-qfeng/falcon-scripts/tree/master/agent_monitor)
 * [memcached](https://github.com/iambocai/falcon-monit-scripts/tree/master/memcached)
-* [Docker 監控Lib库](https://github.com/HunanTV/eru-metric)
-* [mesos 監控](https://github.com/mesos-utility/mesos-metrics)
+* [Docker 监控Lib库](https://github.com/HunanTV/eru-metric)
+* [mesos 监控](https://github.com/mesos-utility/mesos-metrics)
 * [Winodws/Linux 自动汇报资产](https://github.com/triaquae/MadKing)
 * [Nginx监控: 企业级监控标准](https://github.com/GuyCheung/falcon-ngx_metric)
 * [JMX监控: 基于open-falcon的jmx监控插件](https://github.com/toomanyopenfiles/jmxmon)
@@ -49,5 +49,3 @@
 * [来炜——Open-Falcon新版特性解析和规划](http://pan.baidu.com/s/1dFsJa5j)
 * [谢丹博——Open-Falcon在美团的落地与升华](http://pan.baidu.com/s/1o8Cd3MM)
 * [欧曜玮——企业级监控平台的变革与演进](http://pan.baidu.com/s/1hsvuHKg)
-
-

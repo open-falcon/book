@@ -83,7 +83,7 @@ func CoreNetMetrics(ifacePrefix []string) []*model.MetricValue {
 }
 ```
 
-舉例來說，我們可以直接在 agent 要上報數據的時候，將 Bit 轉換為 Byte，同時修改 Counter 的名稱，如下：
+举例來说，我们可以直接在 agent 要上报数据的时候，将 Bit 转换为 Byte，同时修改 Counter 的名称，如下：
 
 ```golang
 ret[idx*20+0] = CounterValue("net.if.in.bits", netIf.InBytes*8, iface)

@@ -1,6 +1,6 @@
 <!-- toc -->
 
-##[v0.2.0] 2017-06-17
+## [v0.2.0] 2017-06-17
 
 > https://github.com/open-falcon/falcon-plus/releases/tag/v0.2.0
 

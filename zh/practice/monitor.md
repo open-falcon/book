@@ -1,5 +1,5 @@
 # 自监控实践
-本文介绍了，小米公司在 Open-Open-Falcon集群自监控方面 的一些实践。
+本文介绍了，小米公司在 Open-Falcon集群自监控方面 的一些实践。
 
 ## 概述
 我们把对监控系统的监控，称为监控系统的自监控。自监控的需求，没有超出监控的业务范畴。同其他系统一样，自监控要做好两方面的工作: 故障报警和状态展示。故障报警，要求尽量实时的发现故障、及时的通知负责人，要求高可用性。状态展示，多用于事前预测、事后追查，实时性、可用性要求 较故障报警 低一个量级。下面我们从这两个方面，分别进行介绍。
@@ -13,18 +13,18 @@ Open-Falcon各个组件，都会提供一个描述自身服务可用性的自监
 	# API for my availability
 	接口URL
 		/health 检测本服务是否正常
-		
+
 	请求方法
 		GET http://$host:$port/health
 		$host 服务所在机器的名称或IP
 		$port 服务的http.server监听端口
-	
+
 	请求参数
 		无参数
-	
+
 	返回结果(string)
 		"ok"（没有返回"ok", 则服务不正常）
-		
+
 ```
 
 AntyEye组件主动拉取状态数据，通过本地配置加载监控实例、报警接收人信息、报警通道信息等，这样做，是为了简化报警链路、使故障的发现过程尽量实时&可靠。AntEye组件足够轻量，代码少、功能简单，这样能够保障单个AntEye实例的可用性；同时，AntEye是无状态的，能够部署多套，这进一步保证了自监控服务的高可用。
@@ -45,15 +45,15 @@ Open-Falcon的多数组件，都会提供一个查询服务状态数据的接口
 	# API for querying my statistics
 	接口URL
 		/counter/all 返回所有的状态数据
-	
+
 	请求方法
 		GET http://$host:$port/counter/all
 		$host 服务所在机器的名称或IP
 		$port 服务的http.server监听端口
-	
+
 	请求参数
 		无参数
-	
+
 	返回结果
 		// json格式
 		{
@@ -67,7 +67,7 @@ Open-Falcon的多数组件，都会提供一个查询服务状态数据的接口
             		"Time": "2015-08-19 15:52:08"
         		},
         		...
-			]	
+			]
 		}
 
 ```
@@ -84,7 +84,7 @@ Task组件，通过[配置文件](https://github.com/open-falcon/task/blob/maste
         "cluster" : [
             // "$module,$hostname:$port"，表示: 地址$hostname:$port对应了一个$module服务
             // 结合"srcUrlFmt"的配置,可以得到状态数据查询接口 "http://test.host01:6060/counter/all" 等
-            "transfer,test.host01:6060", 
+            "transfer,test.host01:6060",
             "graph,test.host01:6071",
             "task,test.host01:8001"
         ]
@@ -101,7 +101,7 @@ Task做数据适配时，将endpoint设置为数据来源的机器名`$hostname`
     	"Qps": 81848,
     	"Time": "2015-08-19 15:52:08"
    }
-	
+
 	# Task适配之后，得到两条监控数据
 	{
 		"endpoint": "test.host01", // Task配置collector.cluster中的配置项"transfer,test.host01:6060"中的机器名
@@ -152,7 +152,7 @@ Task做数据适配时，将endpoint设置为数据来源的机器名`$hostname`
 ```bash
 	## transfer
 	RecvCnt.Qps						接收数据的Qps
-	
+
 	GraphSendCacheCnt				转发数据至Graph的缓存长度
 	SendToGraphCnt.Qps				转发数据至Graph的Qps
 	SendToGraphDropCnt.Qps			转发数据至Graph时, 由于缓存溢出而Drop数据的Qps
@@ -169,7 +169,7 @@ Task做数据适配时，将endpoint设置为数据来源的机器名`$hostname`
 	GraphLastCnt.Qps  				处理Last请求的Qps
 	IndexedItemCacheCnt				已缓存的索引数量,即监控指标数量
 	IndexUpdateAll					全量更新索引的次数
-	
+
 	## query
 	HistoryRequestCnt.Qps			历史数据查询请求的Qps
 	HistoryResponseItemCnt.Qps		历史数据查询请求返回点数的Qps
@@ -179,14 +179,14 @@ Task做数据适配时，将endpoint设置为数据来源的机器名`$hostname`
 	CollectorCronCnt 				自监控状态数据采集的次数
 	IndexDeleteCnt					索引垃圾清除的次数
 	IndexUpdateCnt					索引全量更新的次数
-	
+
 	## gateway
 	RecvCnt.Qps						接收数据的Qps
 	SendCnt.Qps						发送数据至transfer的Qps
 	SendDropCnt.Qps					发送数据至transfer时,由于缓存溢出而Drop数据的Qps
 	SendFailCnt.Qps					发送数据至transfer时,发送失败的Qps
 	SendQueuesCnt 					发送数据至transfer时,发送缓存的长度
-	
+
 	## anteye
 	MonitorCronCnt					自监控进行状态判断的总次数
 	MonitorAlarmMailCnt				自监控报警发送邮件的次数
@@ -199,5 +199,5 @@ Task做数据适配时，将endpoint设置为数据来源的机器名`$hostname`
 	JudgeCronCnt						nodata判断的次数
 	NdConfigCronCnt 					拉取nodata配置的次数
 	SenderCnt.Qps						发送模拟数据的Qps
-		
+
 ```
