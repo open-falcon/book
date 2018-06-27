@@ -36,3 +36,25 @@ curl http://127.0.0.1:6081/history/host01/qps/module=judge,project=falcon
 ```
 如果调用上述接口返回空值，则说明agent没有上报数据、或者transfer服务异常。
 
+**注意**: v0.2.1版本之后judge新增了优化内存使用的功能，如果metric没有对应的strategy或者expression，judge内存中不会存储该metirc的历史数据，所以判断报警数据收集这条链路是否正常时需要先确定metric是否有对应的报警条件
+
+```bash
+# 检查metric是否有对应的strategy
+curl http://127.0.0.1:6081/strategy/$endpoint/$counter
+
+# 检查metric是否有对应的expression
+curl http://127.0.0.1:6081/expression/$counter
+
+
+# $endpoint和$counter是变量，metric没有tag时是不能设置expression报警条件的，当上报的数据没有携带tag时只检测是否有对应的strategy即可
+# 举个例子:
+curl http://127.0.0.1:6081/strategy/host01/cpu.idle
+
+# counter=$metric/sorted($tags)
+# 如果上报的数据带有tag，需要检测streategy和expression是否存在，访问方式是这样的，比如：
+curl http://127.0.0.1:6081/strategy/host01/qps/module=judge,project=falcon
+
+curl http://127.0.0.1:6081/expression/qps/module=judge
+
+curl http://127.0.0.1:6081/expression/qps/project=falcon
+```
