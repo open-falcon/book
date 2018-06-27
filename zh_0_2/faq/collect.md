@@ -46,13 +46,15 @@ curl http://127.0.0.1:6081/strategy/$endpoint/$counter
 curl http://127.0.0.1:6081/expression/$counter
 
 
-# $endpoint和$counter是变量，metric没有tag时是不能设置expression报警条件的，当上报的数据没有携带tag时只检测是否有对应的strategy即可
+# $endpoint和$counter是变量
+# expression报警条件必须包含tag，当metric上报数据没有携带tag时只检测是否有对应的strategy即可
 # 举个例子:
 curl http://127.0.0.1:6081/strategy/host01/cpu.idle
 
 # counter=$metric/sorted($tags)
-# 如果上报的数据带有tag，需要检测streategy和expression是否存在，访问方式是这样的，比如：
-curl http://127.0.0.1:6081/strategy/host01/qps/module=judge,project=falcon
+# 如果上报的数据带有tag，需要检测streategy和expression是否存在
+# 举个例子: 当上报的metric为qps, tag为module=judge,project=falcon时, 访问方式是这样的：
+curl http://127.0.0.1:6081/strategy/host01/qps
 
 curl http://127.0.0.1:6081/expression/qps/module=judge
 
