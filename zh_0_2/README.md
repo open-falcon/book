@@ -17,7 +17,6 @@
 - The OpenFalcon logo and website were contributed by Cepave Design Team.
 - [Wei Lai](https://github.com/laiwei) is the founder of OpenFalcon software and community. 
 - The [english doc](http://book.open-falcon.com/en/index.html) is translated by [宋立岭](https://github.com/songliling).
-- The website is proudly powered by [didiyun](http://www.didiyun.com).
 
 -----
 - QQ四群：697503992 （请加该群）
