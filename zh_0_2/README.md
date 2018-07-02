@@ -1,6 +1,6 @@
 <!-- toc -->
 
-[OpenFalcon](http://open-falcon.org)是一款企业级、高可用、可扩展的开源监控解决方案。
+[OpenFalcon](http://open-falcon.com)是一款企业级、高可用、可扩展的开源监控解决方案。
 
 在大家的热心支持和帮助下，OpenFalcon 已经成为国内最流行的监控系统之一。
 
@@ -16,8 +16,7 @@
 - OpenFalcon was initially started by Xiaomi and we would also like to acknowledge contributions by engineers from [these companies](./contributing.html) and [these individual developers](./contributing.html).
 - The OpenFalcon logo and website were contributed by Cepave Design Team.
 - [Wei Lai](https://github.com/laiwei) is the founder of OpenFalcon software and community. 
-- The [english doc](http://book.open-falcon.org/en/index.html) is translated by [宋立岭](https://github.com/songliling).
-- The website is proudly powered by [didiyun](http://www.didiyun.com).
+- The [english doc](http://book.open-falcon.com/en/index.html) is translated by [宋立岭](https://github.com/songliling).
 
 -----
 - QQ四群：697503992 （请加该群）

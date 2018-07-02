@@ -33,7 +33,7 @@
 * [Golang perfcounter](https://github.com/niean/goperfcounter)
 
 ## Others
-* [SMS sender](http://book.open-falcon.org/en_0_2/distributed_install/mail-sms.html)
+* [SMS sender](http://book.open-falcon.com/en_0_2/distributed_install/mail-sms.html)
 * [Mail sender](https://github.com/niean/mailsender)
 * [Open-Falcon Ansible Playbook](https://github.com/iambocai/falcon-playbook)
 * [Open-Falcon Docker](https://github.com/frostynova/open-falcon-docker)

@@ -1,6 +1,6 @@
 <!-- toc -->
 
-[OpenFalcon](http://open-falcon.org) is an expandable open source monitor resolution with high availability at enterprise-level.
+[OpenFalcon](http://open-falcon.com) is an expandable open source monitor resolution with high availability at enterprise-level.
 
 With the warm support and help of everyone, OpenFalcon has become one of the most popular monitor systems in China.
 
@@ -16,8 +16,7 @@ Now:
 - OpenFalcon was initially started by Xiaomi and we would also like to acknowledge contributions by engineers from [these companies](./contributing.html) and [these individual developers](./contributing.html).
 - The OpenFalcon logo and website were contributed by Cepave Design Team.
 - [Wei Lai](https://github.com/laiwei) is the founder of OpenFalcon software and community. 
-- The [english doc](http://book.open-falcon.org/en/index.html) is translated by [Liling Song](https://github.com/songliling).
-- The website is powered by [didiyun](http://www.didiyun.com).
+- The [english doc](http://book.open-falcon.com/en/index.html) is translated by [Liling Song](https://github.com/songliling).
 
 -----
 - QQ Group No. 4: 697503992 (join this group)

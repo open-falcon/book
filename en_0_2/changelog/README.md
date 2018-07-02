@@ -34,10 +34,10 @@
 - Fixed a bug that several Transfers with high availability written by Agent didn't work;
 - Fix a bug that the time-out limit setting is unreasonable when Agent is sending data to Transfer; 
 
-> **Brand New [RESTful API](http://open-falcon.org/falcon-plus)**：no more operations are hard to automate in Open-Falcon
+> **Brand New [RESTful API](http://open-falcon.com/falcon-plus)**：no more operations are hard to automate in Open-Falcon
 
 - Brand new components Falcon-api is released; all the features in Falcon-plus are available in RESTful API; 
-- The integration of most features in front-end Dashboard is achieved by [falcon-plus](https://github.com/open-falcon/falcon-plus) [api](http://open-falcon.org/falcon-plus);
+- The integration of most features in front-end Dashboard is achieved by [falcon-plus](https://github.com/open-falcon/falcon-plus) [api](http://open-falcon.com/falcon-plus);
 
 
 ## [0.1.0] 2016-03-08
