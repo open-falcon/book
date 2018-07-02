@@ -83,7 +83,7 @@ collector
 Please changes the configuration of collector after the Task module is deployed, so that Task can correctly collect the internal status of Transfer and Graph. Please the the configuration of monitor, so that Task module can self-check each module of Open-Falon (currently including  Transfer, Graph, Query, Judge etc.)
 
 ### About Self-Monitor Alarm
-In need of multi-spot monitoring, we removed the self-monitor alarm feature from Task module since v0.0.10. For information of self-monitor of  Open-Falcon, please visit [here](http://book.open-falcon.org/zh/practice/monitor.html)。
+In need of multi-spot monitoring, we removed the self-monitor alarm feature from Task module since v0.0.10. For information of self-monitor of  Open-Falcon, please visit [here](http://book.open-falcon.com/zh/practice/monitor.html)。
 
 ### About Deleting Out-Dated Index
 After monitor data is stopped from reporting, corresponding index will stop updating as well, becoming out-dated index that confuses users. So some users hope that we delete out-dated index.

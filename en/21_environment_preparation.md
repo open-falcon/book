@@ -67,7 +67,7 @@ rm -rf ./tmp && rm -f open-falcon-latest.tar.gz
     
 ##Changelog
 
-http://book.open-falcon.org/zh/changelog/README.html
+http://book.open-falcon.com/zh/changelog/README.html
 
 
 

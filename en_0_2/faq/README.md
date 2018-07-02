@@ -1,7 +1,7 @@
 <!-- toc -->
 
 
-1. How does was the API file of Open-falcon v0.2 created? (The address of API file:  http://open-falcon.org/falcon-plus/)
+1. How does was the API file of Open-falcon v0.2 created? (The address of API file:  http://open-falcon.com/falcon-plus/)
 > Users create yaml description file through Fi, then set up a static sites through Jekyll served by github. The source code of API site is saved at  https://github.com/open-falcon/falcon-plus/tree/master/docs. Users can open the gen_doc setting of API module. API will record the request and reply of the users and use them as references while writing API yaml file.
 
 2. Does open-falcon v0.2 has administrator accounts?
@@ -17,7 +17,7 @@
 > Yes. Please refer to [pull-request #66](https://github.com/open-falcon/falcon-plus/pull/66)。
 
 6. How to separately compile and install API module in open-falcon v0.2?
-> Please refer to [Environment Prepartion](https://book.open-falcon.org/zh_0_2/quick_install/prepare.html). All you need to do is to run `make.api` in the directory of falcon-plus.
+> Please refer to [Environment Prepartion](https://book.open-falcon.com/zh_0_2/quick_install/prepare.html). All you need to do is to run `make.api` in the directory of falcon-plus.
 
 7. Does open-falcon v0.2 haves administrator accounts?
 > Yes. Please refer to [open-falcon grafana datasource](https://github.com/open-falcon/grafana-openfalcon-datasource).
@@ -41,16 +41,16 @@
 > Dashboard of Open-falcon begins to support i18n since v0.2. For more information, please visit [here](https://github.com/open-falcon/dashboard/blob/master/i18n.md).
 
 14. Can Open-falcon  send alarms to WeChat (or DingTalk)?
-> The native open-falcon v0.2  supports sending alarms in WeChat. Please refer to  [alarm configuration](https://book.open-falcon.org/zh_0_2/distributed_install/mail-sms.html) and [WeChat Gateway Setup](https://github.com/Yanjunhui/chat) 。As for sending alarms in Dingtalk, please refer to [issue #134](https://github.com/open-falcon/falcon-plus/issues/134).
+> The native open-falcon v0.2  supports sending alarms in WeChat. Please refer to  [alarm configuration](https://book.open-falcon.com/zh_0_2/distributed_install/mail-sms.html) and [WeChat Gateway Setup](https://github.com/Yanjunhui/chat) 。As for sending alarms in Dingtalk, please refer to [issue #134](https://github.com/open-falcon/falcon-plus/issues/134).
 
 15. How can I immigrate the data when I increase the node of Graph during  Open-falcon expansion?
 > For smooth expansion, please refer to [immigration of history data during Graph expansion](http://www.jianshu.com/p/16baba04c959)。
 
 16. Can Open-falcon monitor Windows?
-> Yes. Please refer to  [solutions for monitoring Windows](https://book.open-falcon.org/zh_0_2/usage/win.html)。
+> Yes. Please refer to  [solutions for monitoring Windows](https://book.open-falcon.com/zh_0_2/usage/win.html)。
 
 17. Can Open-falcon monitor the switches? 能监控交换机吗?
-> Yes. Please refer to  [solutions for monitoring switches](https://book.open-falcon.org/zh_0_2/usage/switch.html) in the community.
+> Yes. Please refer to  [solutions for monitoring switches](https://book.open-falcon.com/zh_0_2/usage/switch.html) in the community.
 
 18. Sender module is removed from Open-falcon since v0.2?
 > Yes, we removed it to reduce the cost of maintenance and installation since v0.2 and integrated it with Alarm module.
@@ -74,4 +74,4 @@
 > User need to set step to 86400 and push the data every day. After that, the service endpoint will normalize the timestamp by the formula of "timestamp at service endpoint = int (current timestamp/86400)".
 
 25. Where is the history alarm data of Open-falcon saved?
-> In v0.1, the history data was discarded and not saved. We made an improvement in v0.2 so that history alarm data is saved in the database after being sent. Please refer to the list in the `alarms` database. Of course, these data is available at  [API](http://open-falcon.org/falcon-plus/#/alarm_eventcases_list).
+> In v0.1, the history data was discarded and not saved. We made an improvement in v0.2 so that history alarm data is saved in the database after being sent. Please refer to the list in the `alarms` database. Of course, these data is available at  [API](http://open-falcon.com/falcon-plus/#/alarm_eventcases_list).

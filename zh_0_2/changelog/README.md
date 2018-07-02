@@ -34,10 +34,10 @@
 - 修复agent写多个transfer高可用不生效的bug；
 - 修复agent发送数据给transfer的超时设置不合理的问题；
 
-> **全新的 [RESTful API](http://open-falcon.org/falcon-plus)**：让 open-falcon 没有难自动化的操作
+> **全新的 [RESTful API](http://open-falcon.com/falcon-plus)**：让 open-falcon 没有难自动化的操作
 
 - 发布了全新设计的组件 falcon-api，falcon-plus 所有的功能都可以通过 RESTful API 来完成；
-- 统一前端 Dashboard 绝大部分功能都是通过 [falcon-plus](https://github.com/open-falcon/falcon-plus) [api](http://open-falcon.org/falcon-plus) 来实现；
+- 统一前端 Dashboard 绝大部分功能都是通过 [falcon-plus](https://github.com/open-falcon/falcon-plus) [api](http://open-falcon.com/falcon-plus) 来实现；
 
 
 ## [0.1.0] 2016-03-08

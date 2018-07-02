@@ -293,5 +293,5 @@ index e9e500d..d57b1c7 100755
 -LOG_PATH = os.path.join(BASE_DIR,"log/")
 +# portal site config
 +MAINTAINERS = ['root']
-+CONTACT = 'root@open-falcon.org'
++CONTACT = 'root@open-falcon.com'
 ```

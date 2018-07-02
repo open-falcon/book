@@ -1,6 +1,6 @@
 {
     "variables": {
-        "contact": "help@open-falcon.org"
+        "contact": "help@open-falcon.com"
     },
     "styles": {
         "website": "styles/website.css",
@@ -34,7 +34,7 @@
             "tag": "b"
         },
         "tbfed-pagefooter": {
-             "copyright":"Copyright &copy 2017 FalconPlus Community",
+             "copyright":"Copyright 2015 - 2018 Xiaomi Inc.",
              "modify_label": "该文件修订时间：",
              "modify_format": "YYYY-MM-DD HH:mm:ss"
         },

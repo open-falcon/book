@@ -29,7 +29,7 @@ The deployment Open-Falon is evolving with the increasing number of machine (mon
 Agent is supposed to be deployed in every instance of the machine. Agent retrieves the configuration information  from HBS, collects the data and report them to Transfer. Agent itself consumes little resources and it is reliable and stable. Xiaomi has deployed over 10,000 Agent instances and they have been running stably for over a year.
 
 ### Transfer
-Transfer is a stateless cluster. It receives data sent from Agent, slices them according to the consistent hashing algorithm and transfers the sliced data to Graph and Judge. Transfer also will print a copy of data to opentsdb but this feature is still under design.
+Transfer is a stateless cluster. It receives data sent from Agent, slices them according to the consistent hashing algorithm and transfers the sliced data to Graph and Judge. Transfer also will print a copy of data to opentsdb.
 
 Transfer cluster can be shrinked and expanded in some situation and the server can be immigrated sometimes. Those operations can effect the stability of Transfer cluster. If one Transfer instance stops working, it needs to be removed from the Transfer cluster. In order to eliminate the effect of removing a Transfer instance, we suggest users to attach a domain name to the Transfer cluster. Agent will visit Transfer cluster through the domain name, achieving automatic switching function. When there are several IDCs, we suggest users to deploy enough Transfer instances in each IDC and let Agent push the data to the Transfer of the IDC. User can configure the DNS rules to make the domain name of Transfer firstly be resolved as the Transfer instance of the local IDC. 
 
@@ -63,7 +63,7 @@ Of course the test is performanced under ideal conditions and far from the resou
 
 
 ### Opentsdb
-This feature is still under design. We expect it to be finished in the second half of 2015. You are welcomed to diccuss the experience of using tsbd at that time
+This function is complete. Welcome to the QQ group to exchange TSDB related experience.
 
 ### Center-Status
 Center-Status is the collective name for central storage. The storage Open-Falcon uses includes MySQL and Redis (Mencached is abandoned). MySQL is mainly used for saving index data and configuration information, like HostGroup, Alarm strategy, UIC information, Screen inforamtion. Redis is mainly used for alarm cache queue. Forming and querying the index happens frequently and they consume a lot of resources. So we suggest users to deploy an individual MySQL instance equipped with SSD hard disk when data monitor data reporting speed exceeds 100k piece/minute. One piece of meaningful data is: Graph index database， bin log enabled, saving 40 million counters, consecutively running for 60 days, 20GB of hard disk space is consumed.

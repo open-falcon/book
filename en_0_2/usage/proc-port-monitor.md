@@ -17,7 +17,7 @@ net.port.listen/port=443
 The value of them are all 1. Then the data of a port stops from being pushed when the machine does not monitor it anymore. Is that OK? There are two questions
 
 - The machine monitors a lot of ports but it does not want to monitor all of them, which causes the waste of resources.
-- Currently, Open-Falcon does not support Nodata monitor. The system will not find that the port stops sending data without Nodata.
+- Currently, Open-falcon has supported nodata monitoring to detect port survival through the nodata mechanism.
 
 So we improved it.
 
