@@ -1,6 +1,6 @@
 <!-- toc -->
 
-1. open-falcon v0.2的api文档是如何生成的？API文档地址 http://open-falcon.org/falcon-plus/
+1. open-falcon v0.2的api文档是如何生成的？API文档地址 http://open-falcon.com/falcon-plus/
 > 人工生成yaml描述文件，通过Jekyll来生成静态站点，使用github来serve，api站点的源码在 https://github.com/open-falcon/falcon-plus/tree/master/docs 这里。不过可以通过打开api组件的gen_doc选项，然后api会把请求和应答都记录下来，作为撰写api yaml文件的参考。
 
 1. open-falcon v0.2 有管理员帐号吗？
@@ -16,7 +16,7 @@
 > 支持的，参考 [pull-request #66](https://github.com/open-falcon/falcon-plus/pull/66)。
 
 1. open-falcon v0.2 如何单独编译安装api模块？
-> 参考[环境准备](https://book.open-falcon.org/zh_0_2/quick_install/prepare.html)， 在falcon-plus的目录下，执行`make api`即可编译最新的api组件。
+> 参考[环境准备](https://book.open-falcon.com/zh_0_2/quick_install/prepare.html)， 在falcon-plus的目录下，执行`make api`即可编译最新的api组件。
 
 1. open-falcon 支持Grafana吗？
 > 支持的，请参考[open-falcon grafana datasource](https://github.com/open-falcon/grafana-openfalcon-datasource)。
@@ -40,16 +40,16 @@
 > open-falcon v0.2开始，dashboard部分支持i18n，点[这里](https://github.com/open-falcon/dashboard/blob/master/i18n.md)参与。
 
 1. open-falcon 支持发送报警到微信吗？（钉钉呢？）
-> open-falcon v0.2 原生支持发送报警到微信，可以参考 [alarm配置](https://book.open-falcon.org/zh_0_2/distributed_install/mail-sms.html) 和 [微信网关搭建](https://github.com/Yanjunhui/chat) 。发送报警到钉钉，可以参考[issue #134](https://github.com/open-falcon/falcon-plus/issues/134)。
+> open-falcon v0.2 原生支持发送报警到微信，可以参考 [alarm配置](https://book.open-falcon.com/zh_0_2/distributed_install/mail-sms.html) 和 [微信网关搭建](https://github.com/Yanjunhui/chat) 。发送报警到钉钉，可以参考[issue #134](https://github.com/open-falcon/falcon-plus/issues/134)。
 
 1. open-falcon 扩容增加graph节点，怎么让数据重新迁移？
 > 平滑扩容步骤，请参考 [graph扩容历史数据自动迁移](http://www.jianshu.com/p/16baba04c959)。
 
 1. open-falcon 能监控windows吗？
-> 可以的，请参考社区对 [windows监控的解决方案](https://book.open-falcon.org/zh_0_2/usage/win.html)。
+> 可以的，请参考社区对 [windows监控的解决方案](https://book.open-falcon.com/zh_0_2/usage/win.html)。
 
 1. open-falcon 能监控交换机吗？
-> 可以的，请参考社区对 [交换机监控的解决方案](https://book.open-falcon.org/zh_0_2/usage/switch.html)。
+> 可以的，请参考社区对 [交换机监控的解决方案](https://book.open-falcon.com/zh_0_2/usage/switch.html)。
 
 1. open-falcon v0.2 中没有sender模块了吗？
 > 是的，为了减少维护成本和安装成本，在open-falcon v0.2 中，移除了sender模块，将该功能集成在alarm模块中了。
@@ -73,4 +73,4 @@
 > step要设置为86400，并且坚持每天push一次数据；push上去后，服务端会对时间戳做归一化，即服务端记录的时间戳 = int(当前时间戳/86400)。
 
 1. open-falcon 的报警历史是存储在什么地方的？ 
-> 在v0.1版本中，历史报警信息是不存储的，发送后就丢弃了；在v0.2中，做了改进，报警发送后会将历史报警存储在数据库中，请参考 `alarms` 库下面的表。当然，也可以通过 [API](http://open-falcon.org/falcon-plus/#/alarm_eventcases_list) 来访问这些信息。
+> 在v0.1版本中，历史报警信息是不存储的，发送后就丢弃了；在v0.2中，做了改进，报警发送后会将历史报警存储在数据库中，请参考 `alarms` 库下面的表。当然，也可以通过 [API](http://open-falcon.com/falcon-plus/#/alarm_eventcases_list) 来访问这些信息。

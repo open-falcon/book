@@ -28,7 +28,7 @@ Open-Falon的部署情况，会随着机器量(监控对象)的增加而逐渐�
 agent应该随装机过程部署到每个机器实例上。agent从hbs拉取配置信息，进行数据采集、收集，将数据上报给transfer。agent资源消耗很少、运行稳定可靠。小米公司部署了10K+个agent实例，已稳定运行了1Y+。
 
 ### transfer
-transfer是一个无状态的集群。transfer接收agent上报的数据，然后使用一致性哈希进行数据分片、并把分片后的数据转发给graph、judge集群(transfer还会打一份数据到opentsdb，该功能还未完成)。
+transfer是一个无状态的集群。transfer接收agent上报的数据，然后使用一致性哈希进行数据分片、并把分片后的数据转发给graph、judge集群(transfer还会打一份数据到opentsdb)。
 
 transfer集群会有缩扩容的情况，也会有服务器迁移的情况，导致集群实例不固定。如某个transfer实例故障后，要将其从transfer集群中踢出。为了屏蔽这种变化对agent的影响，建议在transfer集群前挂一个域名，agent通过域名方式访问transfer集群、实现自动切换。多IDC时，为了减少跨机房流量，建议每个IDC都部署一定数量的transfer实例、agent将数据push到本IDC的transfer(可以配置dns规则，优先将transfer域名解析为本地IDC内的transfer实例)。
 
@@ -62,7 +62,7 @@ transfer消耗的资源 主要是网络和CPU。使用机型/操作系统选择�
 
 
 ### opentsdb
-该功能还未完成。预计2015年下半年能搞定。欢迎一起交流tsdb相关的使用经验。
+该功能已经完成。欢迎进群一起交流tsdb相关的使用经验。
 
 ### center-status
 center-status是中心存储的统称。Open-Falcon用到的中心存储，包括Mysql、Redis(Memcached要被弃用)。Mysql主要用于存储配置信息(如HostGroup、报警策略、UIC信息、Screen信息等)、索引数据等，Redis主要被用作报警缓存队列。索引生成、查询比较频繁和耗资源，当监控数据上报量超过100K条/min时 建议为其单独部署Mysql实例、并配置SSD硬盘。一个有意义的数据是: graph索引库，开启bin日志，保存4000万个counter且连续运行60天，消耗了20GB的磁盘空间。
