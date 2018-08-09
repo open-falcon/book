@@ -19,9 +19,11 @@
 - The [english doc](http://book.open-falcon.com/en/index.html) is translated by [宋立岭](https://github.com/songliling).
 
 -----
-- QQ四群：697503992 （请加该群）
+- QQ五群：42607978 （请加该群）//请大家优先在 github 上提交 [issue](https://github.com/open-falcon/falcon-plus/issues)， 方便问题沉淀，github issue 会最高优先级解决。
+- QQ四群：697503992 （已满员）
 - QQ一群：373249123 （已满员）
 - QQ二群：516088946 （已满员）
 - QQ三群：469342415 （已满员）
+
 
 <img src="image/OpenFalcon_wechat.jpg" width = "180" height = "180" alt="微信公众号" align=center />
