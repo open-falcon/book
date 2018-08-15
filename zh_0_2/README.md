@@ -15,11 +15,12 @@
 
 - OpenFalcon was initially started by Xiaomi and we would also like to acknowledge contributions by engineers from [these companies](./contributing.html) and [these individual developers](./contributing.html).
 - The OpenFalcon logo and website were contributed by Cepave Design Team.
-- [Wei Lai](https://github.com/laiwei) is the founder of OpenFalcon software and community. 
-- The [english doc](http://book.open-falcon.com/en/index.html) is translated by [宋立岭](https://github.com/songliling).
+- jingyuan、laiwei、Kordan 是OpenFalcon的PMC成员，决策并管理社区的发展和目标.
+- 英文文档 0.2版本 由小米及社区翻译完成.
 
 -----
-- QQ四群：697503992 （请加该群）
+- QQ五群：42607978 （请加该群）//请大家优先在 github 上提交 [issue](https://github.com/open-falcon/falcon-plus/issues)，方便问题沉淀，github issue 会最高优先级解决。
+- QQ四群：697503992 （已满员）
 - QQ一群：373249123 （已满员）
 - QQ二群：516088946 （已满员）
 - QQ三群：469342415 （已满员）
