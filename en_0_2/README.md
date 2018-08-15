@@ -19,7 +19,7 @@ Now:
 - English document version 0.2 was translated by xiaomi and the community.
 
 -----
-- QQ Group No. 5: 42607978  (Join this group) //Please give priority to submit [issue] (https://github.com/open-falcon/falcon-plus/issues) on github to facilitate the problem, and the github issue will be resolved with the highest priority.
+- QQ Group No. 5: 42607978  (Join this group) //Please give priority to submit [issue](https://github.com/open-falcon/falcon-plus/issues) on github to facilitate the problem, and the github issue will be resolved with the highest priority.
 - QQ Group No. 4: 697503992 (full)
 - QQ Group No. 1: 373249123 (full)
 - QQ Group No. 2: 516088946 (full)
