@@ -3,8 +3,9 @@
 # 报警函数说明
 
 配置报警策略的时候open-falcon支持多种报警触发函数，比如`all(#3)` `diff(#10)`等等。
-这些#后面的数字表示的是最新的历史点，比如`#3`代表的是最新的三个点。
-该数字不能大于10，大于10将当作10处理，即只计算最新10个点的值。
+这些#后面的数字表示的是最新的历史点，比如`#3`代表的是最新的三个点。该数字默认不能大于`10`，大于`10`将当作`10`处理，即只计算最新`10`个点的值。
+
+说明：`#`后面的数字的最大值，即在 judge 内存中保留最近几个点，是支持自定义的，具体参考 book 中[描述](http://book.open-falcon.com/zh_0_2/distributed_install/judge.html) ； 源码位置 => [cfg.example.json](https://github.com/open-falcon/falcon-plus/blob/master/modules/judge/cfg.example.json#L4:6)
 
 ```bash
 all(#3): 最新的3个点都满足阈值条件则报警
