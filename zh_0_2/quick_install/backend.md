@@ -13,7 +13,7 @@ mkdir -p $WORKSPACE
 
 ### 解压二进制包
 ```bash
-tar -xzvf open-falcon-v0.2.0.tar.gz -C $WORKSPACE
+tar -xzvf open-falcon-v0.2.1.tar.gz -C $WORKSPACE
 ```
 
 ### 在一台机器上启动所有的后端组件

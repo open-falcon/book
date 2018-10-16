@@ -13,7 +13,7 @@ mkdir -p $WORKSPACE
 
 ### Unzip the Binary Pack
 ```bash
-tar -xzvf open-falcon-v0.2.0.tar.gz -C $WORKSPACE
+tar -xzvf open-falcon-v0.2.1.tar.gz -C $WORKSPACE
 ```
 
 ### Execute All the Backend Modules on One Machine
