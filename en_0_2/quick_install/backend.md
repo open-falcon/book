@@ -21,7 +21,7 @@ tar -xzvf open-falcon-v0.2.1.tar.gz -C $WORKSPACE
 # First, make sure that the username and password in the configuration file of database are valid, or the configuration file should be edited.
 ```
 cd $WORKSPACE
-grep -Ilr 3306  ./ | xargs -n1 -- sed -i 's/root:password/real_user:real_password/g')
+grep -Ilr 3306  ./ | xargs -n1 -- sed -i 's/root:/real_user:real_password/g'
 ```
 # Execute
 ```bash
