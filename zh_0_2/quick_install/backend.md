@@ -13,14 +13,14 @@ mkdir -p $WORKSPACE
 
 ### 解压二进制包
 ```bash
-tar -xzvf open-falcon-v0.2.0.tar.gz -C $WORKSPACE
+tar -xzvf open-falcon-v0.2.1.tar.gz -C $WORKSPACE
 ```
 
 ### 在一台机器上启动所有的后端组件
 # 首先确认配置文件中数据库账号密码与实际相同，否则需要修改配置文件。
 ```
 cd $WORKSPACE
-grep -Ilr 3306  ./ | xargs -n1 -- sed -i 's/root:password/real_user:real_password/g')
+grep -Ilr 3306  ./ | xargs -n1 -- sed -i 's/root:/real_user:real_password/g'
 ```
 # 启动
 ```bash
