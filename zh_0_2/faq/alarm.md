@@ -31,9 +31,9 @@ curl http://127.0.0.1:6081/history/qd-open-falcon-judge01.hd/cpu.idle
 4. 检查hbs的配置hosts是否配置为sync了，只有留空的时候hbs才会去写host表，host表中有数据才能在页面上添加机器
 
 
-#### 在alarm这边配置了短信、邮件、微信通知，告警写入都有，但实际发送有时候只有1种，有时2种，有时3种都有
-1、检查是否有多个alarm进程同时读取一个redis队列，引起相互干扰，如urlooker的alarm。
-2、修改redis队列名称，如修改urlooker的redis队列名称，使2个alarm读取不同的队列，避免造成干扰。
+#### 在alarm这边配置了短信、邮件、微信通知，在alarm 日志中看到告警写入 redis 队列都有，但实际发送有时候只有1种，有时2种，有时3种都有。
+1. 检查是否有多个alarm进程同时读取一个redis队列，引起相互干扰，如urlooker的alarm。
+2. 修改redis队列名称，如修改urlooker的redis队列名称，使2个alarm读取不同的队列，避免造成干扰。
 
 
 
