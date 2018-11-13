@@ -1,7 +1,7 @@
 <!-- toc -->
 
 # API
-api组件，提供统一的restAPI操作接口。比如：api组件接收查询请求，根据一致性哈希算法去相应的graph实例查询不同metric的数据，然后汇总拿到的数据，最后统一返回给用户。
+api组件，提供统一的restAPI操作接口。比如：api组件接收查询请求，根据一致性哈希算法去相应的graph实例查询不同metric的数据，然后汇总拿到的数据，最后统一返回给用户。v0.3 api实现对alarm-manager组件的接口路由进行转发的功能。
 
 ## 服务部署
 服务部署，包括配置修改、启动服务、检验服务、停止服务等。这之前，需要将安装包解压到服务的部署目录下。
@@ -54,13 +54,12 @@ vim cfg.json
 	"skip_auth": false, //如果设置为true，那么访问api就不需要经过认证
 	"default_token": "default-token-used-in-server-side",  //用于服务端各模块间的访问授权
 	"gen_doc": false,
-	"gen_doc_path": "doc/module.html"
+	"gen_doc_path": "doc/module.html"，
+	"alarmManagerApi": "http://127.0.0.1:9922"  //请求alarm-manager组件路由转发地址
 }
-
-
-
 ```
 
 ## 补充说明
 - 部署完成api组件后，请修改dashboard组件的配置、使其能够正确寻址到api组件。
 - 请确保api组件的graph列表 与 transfer的配置 一致。
+- v0.3增加alarm-manager组件，可以通过api组件直接调用alarm-manager接口。
