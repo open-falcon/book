@@ -15,11 +15,12 @@ Now:
 
 - OpenFalcon was initially started by Xiaomi and we would also like to acknowledge contributions by engineers from [these companies](./contributing.html) and [these individual developers](./contributing.html).
 - The OpenFalcon logo and website were contributed by Cepave Design Team.
-- [Wei Lai](https://github.com/laiwei) is the founder of OpenFalcon software and community. 
-- The [english doc](http://book.open-falcon.com/en/index.html) is translated by [Liling Song](https://github.com/songliling).
+-- Jingyuan, Laiwei, Kordan are PMC members of OpenFalcon, making decisions and managing the community's development and goals.
+-- English document version 0.2 was translated by xiaomi and the community.
 
 -----
-- QQ Group No. 4: 697503992 (join this group)
+- QQ Group No. 5: 42607978  (Join this group) //Please give priority to submit [issue] (https://github.com/open-falcon/falcon-plus/issues) on github to facilitate the problem, and the gith
+- QQ Group No. 4: 697503992 (full)
 - QQ Group No. 1: 373249123 (full)
 - QQ Group No. 2: 516088946 (full)
 - QQ Group No. 3: 469342415 (full)
