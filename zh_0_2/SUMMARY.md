@@ -70,6 +70,7 @@
   * [修改绘图曲线精度](dev/change_graph_rra.md)
   * [修改网卡流量单位](dev/change_net_unit.md)
   * [支持 Grafana 视图展现](dev/support_grafana.md)
+  * [基于API的方式新增一个组件](dev/add_new_module.md)
   * [API](api/README.md)
 * [实践经验](practice/README.md)
   * [部署](practice/deploy.md)
