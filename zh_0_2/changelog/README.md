@@ -1,5 +1,11 @@
 <!-- toc -->
 
+## [v0.2.2] 2018-11-01
+> https://github.com/open-falcon/falcon-plus/releases/tag/v0.2.2
+- AlarmManager 增加告警管理组件，组件介绍，http://book.open-falcon.com/zh_0_2/distributed_install/alarm-manager.html
+- Alarm 针对历史报警信息设置了开关，alarm-manager组件将保存历史全量的报警信息, 采用推的方式将报警数据给AlarmManager一份
+- Api 增加AlarmManager告警管理接口
+
 ## [v0.2.0] 2017-06-17
 
 > https://github.com/open-falcon/falcon-plus/releases/tag/v0.2.0

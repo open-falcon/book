@@ -10,7 +10,7 @@ alarm模块是处理报警event的，judge产生的报警event写入redis，alar
 
 我们在配置报警策略的时候配置了报警级别，比如P0/P1/P2等等，每个及别的报警都会对应不同的redis队列 alarm去读取这个数据的时候我们希望先读取P0的数据，再读取P1的数据，最后读取P5的数据，因为我们希望先处理优先级高的。于是：用了redis的brpop指令。
 
-已经发送的告警信息，alarm会写入MySQL中保存，这样用户就可以在dashboard中查阅历史报警，同时针对同一个策略发出的多条报警，在MySQL存储的时候，会聚类；历史报警保存的周期，是可配置的，默认为7天。
+已经发送的告警信息，alarm会写入MySQL中保存，这样用户就可以在dashboard中查阅历史报警，同时针对同一个策略发出的多条报警，在MySQL存储的时候，会聚类；历史报警保存的周期，是可配置的，默认为7天。**v0.2.2对历史报警信息的保存机制，设置了开关，alarm-manager组件保存历史所有的报警信息。**
 
 ## 部署说明
 
@@ -53,6 +53,10 @@ alarm是个单点。对于未恢复的告警是放到alarm的内存中的，alar
         "plus_api":"http://127.0.0.1:8080",   //falcon-plus api模块的运行地址
         "plus_api_token": "default-token-used-in-server-side" //用于和falcon-plus api模块服务端之间的通信认证token
     },
+    "alarm_channel": {
+        "enabled": false,   //默认关闭发送数据到alarm-manager告警管理。如需传输数据，改为true
+        "alarm_manager_api": "http://127.0.0.1:9922/v1/recv"  //alarm-manager组件接收数据地址
+    },
     "falcon_portal": {
         "addr": "root:@tcp(127.0.0.1:3306)/alarms?charset=utf8&loc=Asia%2FChongqing",
         "idle": 10,
@@ -64,6 +68,7 @@ alarm是个单点。对于未恢复的告警是放到alarm的内存中的，alar
         "mail": 50
     },
     "housekeeper": {
+        "enabled": false,  //v0.2.2增加对数据清理的开关机制，如需清理，改为true，数据清理不影响alarm-manager组件告警数据
         "event_retention_days": 7,  //报警历史信息的保留天数
         "event_delete_batch": 100
     }
@@ -72,7 +77,7 @@ alarm是个单点。对于未恢复的告警是放到alarm的内存中的，alar
 ```
 ## 进程管理
 
-``` 
+```
 # 启动
 ./open-falcon start alarm
 
@@ -80,7 +85,7 @@ alarm是个单点。对于未恢复的告警是放到alarm的内存中的，alar
 ./open-falcon stop alarm
 
 # 查看日志
-./open-falcon monitor alarm 
+./open-falcon monitor alarm
 ```
 
 ## 报警合并

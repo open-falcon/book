@@ -31,7 +31,7 @@ export WORKSPACE=$HOME/open-falcon
 mkdir -p $WORKSPACE
 cd $WORKSPACE
 
-git clone https://github.com/open-falcon/scripts.git     
+git clone https://github.com/open-falcon/scripts.git
 cd ./scripts/
 mysql -h localhost -u root -p < db_schema/graph-db-schema.sql
 mysql -h localhost -u root -p < db_schema/dashboard-db-schema.sql
@@ -49,7 +49,7 @@ We have compiled relevant component into binary version to make it easier to use
 Domestic users please click here to quickly download the compiled binary version.
 ```
 DOWNLOAD="https://github.com/open-falcon/of-release/releases/download/v0.1.0/open-falcon-v0.1.0.tar.gz"
-cd $WORKSPACE 
+cd $WORKSPACE
 
 mkdir ./tmp
 wget $DOWNLOAD -O open-falcon-latest.tar.gz
@@ -64,10 +64,9 @@ done
 
 rm -rf ./tmp && rm -f open-falcon-latest.tar.gz
 ```
-    
 ##Changelog
 
-http://book.open-falcon.com/zh/changelog/README.html
+http://book.open-falcon.com/en/10changelog.html
 
 
 
