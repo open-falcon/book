@@ -8,6 +8,7 @@ To collect the data of directory size and process details, we can use the script
 ## Collected Index
 
 Below is the metrics:
+
 | METRIC | NOTE |
 |--------|------|
 |du.bytes.used|directory size, byte|

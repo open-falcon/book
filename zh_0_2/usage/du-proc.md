@@ -6,6 +6,7 @@
 目录大小和进程详情的数据采集可用脚本[falcon-scripts](https://github.com/ZoneTong/falcon-scripts)来做。
 
 收集的指标如下：
+
 | 指标名 | 注释 |
 |--------|------|
 |du.bytes.used|目录大小，单位byte|
