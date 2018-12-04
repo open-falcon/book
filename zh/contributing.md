@@ -25,6 +25,7 @@
 1. [yindashan](https://github.com/yindashan)
 1. [LeonZYang](https://github.com/LeonZYang)
 1. [itxx00](https://github.com/itxx00)
+1. [ZoneTong](https://github.com/ZoneTong)
 
 ----
 
@@ -106,3 +107,4 @@
 1. [优软科技](http://www.usoftchina.com)
 1. [团贷网](https://www.tuandai.com)
 1. [达闼科技](http://www.cloudminds.com)
+1. [华大基因](http://www.genomics.cn)

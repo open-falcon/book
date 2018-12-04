@@ -56,6 +56,7 @@
   * [Mesos Monitor](usage/mesos.md)
   * [VSphere Monitor](usage/vsphere.md)
   * [Flume Monitor](usage/flume.md)
+  * [du and process detail Monitor](usage/du-proc.md)
 
 ### Part Ⅳ : Pilosophy
 * [Design Philosophy](philosophy/README.md)
