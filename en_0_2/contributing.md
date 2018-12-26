@@ -27,6 +27,7 @@
 17. [yindashan](https://github.com/yindashan)
 18. [LeonZYang](https://github.com/LeonZYang)
 19. [itxx00](https://github.com/itxx00)
+20. [ZoneTong](https://github.com/ZoneTong)
 
 ----
 
@@ -106,3 +107,4 @@
 71. Anhui Mobile Communication CO.,LTD.
 72. [WSP360](http://www.wsp360.org)
 73. [USoftChina](http://www.usoftchina.com)
+74. [BGI](http://www.genomics.cn)
