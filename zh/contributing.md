@@ -109,3 +109,4 @@
 1. [达闼科技](http://www.cloudminds.com)
 1. [vipkid](https://www.vipkid.com.cn/)
 1. [华大基因](http://www.genomics.cn)
+1. [浙江移动和慧眼](http://www.hehuiyan.com)
