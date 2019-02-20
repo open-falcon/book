@@ -57,6 +57,7 @@
   * [vSphere监控](usage/vsphere.md)
   * [Flume监控](usage/flume.md)
   * [目录和进程资源监控](usage/du-proc.md)
+  * [故障自愈](usage/fault-recovery.md)
 
 ### 第 Ⅳ  部分：理念
 * [设计理念](philosophy/README.md)
