@@ -57,6 +57,7 @@
   * [VSphere Monitor](usage/vsphere.md)
   * [Flume Monitor](usage/flume.md)
   * [du and process detail Monitor](usage/du-proc.md)
+  * [VSphere and ESXI Monitor](usage/vsphere-esxi.md) 
 
 ### Part Ⅳ : Pilosophy
 * [Design Philosophy](philosophy/README.md)
