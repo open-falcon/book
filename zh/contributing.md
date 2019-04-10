@@ -26,6 +26,7 @@
 1. [LeonZYang](https://github.com/LeonZYang)
 1. [itxx00](https://github.com/itxx00)
 1. [ZoneTong](https://github.com/ZoneTong)
+1. [tpinellia](https://github.com/tpinellia)
 
 ----
 
