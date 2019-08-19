@@ -41,6 +41,7 @@ vim cfg.json
         "storage": "./data/6070" // 历史数据的文件存储路径（如有必要，请修改为合适的路）
     },
     "db": {
+        // 所有的 graph 共用一个数据库 
         "dsn": "root:@tcp(127.0.0.1:3306)/graph?loc=Local&parseTime=true", //MySQL的连接信息，默认用户名是root，密码为空，host为127.0.0.1，database为graph（如有必要，请修改)
                                                                            //如数据库使用密码, 配置稍有不同: "dsn": "root:password@tcp(127.0.0.1:3306)/graph?loc=Local&parseTime=true&allowNativePasswords=true"
         "maxIdle": 4  //MySQL连接池配置，连接池允许的最大连接数，保持默认即可
