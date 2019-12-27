@@ -2,7 +2,7 @@
 
 # Transfer
 
-transfer是数据转发服务。它接收agent上报的数据，然后按照哈希规则进行数据分片、并将分片后的数据分别push给graph&judge等组件。
+transfer是数据转发服务。它接收agent上报的数据，然后按照哈希规则进行数据分片、并将分片后的数据分别push给graph&judge等组件。同时 transfer 也支持将数据转发给 opentsdb 和 influxdb，也可以转发给另外一个 transfer。
 
 ## 服务部署
 服务部署，包括配置修改、启动服务、检验服务、停止服务等。这之前，需要将安装包解压到服务的部署目录下。
@@ -71,7 +71,7 @@ curl -s "127.0.0.1:6060/health"
         - cluster: key-value形式的字典，表示后端的graph列表，其中key代表后端graph名字，value代表的是具体的ip:port(多个地址用逗号隔开, transfer会将同一份数据发送至各个地址，利用这个特性可以实现数据的多重备份)
 
     tsdb
-        - enabled: true/false, 表示是否开启向open tsdb发送数据
+        - enabled: true/false, 表示是否开启向opentsdb发送数据
         - batch: 数据转发的批量大小，可以加快发送速度
         - connTimeout: 单位是毫秒，与后端建立连接的超时时间，可以根据网络质量微调，建议保持默认
         - callTimeout: 单位是毫秒，发送数据给后端的超时时间，可以根据网络质量微调，建议保持默认
@@ -79,6 +79,32 @@ curl -s "127.0.0.1:6060/health"
         - maxIdle: 连接池相关配置，最大空闲连接数，建议保持默认
         - retry: 连接后端的重试次数和发送数据的重试次数
         - address: tsdb地址或者tsdb集群vip地址, 通过tcp连接tsdb. 
+    
+    transfer // transfer 可以转发数据给另外一个 transfer，形成级联模式
+        - enabled: true/false,   表示是否开启向另一个transfer发送数据
+        - batch: 数据转发的批量大小，可以加快发送速度
+        - connTimeout: 单位是毫秒，与后端建立连接的超时时间，可以根据网络质量微调，建议保持默认
+        - callTimeout: 单位是毫秒，发送数据给后端的超时时间，可以根据网络质量微调，建议保持默认
+        - maxConns: 连接池相关配置，最大连接数，建议保持默认
+        - maxIdle: 连接池相关配置，最大空闲连接数，建议保持默认
+        - retry: 连接后端的重试次数和发送数据的重试次数
+        - cluster: {   //下游级联的 transfer 列表，以key-value形式的字典
+            "t1": "127.0.0.1:8433"
+        }
+
+    influxdb  // transfer 可以转发数据给 influxdb，通过 http 的形式提交数据
+        - enabled: true/false,  表示是否开启向 influxdb 发送数据
+        - batch: 数据转发的批量大小，可以加快发送速度
+        - retry: 连接后端的重试次数和发送数据的重试次数
+        - maxConns: 连接池相关配置，最大连接数，建议保持默认
+        - username: 提交数据给 influxdb 时，需要指定 influxdb 中事先创建好的用户
+        - password: 提交数据给 influxdb 时，需要指定 influxdb 中事先创建好的用户的密码
+        - precision: 数据的粒度，默认位 s
+        - db: 数据会提交到influxdb 中事先已经创建号的 database 中
+        - address: influxdb 的http 接口地址，influxdb 的默认 http 端口是8086
+        - timeout: 单位是毫秒，与后端建立连接和发送数据的超时时间，可以根据网络质量微调，建议保持默认
+    }
+    
        
 ```
 
