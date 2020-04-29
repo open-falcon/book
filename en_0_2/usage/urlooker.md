@@ -1,64 +1,59 @@
 ﻿<!-- toc -->
 
-## [urlooker][1]
-Urlooker, which is written in Go language, monitors the availability of Web service and the visit quality and it is easy to install and redevelop.
+## [urlooker](https://github.com/710leo/urlooker)
+-Urlooker, which is written in Go language, monitors the availability of Web service and the visit quality and it is easy to install and redevelop.
 
 ## Feature
-- Detect the state code of response
-- Detect the response time of a page
-- Matching detect of key word in a page
-- Visit with cookie
-- Agent deployment in multiple machine room; visit specific machine room
-- Support sending detection result to Open-Falcon
-- Support sending alarms via SMS and mail
+- status code
+- respose time
+- page keyword 
+- customize header
+- customize post body
+- support get post put method
+- send to open-falcon、statsd、prometheus
 
 ## Architecture
-![此处输入图片的描述][2]
+![Architecture](https://github.com/710leo/urlooker/raw/master/img/urlooker_arch.png)
 
 ## ScreenShot
 
-![看图][3]
+![](https://github.com/710leo/urlooker/blob/master/img/urlooker_en1.png)
+![](https://github.com/710leo/urlooker/blob/master/img/urlooker_en2.png)
+![stra](https://github.com/710leo/urlooker/blob/master/img/urlooker_stra.png)
 
-![此处输入图片的描述][4]
-
-![添加监控项][5]
-
-## Sent Metrics(details in [wiki][6])
-- metric: url_status
-- endpoint: url_id (ID in picture number 2)
-- tag: creator=username (username in the top right of the picture 6)
-- counterType: GAUGE
-- step: 60 (can be adjusted in the configuration of web application)
-- value: 0 (0~4 0 means normal, others mean innormal)
+## FAQ
+- [wiki](https://github.com/710leo/urlooker/wiki)
+- [FAQ](https://github.com/710leo/urlooker/wiki/FAQ)
+- default user/password：admin/password
 
 ## Install
+##### install by docker
 
-**Environment Dependency**   
-Install mysql & redis      
-wget http://x2know.qiniudn.com/schema.sql      
-Import schema.sql to the database  
+```bash
+git clone https://github.com/710leo/urlooker.git
+cd urlooker
+docker build .
+docker volume create urlooker-vol
+docker run -p 1984:1984 -d --name urlooker --mount source=urlooker-vol,target=/var/lib/mysql --restart=always [CONTAINER ID]
+```
 
-Binary installation(compiled in Ubuntu 14.4 Go1.6)：
+##### install by code
+```bash
+# install dependence
+yum install -y mysql-server
+wget https://raw.githubusercontent.com/710leo/urlooker/master/sql/schema.sql
+mysql -h 127.0.0.1 -u root -p < schema.sql
 
-    wget http://x2know.qiniudn.com/urlooker.tar.gz
-    tar xzvf urlooker.tar.gz
-    cd urlooker
-    # Adjust the configuration of MySQL and redis in cfg.json
-    web/control start
-    alarm/control start
-    agent/control start
+curl https://raw.githubusercontent.com/710leo/urlooker/master/install.sh|bash
+cd $GOPATH/src/github.com/710leo/urlooker
 
-Visit http://127.0.0.1:1984 with your browser.
+# change [mysql root password]to your mysql root password
+sed -i 's/urlooker.pass/[mysql root password]/g' configs/web.yml
 
+./control start all
+```
 
-## Help
-Please refer to [urlooker][7] for source code installation and other detailed information. 
+open http://127.0.0.1:1984 in browser
 
-
-  [1]: https://github.com/urlooker
-  [2]: https://github.com/urlooker/wiki/raw/master/img/urlooker4.png
-  [3]: https://github.com/urlooker/wiki/raw/master/img/urlooker1.png
-  [4]: https://github.com/urlooker/wiki/raw/master/img/urlooker3.png
-  [5]: https://github.com/urlooker/wiki/raw/master/img/urlooker2.png
-  [6]: https://github.com/URLooker/wiki/wiki/open-falcon-%E4%B8%8A%E6%8A%A5%E9%A1%B9%E4%BB%8B%E7%BB%8D
-  [7]: https://github.com/710leo/urlooker/blob/master/README.md
+## Q&A
+Gitter: [urlooker](https://gitter.im/urllooker/community)
