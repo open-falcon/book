@@ -59,6 +59,7 @@
   * [目录和进程资源监控](usage/du-proc.md)
   * [故障自愈](usage/fault-recovery.md)
   * [VSphere和ESXI监控](usage/vsphere-esxi.md)
+  * [Prometheus exporter](usage/prometheus-exporter.md)
 
 ### 第 Ⅳ  部分：理念
 * [设计理念](philosophy/README.md)
