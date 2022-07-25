@@ -1,0 +1,1 @@
+../zh/contributing.md
